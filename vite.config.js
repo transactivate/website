@@ -4,5 +4,5 @@ import react from '@vitejs/plugin-react'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  base: '/transactivate/', // Assumes GitHub Pages deployment to user/transactivate
+  base: '/', // Custom domain uses root path
 })
