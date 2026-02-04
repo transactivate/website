@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, ChevronRight, Search, Activity, Briefcase, Mail, HelpCircle, FileText, Check, Database, Layers } from 'lucide-react';
+import { Shield, ChevronRight, Search, Activity, Briefcase, Mail, HelpCircle, FileText, Check, Zap, Layers } from 'lucide-react';
 
 const SECTIONS = {
     LANDING: 'LANDING',
@@ -51,12 +51,6 @@ function App() {
                         className={`nav-link ${activeSection === SECTIONS.CONTACT ? 'text-[#64ffda]' : ''}`}
                     >
                         Contact
-                    </button>
-                    <button
-                        className="nav-link flex items-center gap-1 text-slate-400 hover:text-[#64ffda]"
-                        onClick={() => window.open('https://github.com/transactivate', '_blank')}
-                    >
-                        Ledger <ChevronRight size={12} />
                     </button>
                 </div>
             </nav>
@@ -121,15 +115,15 @@ const BuyersKey = () => (
 
         <div className="grid md:grid-cols-3 gap-8">
             <div className="glass-card">
-                <Database className="text-[#64ffda] mb-4" size={32} />
-                <h3 className="text-xl font-bold text-slate-200 mb-2">The Ledger</h3>
+                <Zap className="text-[#64ffda] mb-4" size={32} />
+                <h3 className="text-xl font-bold text-slate-200 mb-2">Rapid Acquisition</h3>
                 <p className="text-slate-400 mb-4">
-                    Access the authoritative registry of verified SBIR assets. We maintain a living database of "Successor-in-Interest" holders, ensuring every asset is active and transferable.
+                    Bypass typical procurement lead times. Phase III awards allow for immediate sole-source contracting without further competition.
                 </p>
                 <ul className="text-sm text-slate-500 font-mono space-y-2">
-                    <li>+ VERIFIED HOLDERS</li>
-                    <li>+ DATA RIGHTS EXPIRY TRACKING</li>
-                    <li>+ LIVE M&A UPDATES</li>
+                    <li>+ NO J&A REQUIRED</li>
+                    <li>+ 30-DAY EXECUTION</li>
+                    <li>+ AGENCY-WIDE SCOPE</li>
                 </ul>
             </div>
 
@@ -137,7 +131,7 @@ const BuyersKey = () => (
                 <Search className="text-[#64ffda] mb-4" size={32} />
                 <h3 className="text-xl font-bold text-slate-200 mb-2">Strategic Search</h3>
                 <p className="text-slate-400 mb-4">
-                    Identify assets that perfectly map to your agency's requirements. We scan the "Ledger" to find technology that can be transitioned immediately via Phase III.
+                    Identify assets that perfectly map to your agency's requirements. We scan verified SBIR awards to find technology that can be transitioned immediately via Phase III.
                 </p>
                 <ul className="text-sm text-slate-500 font-mono space-y-2">
                     <li>+ AUTOMATED TECH MATCHING</li>
@@ -182,8 +176,8 @@ const SellersKey = () => (
                     Uncover hidden value in your IP portfolio. We audit your historical SBIR/STTR awards to identify dormant data rights that can be monetized.
                 </p>
                 <div className="p-3 bg-[#020c1b] rounded border border-slate-700 font-mono text-xs text-slate-400">
-                    > SCANNING PAST AWARDS...<br />
-                    > IDENTIFIED: 3 TRANSFERABLE ASSETS
+           > SCANNING PAST AWARDS...<br />
+           > IDENTIFIED: 3 TRANSFERABLE ASSETS
                 </div>
             </div>
 
@@ -194,8 +188,8 @@ const SellersKey = () => (
                     We identify large Prime contractors facing "Revenue Cliffs" who need your Sole Source authority to bridge the gap. Turn your IP into immediate liquidity.
                 </p>
                 <div className="p-3 bg-[#020c1b] rounded border border-slate-700 font-mono text-xs text-slate-400">
-                    > MATCHING: [YOUR_ASSET] -> [PRIME]<br />
-                    > STATUS: MATCH FOUND (95%)
+          > MATCHING: [YOUR_ASSET] -> [PRIME]<br />
+          > STATUS: MATCH FOUND (95%)
                 </div>
             </div>
 
@@ -208,7 +202,7 @@ const SellersKey = () => (
                 <ul className="space-y-4 text-slate-400 text-sm">
                     <li className="flex gap-2">
                         <span className="text-[#64ffda]">01.</span>
-                        <span>Asset Sale (Cash Out)</span>
+                        <span>Asset Sale (Simple Assignment)</span>
                     </li>
                     <li className="flex gap-2">
                         <span className="text-[#64ffda]">02.</span>
