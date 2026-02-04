@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, ChevronRight, Search, Activity, Briefcase, Mail, HelpCircle, FileText, Check } from 'lucide-react';
+import { Shield, ChevronRight, Search, Activity, Briefcase, Mail, HelpCircle, FileText, Check, Database, Layers } from 'lucide-react';
 
 const SECTIONS = {
     LANDING: 'LANDING',
@@ -51,6 +51,12 @@ function App() {
                         className={`nav-link ${activeSection === SECTIONS.CONTACT ? 'text-[#64ffda]' : ''}`}
                     >
                         Contact
+                    </button>
+                    <button
+                        className="nav-link flex items-center gap-1 text-slate-400 hover:text-[#64ffda]"
+                        onClick={() => window.open('https://github.com/transactivate', '_blank')}
+                    >
+                        Ledger <ChevronRight size={12} />
                     </button>
                 </div>
             </nav>
@@ -106,24 +112,37 @@ const BuyersKey = () => (
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}
-        className="w-full max-w-5xl"
+        className="w-full max-w-6xl"
     >
         <div className="flex items-center gap-4 mb-8">
             <div className="w-16 h-1 bg-[#64ffda]"></div>
             <h2 className="text-3xl font-bold text-slate-200">Buy-Side Engine</h2>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid md:grid-cols-3 gap-8">
+            <div className="glass-card">
+                <Database className="text-[#64ffda] mb-4" size={32} />
+                <h3 className="text-xl font-bold text-slate-200 mb-2">The Ledger</h3>
+                <p className="text-slate-400 mb-4">
+                    Access the authoritative registry of verified SBIR assets. We maintain a living database of "Successor-in-Interest" holders, ensuring every asset is active and transferable.
+                </p>
+                <ul className="text-sm text-slate-500 font-mono space-y-2">
+                    <li>+ VERIFIED HOLDERS</li>
+                    <li>+ DATA RIGHTS EXPIRY TRACKING</li>
+                    <li>+ LIVE M&A UPDATES</li>
+                </ul>
+            </div>
+
             <div className="glass-card">
                 <Search className="text-[#64ffda] mb-4" size={32} />
                 <h3 className="text-xl font-bold text-slate-200 mb-2">Strategic Search</h3>
                 <p className="text-slate-400 mb-4">
-                    Identify assets that perfectly map to your agency's requirements. We scan the "Ledger" of verified SBIR awards to find technology that can be transitioned immediately via Phase III.
+                    Identify assets that perfectly map to your agency's requirements. We scan the "Ledger" to find technology that can be transitioned immediately via Phase III.
                 </p>
                 <ul className="text-sm text-slate-500 font-mono space-y-2">
                     <li>+ AUTOMATED TECH MATCHING</li>
                     <li>+ AGENCY MISSION ALIGNMENT</li>
-                    <li>+ 20-YEAR DATA RIGHTS CHECK</li>
+                    <li>+ CAPABILITY MAPPING</li>
                 </ul>
             </div>
 
@@ -131,7 +150,7 @@ const BuyersKey = () => (
                 <Check className="text-[#64ffda] mb-4" size={32} />
                 <h3 className="text-xl font-bold text-slate-200 mb-2">Forensic Verification</h3>
                 <p className="text-slate-400 mb-4">
-                    Every transaction is backed by a rigorous forensic audit of the "Chain of Custody". We ensure the Assignor is the valid holder of title and that all "Successor-in-Interest" clauses are satisfied.
+                    Every transaction is backed by a rigorous forensic audit of the "Chain of Custody". We ensure the Assignor is the valid holder of title.
                 </p>
                 <ul className="text-sm text-slate-500 font-mono space-y-2">
                     <li>+ IDENTITY GUARD PROTOCOLS</li>
@@ -148,7 +167,7 @@ const SellersKey = () => (
         initial={{ opacity: 0, x: 50 }}
         animate={{ opacity: 1, x: 0 }}
         exit={{ opacity: 0, x: -50 }}
-        className="w-full max-w-5xl"
+        className="w-full max-w-6xl"
     >
         <div className="flex items-center gap-4 mb-8">
             <div className="w-16 h-1 bg-[#64ffda]"></div>
@@ -156,26 +175,40 @@ const SellersKey = () => (
         </div>
 
         <div className="grid md:grid-cols-3 gap-6">
-            <div className="glass-card md:col-span-2">
-                <Activity className="text-[#64ffda] mb-4" size={32} />
-                <h3 className="text-xl font-bold text-slate-200 mb-2">Trojan Horse Asset Rescue</h3>
+            <div className="glass-card">
+                <Layers className="text-[#64ffda] mb-4" size={32} />
+                <h3 className="text-xl font-bold text-slate-200 mb-2">Portfolio Audit</h3>
                 <p className="text-slate-400 mb-6">
-                    Do you hold dormant SBIR assets? We identify large Prime contractors facing "Revenue Cliffs" (e.g., expiring contracts, protests) who need your Sole Source authority to bridge the gap. Turn your IP into immediate liquidity.
+                    Uncover hidden value in your IP portfolio. We audit your historical SBIR/STTR awards to identify dormant data rights that can be monetized.
                 </p>
-                <div className="p-4 bg-[#020c1b] rounded border border-slate-700 font-mono text-xs text-slate-400">
-          > DETECTING REVENUE CLIFFS...<br />
-          > MATCHING: [YOUR_ASSET] -> [PRIME_CONTRACT_RISK]<br />
-          > STATUS: MATCH FOUND (95% CONFIDENCE)
+                <div className="p-3 bg-[#020c1b] rounded border border-slate-700 font-mono text-xs text-slate-400">
+                    > SCANNING PAST AWARDS...<br />
+                    > IDENTIFIED: 3 TRANSFERABLE ASSETS
+                </div>
+            </div>
+
+            <div className="glass-card">
+                <Activity className="text-[#64ffda] mb-4" size={32} />
+                <h3 className="text-xl font-bold text-slate-200 mb-2">Trojan Horse Match</h3>
+                <p className="text-slate-400 mb-6">
+                    We identify large Prime contractors facing "Revenue Cliffs" who need your Sole Source authority to bridge the gap. Turn your IP into immediate liquidity.
+                </p>
+                <div className="p-3 bg-[#020c1b] rounded border border-slate-700 font-mono text-xs text-slate-400">
+                    > MATCHING: [YOUR_ASSET] -> [PRIME]<br />
+                    > STATUS: MATCH FOUND (95%)
                 </div>
             </div>
 
             <div className="glass-card">
                 <Briefcase className="text-[#64ffda] mb-4" size={32} />
-                <h3 className="text-xl font-bold text-slate-200 mb-2">Liquidity Types</h3>
-                <ul className="space-y-4 text-slate-400">
+                <h3 className="text-xl font-bold text-slate-200 mb-2">Liquidity Events</h3>
+                <p className="text-slate-400 mb-4">
+                    Flexible structure options for your exit.
+                </p>
+                <ul className="space-y-4 text-slate-400 text-sm">
                     <li className="flex gap-2">
                         <span className="text-[#64ffda]">01.</span>
-                        <span>Asset Sale (Simple Assignment)</span>
+                        <span>Asset Sale (Cash Out)</span>
                     </li>
                     <li className="flex gap-2">
                         <span className="text-[#64ffda]">02.</span>
