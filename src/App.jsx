@@ -44,7 +44,7 @@ function App() {
         <Particles
             id="tsparticles"
             init={particlesInit}
-            className="absolute inset-0 z-30 opacity-40"
+            className="absolute inset-0 z-30 opacity-80"
             options={{
                 fullScreen: { enable: false },
                 fpsLimit: 60,
@@ -58,9 +58,9 @@ function App() {
                     },
                     modes: {
                         grab: {
-                            distance: 140,
+                            distance: 180,
                             links: {
-                                opacity: 0.3,
+                                opacity: 0.6,
                                 color: "#B89947"
                             }
                         },
@@ -72,10 +72,10 @@ function App() {
                     },
                     links: {
                         color: "#888C8D",
-                        distance: 150,
+                        distance: 180,
                         enable: true,
-                        opacity: 0.15,
-                        width: 1,
+                        opacity: 0.35,
+                        width: 1.5,
                         triangles: {
                             enable: false
                         }
@@ -87,7 +87,7 @@ function App() {
                             default: "bounce",
                         },
                         random: true,
-                        speed: 0.3,
+                        speed: 0.5,
                         straight: false,
                     },
                     number: {
@@ -95,16 +95,16 @@ function App() {
                             enable: true,
                             area: 800,
                         },
-                        value: 40,
+                        value: 70,
                     },
                     opacity: {
-                        value: 0.3,
+                        value: 0.6,
                     },
                     shape: {
                         type: "circle",
                     },
                     size: {
-                        value: { min: 1, max: 2 },
+                        value: { min: 1.5, max: 3 },
                     },
                 },
                 detectRetina: true,
