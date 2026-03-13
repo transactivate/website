@@ -1,330 +1,362 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, ChevronRight, Search, Activity, Briefcase, Mail, HelpCircle, FileText, Check, Zap, Layers } from 'lucide-react';
+import { Shield, ChevronRight, Activity, Cpu, Hexagon, Crosshair, Network, FileText, ArrowUpRight } from 'lucide-react';
 
 const SECTIONS = {
-    LANDING: 'LANDING',
-    BUYERS: 'BUYERS',
-    SELLERS: 'SELLERS',
-    FAQ: 'FAQ',
-    CONTACT: 'CONTACT'
+  LANDING: 'LANDING',
+  BUYERS: 'BUYERS',
+  SELLERS: 'SELLERS',
+  FAQ: 'FAQ',
+  CONTACT: 'CONTACT'
 };
 
 function App() {
-    const [activeSection, setActiveSection] = useState(SECTIONS.LANDING);
+  const [activeSection, setActiveSection] = useState(SECTIONS.LANDING);
+  const [scrollY, setScrollY] = useState(0);
 
-    return (
-        <div className="min-h-screen flex flex-col relative overflow-hidden">
-            {/* Background Particles/Effect */}
-            <div className="fixed inset-0 pointer-events-none z-0">
-                <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_50%,rgba(17,34,64,0.7),rgba(10,25,47,1))]"></div>
-            </div>
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
-            <nav className="relative z-50 flex flex-wrap justify-between items-center px-8 py-6 max-w-7xl mx-auto w-full">
-                <div
-                    className="text-2xl font-bold font-mono text-[#64ffda] cursor-pointer tracking-tighter flex items-center gap-2"
-                    onClick={() => setActiveSection(SECTIONS.LANDING)}
-                >
-                    <Shield size={24} /> transactivate.ai
-                </div>
-                <div className="hidden md:flex gap-6 font-mono text-sm items-center">
-                    <button
-                        onClick={() => setActiveSection(SECTIONS.BUYERS)}
-                        className={`nav-link ${activeSection === SECTIONS.BUYERS ? 'text-[#64ffda]' : ''}`}
-                    >
-                        For Buyers
-                    </button>
-                    <button
-                        onClick={() => setActiveSection(SECTIONS.SELLERS)}
-                        className={`nav-link ${activeSection === SECTIONS.SELLERS ? 'text-[#64ffda]' : ''}`}
-                    >
-                        For Sellers
-                    </button>
-                    <button
-                        onClick={() => setActiveSection(SECTIONS.FAQ)}
-                        className={`nav-link ${activeSection === SECTIONS.FAQ ? 'text-[#64ffda]' : ''}`}
-                    >
-                        FAQ
-                    </button>
-                    <button
-                        onClick={() => setActiveSection(SECTIONS.CONTACT)}
-                        className={`nav-link ${activeSection === SECTIONS.CONTACT ? 'text-[#64ffda]' : ''}`}
-                    >
-                        Contact
-                    </button>
-                </div>
-            </nav>
+  return (
+    <div className="min-h-screen flex flex-col relative overflow-hidden bg-brand-black text-brand-steel font-sans selection:bg-brand-gold selection:text-brand-black">
+      {/* Background Image & Overlay */}
+      <div className="fixed inset-0 pointer-events-none z-0">
+        <div 
+           className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity grayscale transition-transform duration-1000 ease-out"
+           style={{ 
+             backgroundImage: 'url(/hero-bg.jpg)',
+             transform: `scale(${1 + scrollY * 0.0002})`
+           }}
+        ></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/80 via-brand-black/95 to-brand-black"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(184,153,71,0.05),transparent_70%)]"></div>
+      </div>
 
-            <main className="flex-grow relative z-10 container mx-auto px-4 md:px-8 flex items-center justify-center py-10">
-                <AnimatePresence mode='wait'>
-                    {activeSection === SECTIONS.LANDING && <LandingKey key="landing" onNavigate={setActiveSection} />}
-                    {activeSection === SECTIONS.BUYERS && <BuyersKey key="buyers" />}
-                    {activeSection === SECTIONS.SELLERS && <SellersKey key="sellers" />}
-                    {activeSection === SECTIONS.FAQ && <FaqKey key="faq" />}
-                    {activeSection === SECTIONS.CONTACT && <ContactKey key="contact" />}
-                </AnimatePresence>
-            </main>
-
-            <footer className="relative z-50 py-6 text-center text-slate-500 font-mono text-xs">
-                &copy; 2026 TRANSACTIVATE. ALL RIGHTS RESERVED.
-            </footer>
+      <nav className="relative z-50 flex flex-wrap justify-between items-center px-8 py-8 max-w-[90rem] mx-auto w-full border-b border-brand-steel/10">
+        <div 
+          className="text-2xl font-bold tracking-[0.2em] text-white cursor-pointer flex items-center gap-3 uppercase"
+          onClick={() => setActiveSection(SECTIONS.LANDING)}
+        >
+          <div className="w-8 h-8 flex items-center justify-center border border-brand-gold/50 bg-brand-gold/10">
+            <Hexagon size={18} className="text-brand-gold" />
+          </div>
+          transactivate
         </div>
-    );
+        <div className="hidden md:flex gap-10 text-xs items-center tracking-widest font-semibold uppercase">
+          <button 
+            onClick={() => setActiveSection(SECTIONS.BUYERS)} 
+            className={`nav-link ${activeSection === SECTIONS.BUYERS ? 'text-white border-b border-brand-gold pb-1' : ''}`}
+          >
+            Buy-Side Engine
+          </button>
+          <button 
+            onClick={() => setActiveSection(SECTIONS.SELLERS)} 
+            className={`nav-link ${activeSection === SECTIONS.SELLERS ? 'text-white border-b border-brand-gold pb-1' : ''}`}
+          >
+            Sell-Side Engine
+          </button>
+          <button 
+            onClick={() => setActiveSection(SECTIONS.FAQ)} 
+            className={`nav-link ${activeSection === SECTIONS.FAQ ? 'text-white border-b border-brand-gold pb-1' : ''}`}
+          >
+            Intelligence
+          </button>
+          <button 
+            onClick={() => setActiveSection(SECTIONS.CONTACT)} 
+            className={`px-6 py-2 border border-brand-steel/30 text-brand-light_steel hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300`}
+          >
+            Initiate Contact
+          </button>
+        </div>
+      </nav>
+
+      <main className="flex-grow relative z-10 container mx-auto px-4 md:px-8 flex items-center justify-center py-20 min-h-[80vh]">
+        <AnimatePresence mode='wait'>
+          {activeSection === SECTIONS.LANDING && <LandingKey key="landing" onNavigate={setActiveSection} />}
+          {activeSection === SECTIONS.BUYERS && <BuyersKey key="buyers" />}
+          {activeSection === SECTIONS.SELLERS && <SellersKey key="sellers" />}
+          {activeSection === SECTIONS.FAQ && <FaqKey key="faq" />}
+          {activeSection === SECTIONS.CONTACT && <ContactKey key="contact" />}
+        </AnimatePresence>
+      </main>
+
+      <footer className="relative z-50 py-8 border-t border-brand-steel/10 text-center flex flex-col items-center gap-4">
+        <div className="flex gap-2 text-brand-gold">
+           <div className="w-1 h-1 bg-brand-gold rounded-full"></div>
+           <div className="w-1 h-1 bg-brand-gold/50 rounded-full"></div>
+           <div className="w-1 h-1 bg-brand-gold/20 rounded-full"></div>
+        </div>
+        <p className="text-brand-steel/50 uppercase tracking-[0.3em] text-[10px] font-bold">
+          &copy; 2026 TRANSACTIVATE. DOMAIN-AWARE INTELLIGENCE.
+        </p>
+      </footer>
+    </div>
+  );
 }
 
 // -- SECTIONS --
 
 const LandingKey = ({ onNavigate }) => (
-    <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        transition={{ duration: 0.5 }}
-        className="text-center max-w-4xl"
-    >
-        <div className="text-[#64ffda] font-mono mb-4 text-sm tracking-widest">ESTABLISHED 2026</div>
-        <h1 className="text-5xl md:text-7xl font-bold text-slate-200 mb-6 leading-tight">
-            The Marketplace for <br />
-            <span className="text-[#64ffda] glow-text">Sole Source Authority.</span>
-        </h1>
-        <p className="text-slate-400 text-lg max-w-2xl mx-auto mb-12">
-            We facilitate the secure transfer of SBIR Data Rights, unlocking speed to contract for Buyers and liquidity for Sellers through verified Successor-in-Interest transactions.
-        </p>
-        <div className="flex flex-col md:flex-row gap-4 justify-center">
-            <button onClick={() => onNavigate(SECTIONS.BUYERS)} className="btn-primary flex items-center gap-2 justify-center">
-                Enter Buy-Side Engine <ChevronRight size={16} />
-            </button>
-            <button onClick={() => onNavigate(SECTIONS.SELLERS)} className="px-6 py-3 border border-slate-700 text-slate-300 rounded hover:bg-[#112240] transition-colors font-mono uppercase tracking-wider text-sm font-semibold">
-                Explore Sell-Side
-            </button>
-        </div>
-    </motion.div>
+  <motion.div 
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, scale: 0.98 }}
+    transition={{ duration: 0.8, ease: "easeOut" }}
+    className="w-full max-w-6xl mx-auto grid lg:grid-cols-12 gap-16 items-center"
+  >
+    <div className="lg:col-span-12 text-center flex flex-col items-center">
+      <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-[10px] uppercase tracking-[0.3em] mb-8 font-bold">
+        <Activity size={12} />
+        Forensic Market Intelligence Engine
+      </div>
+      
+      <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[1.1] tracking-tighter uppercase">
+        Institutionalizing <br />
+        <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-brand-light_steel to-white glow-text">
+          Successor-in-Interest
+        </span>
+      </h1>
+      
+      <p className="text-brand-steel text-lg md:text-xl max-w-4xl mx-auto mb-14 leading-relaxed font-light">
+        Ideated, architected, and engineered a one-of-a-kind, context- and domain-aware forensic market intelligence engine that uses Generative AI and advanced data waterfalls to synthesize and automate the full lifecycle and ecosystem of SBIR M&A. 
+        <br/><br/>
+        By fusing frontier technology with deep federal context, transactivate identifies, validates, and institutionalizes the path to non-competitive, <strong className="text-white font-medium">unlimited-value "successor-in-interest" funding.</strong>
+      </p>
+      
+      <div className="flex flex-col sm:flex-row gap-6 justify-center w-full max-w-2xl">
+        <button 
+          onClick={() => onNavigate(SECTIONS.BUYERS)} 
+          className="flex-1 btn-primary flex items-center justify-center gap-3 group"
+        >
+          Buy-Side <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+        </button>
+        <button 
+          onClick={() => onNavigate(SECTIONS.SELLERS)} 
+          className="flex-1 px-8 py-4 border border-brand-steel/40 text-brand-light_steel bg-brand-graphite/50 backdrop-blur-sm font-bold uppercase tracking-[0.2em] text-sm hover:bg-brand-steel/10 transition-colors flex items-center justify-center gap-3 group"
+        >
+          Sell-Side <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
+        </button>
+      </div>
+    </div>
+  </motion.div>
 );
 
 const BuyersKey = () => (
-    <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -50 }}
-        className="w-full max-w-6xl"
-    >
-        <div className="flex items-center gap-4 mb-8">
-            <div className="w-16 h-1 bg-[#64ffda]"></div>
-            <h2 className="text-3xl font-bold text-slate-200">Buy-Side Engine</h2>
-        </div>
+  <motion.div 
+    initial={{ opacity: 0, x: 20 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: -20 }}
+    transition={{ duration: 0.6 }}
+    className="w-full max-w-7xl mx-auto"
+  >
+    <div className="flex flex-col items-center mb-16 text-center">
+      <div className="w-16 h-px bg-brand-gold mb-6"></div>
+      <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">Buy-Side Engine</h2>
+      <p className="text-brand-gold tracking-[0.2em] text-sm uppercase font-semibold">Surgical Path To Unlimited Sole-Source Funding</p>
+    </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
-            <div className="glass-card">
-                <Zap className="text-[#64ffda] mb-4" size={32} />
-                <h3 className="text-xl font-bold text-slate-200 mb-2">Rapid Acquisition</h3>
-                <p className="text-slate-400 mb-4">
-                    Bypass typical procurement lead times. Phase III awards allow for immediate sole-source contracting without further competition.
-                </p>
-                <ul className="text-sm text-slate-500 font-mono space-y-2">
-                    <li>+ NO J&A REQUIRED</li>
-                    <li>+ 30-DAY EXECUTION</li>
-                    <li>+ AGENCY-WIDE SCOPE</li>
-                </ul>
-            </div>
+    <div className="max-w-4xl mx-auto text-center mb-16">
+      <p className="text-xl text-brand-light_steel font-light leading-relaxed">
+        Algorithmically identifies and ranks the massive universe of SBIRs based on capability and mission overlap, desired customer, SBIR Phase III program intent, and a high-fidelity evaluation of remaining data rights (20-year forensic look-back).
+      </p>
+    </div>
 
-            <div className="glass-card">
-                <Search className="text-[#64ffda] mb-4" size={32} />
-                <h3 className="text-xl font-bold text-slate-200 mb-2">Strategic Search</h3>
-                <p className="text-slate-400 mb-4">
-                    Identify assets that perfectly map to your agency's requirements. We scan verified SBIR awards to find technology that can be transitioned immediately via Phase III.
-                </p>
-                <ul className="text-sm text-slate-500 font-mono space-y-2">
-                    <li>+ AUTOMATED TECH MATCHING</li>
-                    <li>+ AGENCY MISSION ALIGNMENT</li>
-                    <li>+ CAPABILITY MAPPING</li>
-                </ul>
-            </div>
+    <div className="grid md:grid-cols-3 gap-8">
+      <div className="glass-card flex flex-col items-start text-left">
+        <Crosshair className="text-brand-gold mb-6" size={40} strokeWidth={1} />
+        <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-wider">Algorithmic Ranking</h3>
+        <p className="text-brand-steel font-light text-sm leading-relaxed mb-6 flex-grow">
+          We process the massive universe of SBIRs, ranking them surgically based on precision capability mapping and agency mission overlap.
+        </p>
+        <div className="w-full h-px bg-brand-steel/20 mb-4"></div>
+        <span className="text-[10px] text-brand-gold uppercase tracking-[0.2em] font-bold">Mission Alignment</span>
+      </div>
 
-            <div className="glass-card">
-                <Check className="text-[#64ffda] mb-4" size={32} />
-                <h3 className="text-xl font-bold text-slate-200 mb-2">Forensic Verification</h3>
-                <p className="text-slate-400 mb-4">
-                    Every transaction is backed by a rigorous forensic audit of the "Chain of Custody". We ensure the Assignor is the valid holder of title.
-                </p>
-                <ul className="text-sm text-slate-500 font-mono space-y-2">
-                    <li>+ IDENTITY GUARD PROTOCOLS</li>
-                    <li>+ LEGAL SUCCESSION AUDIT</li>
-                    <li>+ UEI & CAGE VALIDATION</li>
-                </ul>
-            </div>
-        </div>
-    </motion.div>
+      <div className="glass-card flex flex-col items-start text-left relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-32 h-32 bg-brand-gold/5 rounded-full blur-3xl -mr-10 -mt-10"></div>
+        <Network className="text-brand-gold mb-6 relative z-10" size={40} strokeWidth={1} />
+        <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-wider relative z-10">Program Intent</h3>
+        <p className="text-brand-steel font-light text-sm leading-relaxed mb-6 flex-grow relative z-10">
+          Evaluates the structural potential of the asset against your desired customer and the specific intent for SBIR Phase III transition.
+        </p>
+        <div className="w-full h-px bg-brand-steel/20 mb-4 relative z-10"></div>
+        <span className="text-[10px] text-brand-gold uppercase tracking-[0.2em] font-bold relative z-10">Transition Mapping</span>
+      </div>
+
+      <div className="glass-card flex flex-col items-start text-left">
+        <Cpu className="text-brand-gold mb-6" size={40} strokeWidth={1} />
+        <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-wider">Forensic Look-Back</h3>
+        <p className="text-brand-steel font-light text-sm leading-relaxed mb-6 flex-grow">
+          High-fidelity evaluation of remaining data rights, utilizing a rigourous 20-year forensic look-back to ensure legal viability and sole-source authority.
+        </p>
+        <div className="w-full h-px bg-brand-steel/20 mb-4"></div>
+        <span className="text-[10px] text-brand-gold uppercase tracking-[0.2em] font-bold">Data Rights Validation</span>
+      </div>
+    </div>
+  </motion.div>
 );
 
 const SellersKey = () => (
-    <motion.div
-        initial={{ opacity: 0, x: 50 }}
-        animate={{ opacity: 1, x: 0 }}
-        exit={{ opacity: 0, x: -50 }}
-        className="w-full max-w-6xl"
-    >
+  <motion.div 
+    initial={{ opacity: 0, x: 20 }}
+    animate={{ opacity: 1, x: 0 }}
+    exit={{ opacity: 0, x: -20 }}
+    transition={{ duration: 0.6 }}
+    className="w-full max-w-7xl mx-auto"
+  >
+    <div className="flex flex-col items-center mb-16 text-center">
+      <div className="w-16 h-px bg-brand-gold mb-6"></div>
+      <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">Sell-Side Engine</h2>
+      <p className="text-brand-gold tracking-[0.2em] text-sm uppercase font-semibold">Strategic Liquidity For Asset Holders</p>
+    </div>
+
+    <div className="max-w-4xl mx-auto text-center mb-16">
+      <p className="text-xl text-brand-light_steel font-light leading-relaxed">
+        Merges and synthesizes disparate datasets to forensically discover companies that have successfully acquired SBIRs and turned them into multi-million-dollar Phase III programs, and Primes facing ongoing or imminent material procurement challenges for which a sole-source SBIR Phase III could be the best solution.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-8">
+      <div className="glass-card">
         <div className="flex items-center gap-4 mb-8">
-            <div className="w-16 h-1 bg-[#64ffda]"></div>
-            <h2 className="text-3xl font-bold text-slate-200">Sell-Side Engine</h2>
+           <div className="w-12 h-12 flex items-center justify-center border border-brand-gold/30 bg-brand-gold/5">
+             <span className="text-brand-gold font-mono font-bold">01</span>
+           </div>
+           <h3 className="text-2xl font-bold text-white uppercase tracking-wider">Dataset Synthesis</h3>
         </div>
+        <p className="text-brand-steel leading-relaxed font-light">
+          We ingest and merge vast, disparate federal datasets. Our intelligence engine forensically uncovers organizations with a proven track record of acquiring SBIR assets and successfully scaling them into massive Phase III programs. We know who buys, and how they scale.
+        </p>
+      </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
-            <div className="glass-card">
-                <Layers className="text-[#64ffda] mb-4" size={32} />
-                <h3 className="text-xl font-bold text-slate-200 mb-2">Portfolio Audit</h3>
-                <p className="text-slate-400 mb-6">
-                    Uncover hidden value in your IP portfolio. We audit your historical SBIR/STTR awards to identify dormant data rights that can be monetized.
-                </p>
-                <div className="p-3 bg-[#020c1b] rounded border border-slate-700 font-mono text-xs text-slate-400">
-           > SCANNING PAST AWARDS...<br />
-           > IDENTIFIED: 3 TRANSFERABLE ASSETS
-                </div>
-            </div>
-
-            <div className="glass-card">
-                <Activity className="text-[#64ffda] mb-4" size={32} />
-                <h3 className="text-xl font-bold text-slate-200 mb-2">Trojan Horse Match</h3>
-                <p className="text-slate-400 mb-6">
-                    We identify large Prime contractors facing "Revenue Cliffs" who need your Sole Source authority to bridge the gap. Turn your IP into immediate liquidity.
-                </p>
-                <div className="p-3 bg-[#020c1b] rounded border border-slate-700 font-mono text-xs text-slate-400">
-          > MATCHING: [YOUR_ASSET] -> [PRIME]<br />
-          > STATUS: MATCH FOUND (95%)
-                </div>
-            </div>
-
-            <div className="glass-card">
-                <Briefcase className="text-[#64ffda] mb-4" size={32} />
-                <h3 className="text-xl font-bold text-slate-200 mb-2">Liquidity Events</h3>
-                <p className="text-slate-400 mb-4">
-                    Flexible structure options for your exit.
-                </p>
-                <ul className="space-y-4 text-slate-400 text-sm">
-                    <li className="flex gap-2">
-                        <span className="text-[#64ffda]">01.</span>
-                        <span>Asset Sale (Simple Assignment)</span>
-                    </li>
-                    <li className="flex gap-2">
-                        <span className="text-[#64ffda]">02.</span>
-                        <span>Royalty Stream</span>
-                    </li>
-                    <li className="flex gap-2">
-                        <span className="text-[#64ffda]">03.</span>
-                        <span>Strategic Alliance</span>
-                    </li>
-                </ul>
-            </div>
+      <div className="glass-card">
+        <div className="flex items-center gap-4 mb-8">
+           <div className="w-12 h-12 flex items-center justify-center border border-brand-gold/30 bg-brand-gold/5">
+             <span className="text-brand-gold font-mono font-bold">02</span>
+           </div>
+           <h3 className="text-2xl font-bold text-white uppercase tracking-wider">Procurement Challenge Modeling</h3>
         </div>
-    </motion.div>
+        <p className="text-brand-steel leading-relaxed font-light">
+          We identify massive Prime contractors who are currently facing, or are about to face, material procurement challenges (e.g., expiring contracts, protests, ceiling breaches). For these Primes, your sole-source SBIR Phase III authority acts as the ultimate strategic rescue mechanism.
+        </p>
+      </div>
+    </div>
+  </motion.div>
 );
 
 const FaqKey = () => (
-    <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -30 }}
-        className="w-full max-w-3xl"
-    >
-        <div className="text-center mb-10">
-            <div className="flex justify-center mb-4">
-                <FileText className="text-[#64ffda]" size={40} />
-            </div>
-            <h2 className="text-3xl font-bold text-slate-200 mb-2">FAQ</h2>
-            <p className="text-slate-400 text-sm">Direct citations from Federal Law & Acquisition Regulations</p>
-        </div>
+  <motion.div 
+    initial={{ opacity: 0, y: 20 }}
+    animate={{ opacity: 1, y: 0 }}
+    exit={{ opacity: 0, y: -20 }}
+    transition={{ duration: 0.6 }}
+    className="w-full max-w-4xl mx-auto"
+  >
+    <div className="text-center mb-16">
+      <div className="flex justify-center mb-6">
+         <FileText className="text-brand-gold" size={48} strokeWidth={1} />
+      </div>
+      <h2 className="text-4xl font-black text-white uppercase tracking-tighter mb-4">Intelligence & Authority</h2>
+      <p className="text-brand-steel uppercase tracking-[0.2em] text-xs font-bold">Statutory Citations & Verification</p>
+    </div>
 
-        <div className="space-y-4">
-            <FaqItem
-                question="Is it legal to transfer 'successor-in-interest' rights?"
-                answer="Yes. The Federal Register explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete."
-                citations={['85 FR 50062', 'SBIR Policy Directive § 6(a)(5)']}
-            />
+    <div className="space-y-4">
+      <FaqItem 
+        question="Is it legal to transfer 'successor-in-interest' rights?"
+        answer="Yes. The Federal Register explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete."
+        citations={['85 FR 50062', 'SBIR Policy Directive § 6(a)(5)']}
+      />
+      
+      <FaqItem 
+        question="Does this justify a Sole-Source award?"
+        answer="Absolutely. Phase III awards are statutorily authorized to be made on a sole-source basis. The competition requirement is considered satisfied by the original Phase I/II competition. No further J&A (Justification and Approval) is typically needed beyond citing the statute."
+        citations={['15 U.S.C. § 638(r)(4)', 'FAR 6.302-5']}
+      />
 
-            <FaqItem
-                question="Does this justify a Sole-Source award?"
-                answer="Absolutely. Phase III awards are statutorily authorized to be made on a sole-source basis. The competition requirement is considered satisfied by the original Phase I/II competition. No further J&A (Justification and Approval) is typically needed beyond citing the statute."
-                citations={['15 U.S.C. § 638(r)(4)', 'FAR 6.302-5']}
-            />
-
-            <FaqItem
-                question="Is there a dollar limit on Phase III awards?"
-                answer="No. Unlike Phase I and II awards, which have caps, Phase III awards have no statutory dollar limit. They are intended for commercialization and full-scale deployment."
-                citations={['SBIR Policy Directive § 4(c)(5)']}
-            />
-
-            <FaqItem
-                question="Which rights are actually transferred?"
-                answer="You are acquiring the 'SBIR Data Rights' and the status of 'successor-in-interest'. This includes the right to receive non-competitive government contracts derived from the original innovation's lineage."
-                citations={['FAR 52.227-20', 'DFARS 252.227-7018']}
-            />
-        </div>
-    </motion.div>
+      <FaqItem 
+        question="Is there a dollar limit on Phase III awards?"
+        answer="No. Unlike Phase I and II awards, which have caps, Phase III awards have no statutory dollar limit. They are intended for commercialization and full-scale deployment."
+        citations={['SBIR Policy Directive § 4(c)(5)']}
+      />
+    </div>
+  </motion.div>
 );
 
 const FaqItem = ({ question, answer, citations }) => {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    return (
-        <div className="glass-card hover:translate-y-0 p-0 overflow-hidden cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-            <div className="p-6 flex justify-between items-center">
-                <h3 className="font-semibold text-slate-200">{question}</h3>
-                <ChevronRight className={`text-[#64ffda] transition-transform ${isOpen ? 'rotate-90' : ''}`} />
-            </div>
-            <AnimatePresence>
-                {isOpen && (
-                    <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: 'auto', opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="px-6 pb-6"
-                    >
-                        <p className="text-slate-300 text-sm leading-relaxed mb-4">
-                            {answer}
-                        </p>
-                        <div className="flex gap-2 flex-wrap">
-                            {citations.map((cite, i) => (
-                                <span key={i} className="px-2 py-1 rounded bg-[#64ffda]/10 border border-[#64ffda]/30 text-[#64ffda] text-[10px] font-mono tracking-wider">
-                                    {cite}
-                                </span>
-                            ))}
-                        </div>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
+  return (
+    <div className={`glass-card p-0 overflow-hidden cursor-pointer transition-colors duration-300 ${isOpen ? 'border-brand-gold/50 bg-brand-graphite' : ''}`} onClick={() => setIsOpen(!isOpen)}>
+      <div className="p-6 md:p-8 flex justify-between items-center">
+        <h3 className={`font-bold uppercase tracking-wider transition-colors ${isOpen ? 'text-brand-gold' : 'text-white'}`}>{question}</h3>
+        <ChevronRight className={`text-brand-steel transition-transform duration-300 ${isOpen ? 'rotate-90 text-brand-gold' : ''}`} size={20} />
+      </div>
+      <AnimatePresence>
+        {isOpen && (
+           <motion.div 
+             initial={{ height: 0, opacity: 0 }}
+             animate={{ height: 'auto', opacity: 1 }}
+             exit={{ height: 0, opacity: 0 }}
+             className="px-6 md:px-8 pb-8"
+           >
+             <div className="w-12 h-px bg-brand-gold/50 mb-6"></div>
+             <p className="text-brand-light_steel text-sm leading-relaxed mb-6 font-light">
+               {answer}
+             </p>
+             <div className="flex gap-3 flex-wrap">
+                {citations.map((cite, i) => (
+                  <span key={i} className="px-3 py-1.5 border border-brand-steel/20 text-brand-steel text-[10px] uppercase font-bold tracking-[0.2em] bg-black/50">
+                    {cite}
+                  </span>
+                ))}
+             </div>
+           </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
 };
 
 const ContactKey = () => (
-    <motion.div
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.95 }}
-        className="w-full max-w-2xl text-center"
-    >
-        <h2 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-[#64ffda] to-slate-200 mb-6">
-            Get in Touch
-        </h2>
-        <p className="text-slate-400 mb-12">
-            Interested in buying or selling SBIRs? Reach out to us directly.
-        </p>
+   <motion.div 
+    initial={{ opacity: 0, scale: 0.95 }}
+    animate={{ opacity: 1, scale: 1 }}
+    exit={{ opacity: 0, scale: 0.95 }}
+    transition={{ duration: 0.5 }}
+    className="w-full max-w-2xl mx-auto text-center"
+  >
+    <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-[10px] uppercase tracking-[0.3em] mb-8 font-bold">
+        Status: Online
+    </div>
+    
+    <h2 className="text-5xl font-black text-white uppercase tracking-tighter mb-6">
+      Initiate Protocol
+    </h2>
+    <p className="text-brand-steel mb-12 font-light text-lg">
+      By connecting the right buyer and seller to the right asset at the right time, transactivate provides a surgical, streamlined path.
+    </p>
 
-        <div className="glass-card p-12 max-w-md mx-auto flex flex-col items-center">
-            <div className="w-16 h-16 rounded-full bg-[#112240] flex items-center justify-center border border-[#64ffda]/20 mb-6">
-                <Mail className="text-[#64ffda]" size={32} />
-            </div>
+    <div className="glass-card p-12 max-w-md mx-auto flex flex-col items-center relative overflow-hidden group">
+      <div className="absolute inset-0 bg-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      
+      <div className="w-20 h-20 border border-brand-gold/30 flex items-center justify-center mb-8 relative z-10 bg-brand-black">
+        <Shield className="text-brand-gold" size={32} strokeWidth={1} />
+      </div>
+      
+      <h3 className="text-2xl font-black text-white uppercase tracking-widest mb-2 relative z-10">Direct Comms</h3>
+      <p className="text-brand-steel/60 text-xs uppercase tracking-[0.2em] font-bold mb-10 relative z-10">Founder Line</p>
 
-            <h3 className="text-xl font-bold text-white mb-2">Email Us</h3>
-            <p className="text-slate-500 text-sm mb-8">Direct line to the founder</p>
-
-            <a
-                href="mailto:founder@transactivate.ai"
-                className="w-full py-4 bg-[#64ffda] text-[#0a192f] font-bold rounded hover:bg-[#64ffda]/90 transition-colors flex items-center justify-center gap-2"
-            >
-                founder@transactivate.ai <ChevronRight size={16} />
-            </a>
-        </div>
-    </motion.div>
+      <a 
+        href="mailto:founder@transactivate.ai" 
+        className="w-full btn-primary flex justify-center items-center gap-3 relative z-10"
+      >
+        founder@transactivate.ai <ArrowUpRight size={16} />
+      </a>
+    </div>
+  </motion.div>
 );
 
 export default App;

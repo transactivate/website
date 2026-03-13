@@ -8,11 +8,11 @@ export default {
         extend: {
             colors: {
                 brand: {
-                    navy: '#0a192f',
-                    dark: '#020c1b',
-                    light: '#112240',
-                    blue: '#64ffda',
-                    slate: '#8892b0',
+                    black: '#050505',
+                    graphite: '#121212',
+                    steel: '#888C8D',
+                    gold: '#B89947',
+                    light_steel: '#D1D5DB'
                 }
             },
             fontFamily: {
