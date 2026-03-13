@@ -1,8 +1,6 @@
-import { useState, useCallback, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, ChevronRight, Activity, Cpu, Hexagon, Crosshair, Network, FileText, ArrowUpRight } from 'lucide-react';
-import Particles from "react-tsparticles";
-import { loadFull } from "tsparticles";
 
 const SECTIONS = {
   LANDING: 'LANDING',
@@ -22,94 +20,25 @@ function App() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const particlesInit = useCallback(async engine => {
-    await loadFull(engine);
-  }, []);
-
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-brand-black text-brand-steel font-sans selection:bg-brand-gold selection:text-brand-black">
-      {/* Background Image & Overlay */}
+      {/* Background Layer Group */}
       <div className="fixed inset-0 pointer-events-none z-0">
+        {/* CSS Aurora / Spotlight Effect (Moves slowly across the background) */}
+        <div className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] bg-spotlight-gradient opacity-30 animate-slow-drift z-0 mix-blend-screen"></div>
+
+        {/* Hero Image Parallax */}
         <div 
-           className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity grayscale transition-transform duration-1000 ease-out z-0"
+           className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity grayscale transition-transform duration-1000 ease-out z-10"
            style={{ 
              backgroundImage: 'url(/hero-bg.jpg)',
              transform: `scale(${1 + scrollY * 0.0002})`
            }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/80 via-brand-black/95 to-brand-black z-10"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(184,153,71,0.05),transparent_70%)] z-20"></div>
         
-        {/* Neural Web Particles */}
-        <Particles
-            id="tsparticles"
-            init={particlesInit}
-            className="absolute inset-0 z-30 opacity-80"
-            options={{
-                fullScreen: { enable: false },
-                fpsLimit: 60,
-                interactivity: {
-                    events: {
-                        onHover: {
-                            enable: true,
-                            mode: "grab",
-                        },
-                        resize: true,
-                    },
-                    modes: {
-                        grab: {
-                            distance: 180,
-                            links: {
-                                opacity: 0.6,
-                                color: "#B89947"
-                            }
-                        },
-                    },
-                },
-                particles: {
-                    color: {
-                        value: ["#888C8D", "#B89947"],
-                    },
-                    links: {
-                        color: "#888C8D",
-                        distance: 180,
-                        enable: true,
-                        opacity: 0.35,
-                        width: 1.5,
-                        triangles: {
-                            enable: false
-                        }
-                    },
-                    move: {
-                        direction: "none",
-                        enable: true,
-                        outModes: {
-                            default: "bounce",
-                        },
-                        random: true,
-                        speed: 0.5,
-                        straight: false,
-                    },
-                    number: {
-                        density: {
-                            enable: true,
-                            area: 800,
-                        },
-                        value: 70,
-                    },
-                    opacity: {
-                        value: 0.6,
-                    },
-                    shape: {
-                        type: "circle",
-                    },
-                    size: {
-                        value: { min: 1.5, max: 3 },
-                    },
-                },
-                detectRetina: true,
-            }}
-        />
+        {/* Deep Gradients for Readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/70 via-brand-black/95 to-brand-black z-20"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(184,153,71,0.08),transparent_60%)] z-30"></div>
       </div>
 
       <nav className="relative z-50 flex flex-wrap justify-between items-center px-8 py-8 max-w-[90rem] mx-auto w-full border-b border-brand-steel/10">

@@ -15,9 +15,7 @@
     "framer-motion": "^10.16.4",
     "lucide-react": "^0.284.0",
     "clsx": "^2.0.0",
-    "tailwind-merge": "^2.0.0",
-    "react-tsparticles": "^2.12.2",
-    "tsparticles": "^3.5.0"
+    "tailwind-merge": "^2.0.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.37",
