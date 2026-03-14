@@ -83,18 +83,18 @@ function App() {
 
         {/* Dynamic Mouse-Responsive Aura */}
         <motion.div 
-          className="absolute inset-0 z-[22] opacity-40 pointer-events-none mix-blend-screen transition-opacity duration-1000 hidden md:block"
+          className="absolute inset-0 z-[22] opacity-80 pointer-events-none mix-blend-screen transition-opacity duration-1000 hidden md:block"
           animate={{
-            background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(184,153,71,0.12), transparent 40%)`
+            background: `radial-gradient(1000px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(184,153,71,0.3), transparent 60%)`
           }}
           transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
         />
 
         {/* Mobile Static Fallback (for when pointer is not fine) */}
         <div 
-          className="absolute -inset-[50%] z-[22] opacity-30 pointer-events-none mix-blend-screen md:hidden"
+          className="absolute -inset-[50%] z-[22] opacity-50 pointer-events-none mix-blend-screen md:hidden"
           style={{
-             background: 'radial-gradient(ellipse at center, rgba(184,153,71,0.15) 0%, transparent 40%)'
+             background: 'radial-gradient(ellipse at center, rgba(184,153,71,0.25) 0%, transparent 50%)'
           }}
         />
 
