@@ -18,19 +18,6 @@ export default {
             fontFamily: {
                 sans: ['Inter', 'sans-serif'],
                 mono: ['Fira Code', 'monospace'],
-            },
-            backgroundImage: {
-                'spotlight-gradient': 'radial-gradient(ellipse at 50% 50%, rgba(184,153,71,0.15) 0%, transparent 60%)',
-            },
-            animation: {
-                'slow-drift': 'drift 15s ease-in-out infinite alternate',
-            },
-            keyframes: {
-                drift: {
-                    '0%': { transform: 'translate(-2%, -3%) scale(1)' },
-                    '50%': { transform: 'translate(2%, 4%) scale(1.05)' },
-                    '100%': { transform: 'translate(-4%, 2%) scale(1.1)' },
-                }
             }
         },
     },

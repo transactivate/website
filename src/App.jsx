@@ -23,10 +23,7 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-brand-black text-brand-steel font-sans selection:bg-brand-gold selection:text-brand-black">
       {/* Background Layer Group */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        {/* CSS Aurora / Spotlight Effect (Moves slowly across the background) */}
-        <div className="absolute top-[-10%] left-[-10%] w-[120%] h-[120%] bg-spotlight-gradient opacity-30 animate-slow-drift z-0 mix-blend-screen"></div>
-
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
         {/* Hero Image Parallax */}
         <div 
            className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity grayscale transition-transform duration-1000 ease-out z-10"
@@ -38,7 +35,28 @@ function App() {
         
         {/* Deep Gradients for Readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-brand-black/70 via-brand-black/95 to-brand-black z-20"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(184,153,71,0.08),transparent_60%)] z-30"></div>
+
+        {/* Framer Motion - Guaranteed Forensic Scanner Effect */}
+        <motion.div 
+          className="absolute top-0 left-0 w-full h-[1px] bg-brand-gold/40 shadow-[0_0_15px_rgba(184,153,71,0.6)] z-30"
+          animate={{ y: ['-10vh', '110vh'] }}
+          transition={{ duration: 8, ease: "linear", repeat: Infinity }}
+        />
+
+        <motion.div 
+          className="absolute top-0 left-0 w-[1px] h-full bg-brand-light_steel/20 shadow-[0_0_15px_rgba(209,213,219,0.3)] z-30"
+          animate={{ x: ['-10vw', '110vw'] }}
+          transition={{ duration: 12, ease: "linear", repeat: Infinity }}
+        />
+
+        {/* Breathing Center Accent */}
+        <div className="absolute inset-0 flex items-center justify-center z-[25]">
+           <motion.div 
+             className="w-[60vw] h-[60vw] md:w-[40vw] md:h-[40vw] bg-brand-gold/5 rounded-full blur-[100px]"
+             animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.7, 0.3] }}
+             transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
+           />
+        </div>
       </div>
 
       <nav className="relative z-50 flex flex-wrap justify-between items-center px-8 py-8 max-w-[90rem] mx-auto w-full border-b border-brand-steel/10">
