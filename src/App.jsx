@@ -14,11 +14,31 @@ function App() {
   const [activeSection, setActiveSection] = useState(SECTIONS.LANDING);
   const [scrollY, setScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Track cursor for the responsive background aura
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setMousePosition({
+        x: e.clientX,
+        y: e.clientY
+      });
+    };
+    
+    // Only track mouse movement on non-touch devices for performance
+    if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+       window.addEventListener('mousemove', handleMouseMove);
+    }
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
   }, []);
 
   // Lock body scroll when mobile menu is open
@@ -61,18 +81,21 @@ function App() {
           }}
         ></div>
 
-        {/* Forensic Matrix: Ambient Panning Searchlight */}
+        {/* Dynamic Mouse-Responsive Aura */}
         <motion.div 
-          className="absolute -inset-[50%] z-[22] opacity-30 pointer-events-none mix-blend-screen"
+          className="absolute inset-0 z-[22] opacity-40 pointer-events-none mix-blend-screen transition-opacity duration-1000 hidden md:block"
+          animate={{
+            background: `radial-gradient(800px circle at ${mousePosition.x}px ${mousePosition.y}px, rgba(184,153,71,0.12), transparent 40%)`
+          }}
+          transition={{ type: "tween", ease: "backOut", duration: 0.5 }}
+        />
+
+        {/* Mobile Static Fallback (for when pointer is not fine) */}
+        <div 
+          className="absolute -inset-[50%] z-[22] opacity-30 pointer-events-none mix-blend-screen md:hidden"
           style={{
              background: 'radial-gradient(ellipse at center, rgba(184,153,71,0.15) 0%, transparent 40%)'
           }}
-          animate={{ 
-            x: ['-5%', '5%', '-2%', '-5%'],
-            y: ['-5%', '2%', '8%', '-5%'],
-            scale: [1, 1.05, 0.95, 1]
-          }}
-          transition={{ duration: 25, ease: "easeInOut", repeat: Infinity }}
         />
 
         {/* Forensic Matrix: Abstract Calculating Nodes */}
