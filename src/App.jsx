@@ -52,26 +52,52 @@ function App() {
         {/* Deep Gradients for Readability */}
         <div className="absolute inset-0 bg-gradient-to-b from-brand-black/70 via-brand-black/95 to-brand-black z-20"></div>
 
-        {/* Framer Motion - Guaranteed Forensic Scanner Effect */}
+        {/* Forensic Matrix: Architectural Grid Overlay */}
+        <div 
+          className="absolute inset-0 z-20 opacity-[0.03]"
+          style={{
+            backgroundImage: `linear-gradient(to right, #888C8D 1px, transparent 1px), linear-gradient(to bottom, #888C8D 1px, transparent 1px)`,
+            backgroundSize: '40px 40px'
+          }}
+        ></div>
+
+        {/* Forensic Matrix: Ambient Panning Searchlight */}
         <motion.div 
-          className="absolute top-0 left-0 w-full h-[1px] bg-brand-gold/40 shadow-[0_0_15px_rgba(184,153,71,0.6)] z-30"
-          animate={{ y: ['-10vh', '110vh'] }}
-          transition={{ duration: 8, ease: "linear", repeat: Infinity }}
+          className="absolute -inset-[50%] z-[22] opacity-30 pointer-events-none mix-blend-screen"
+          style={{
+             background: 'radial-gradient(ellipse at center, rgba(184,153,71,0.15) 0%, transparent 40%)'
+          }}
+          animate={{ 
+            x: ['-5%', '5%', '-2%', '-5%'],
+            y: ['-5%', '2%', '8%', '-5%'],
+            scale: [1, 1.05, 0.95, 1]
+          }}
+          transition={{ duration: 25, ease: "easeInOut", repeat: Infinity }}
         />
 
-        <motion.div 
-          className="absolute top-0 left-0 w-[1px] h-full bg-brand-light_steel/20 shadow-[0_0_15px_rgba(209,213,219,0.3)] z-30"
-          animate={{ x: ['-10vw', '110vw'] }}
-          transition={{ duration: 12, ease: "linear", repeat: Infinity }}
-        />
-
-        {/* Breathing Center Accent */}
-        <div className="absolute inset-0 flex items-center justify-center z-[25]">
+        {/* Forensic Matrix: Abstract Calculating Nodes */}
+        <div className="absolute inset-0 z-[25] overflow-hidden pointer-events-none hidden md:block">
            <motion.div 
-             className="w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] bg-brand-gold/5 rounded-full blur-[100px]"
-             animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.7, 0.3] }}
-             transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
-           />
+             className="absolute top-[18%] left-[8%] text-brand-gold/30 font-mono text-[9px] tracking-[0.3em] font-bold"
+             animate={{ opacity: [0, 0.8, 0] }}
+             transition={{ duration: 8, ease: "easeInOut", repeat: Infinity, delay: 1 }}
+           >
+              [AUTH.NODE.77]
+           </motion.div>
+           <motion.div 
+             className="absolute top-[65%] right-[10%] text-brand-steel/30 font-mono text-[9px] tracking-[0.3em] font-bold"
+             animate={{ opacity: [0, 0.5, 0] }}
+             transition={{ duration: 12, ease: "easeInOut", repeat: Infinity, delay: 4 }}
+           >
+              [SYNC_VALIDATED]
+           </motion.div>
+           <motion.div 
+             className="absolute bottom-[25%] left-[20%] text-brand-gold/20 font-mono text-[9px] tracking-[0.3em] font-bold"
+             animate={{ opacity: [0, 0.6, 0] }}
+             transition={{ duration: 10, ease: "easeInOut", repeat: Infinity, delay: 2 }}
+           >
+              [COORD.99.301]
+           </motion.div>
         </div>
       </div>
 
