@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, ChevronRight, Activity, Cpu, Hexagon, Crosshair, Network, FileText, ArrowUpRight } from 'lucide-react';
+import { Shield, ChevronRight, Activity, Cpu, Hexagon, Crosshair, Network, FileText, ArrowUpRight, Menu, X } from 'lucide-react';
 
 const SECTIONS = {
   LANDING: 'LANDING',
@@ -13,12 +13,28 @@ const SECTIONS = {
 function App() {
   const [activeSection, setActiveSection] = useState(SECTIONS.LANDING);
   const [scrollY, setScrollY] = useState(0);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => setScrollY(window.scrollY);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isMobileMenuOpen]);
+
+  const handleNavClick = (section) => {
+    setActiveSection(section);
+    setIsMobileMenuOpen(false);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-brand-black text-brand-steel font-sans selection:bg-brand-gold selection:text-brand-black">
@@ -52,44 +68,54 @@ function App() {
         {/* Breathing Center Accent */}
         <div className="absolute inset-0 flex items-center justify-center z-[25]">
            <motion.div 
-             className="w-[60vw] h-[60vw] md:w-[40vw] md:h-[40vw] bg-brand-gold/5 rounded-full blur-[100px]"
+             className="w-[80vw] h-[80vw] md:w-[40vw] md:h-[40vw] bg-brand-gold/5 rounded-full blur-[100px]"
              animate={{ scale: [1, 1.1, 1], opacity: [0.3, 0.7, 0.3] }}
              transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
            />
         </div>
       </div>
 
-      <nav className="relative z-50 flex flex-wrap justify-between items-center px-8 py-8 max-w-[90rem] mx-auto w-full border-b border-brand-steel/10">
+      <nav className="relative z-50 flex flex-wrap justify-between items-center px-6 md:px-8 py-6 md:py-8 max-w-[90rem] mx-auto w-full border-b border-brand-steel/10">
         <div 
-          className="text-2xl font-bold tracking-[0.2em] text-white cursor-pointer flex items-center gap-3 uppercase"
-          onClick={() => setActiveSection(SECTIONS.LANDING)}
+          className="text-xl md:text-2xl font-bold tracking-[0.2em] text-white cursor-pointer flex items-center gap-3 uppercase z-50"
+          onClick={() => handleNavClick(SECTIONS.LANDING)}
         >
-          <div className="w-8 h-8 flex items-center justify-center border border-brand-gold/50 bg-brand-gold/10">
-            <Hexagon size={18} className="text-brand-gold" />
+          <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center border border-brand-gold/50 bg-brand-gold/10">
+            <Hexagon size={16} className="text-brand-gold" />
           </div>
           transactivate
         </div>
+        
+        {/* Mobile Menu Toggle Button */}
+        <button 
+          className="md:hidden text-white z-50 p-2"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        >
+          {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
+        </button>
+
+        {/* Desktop Navigation */}
         <div className="hidden md:flex gap-10 text-xs items-center tracking-widest font-semibold uppercase">
           <button 
-            onClick={() => setActiveSection(SECTIONS.BUYERS)} 
+            onClick={() => handleNavClick(SECTIONS.BUYERS)} 
             className={`nav-link ${activeSection === SECTIONS.BUYERS ? 'text-white border-b border-brand-gold pb-1' : ''}`}
           >
             Buy-Side Engine
           </button>
           <button 
-            onClick={() => setActiveSection(SECTIONS.SELLERS)} 
+            onClick={() => handleNavClick(SECTIONS.SELLERS)} 
             className={`nav-link ${activeSection === SECTIONS.SELLERS ? 'text-white border-b border-brand-gold pb-1' : ''}`}
           >
             Sell-Side Engine
           </button>
           <button 
-            onClick={() => setActiveSection(SECTIONS.FAQ)} 
+            onClick={() => handleNavClick(SECTIONS.FAQ)} 
             className={`nav-link ${activeSection === SECTIONS.FAQ ? 'text-white border-b border-brand-gold pb-1' : ''}`}
           >
             Intelligence
           </button>
           <button 
-            onClick={() => setActiveSection(SECTIONS.CONTACT)} 
+            onClick={() => handleNavClick(SECTIONS.CONTACT)} 
             className={`px-6 py-2 border border-brand-steel/30 text-brand-light_steel hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300`}
           >
             Initiate Contact
@@ -97,9 +123,48 @@ function App() {
         </div>
       </nav>
 
-      <main className="flex-grow relative z-10 container mx-auto px-4 md:px-8 flex items-center justify-center py-20 min-h-[80vh]">
+      {/* Mobile Full-Screen Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            className="fixed inset-0 z-40 bg-brand-black/95 backdrop-blur-md flex flex-col items-center justify-center pt-20 pb-10 px-6 overflow-y-auto"
+          >
+            <div className="flex flex-col items-center gap-8 w-full max-w-sm">
+              <button 
+                onClick={() => handleNavClick(SECTIONS.BUYERS)} 
+                className={`w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 ${activeSection === SECTIONS.BUYERS ? 'text-brand-gold' : 'text-white'}`}
+              >
+                Buy-Side Engine
+              </button>
+              <button 
+                onClick={() => handleNavClick(SECTIONS.SELLERS)} 
+                className={`w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 ${activeSection === SECTIONS.SELLERS ? 'text-brand-gold' : 'text-white'}`}
+              >
+                Sell-Side Engine
+              </button>
+              <button 
+                onClick={() => handleNavClick(SECTIONS.FAQ)} 
+                className={`w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 ${activeSection === SECTIONS.FAQ ? 'text-brand-gold' : 'text-white'}`}
+              >
+                Intelligence
+              </button>
+              <button 
+                onClick={() => handleNavClick(SECTIONS.CONTACT)} 
+                className="w-full mt-4 py-4 border border-brand-gold text-brand-gold uppercase tracking-[0.2em] font-bold text-sm bg-brand-gold/5"
+              >
+                Initiate Contact
+              </button>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
+      <main className="flex-grow relative z-10 container mx-auto px-6 md:px-8 flex items-center justify-center py-16 md:py-20 min-h-[80vh]">
         <AnimatePresence mode='wait'>
-          {activeSection === SECTIONS.LANDING && <LandingKey key="landing" onNavigate={setActiveSection} />}
+          {activeSection === SECTIONS.LANDING && <LandingKey key="landing" onNavigate={handleNavClick} />}
           {activeSection === SECTIONS.BUYERS && <BuyersKey key="buyers" />}
           {activeSection === SECTIONS.SELLERS && <SellersKey key="sellers" />}
           {activeSection === SECTIONS.FAQ && <FaqKey key="faq" />}
@@ -132,28 +197,28 @@ const LandingKey = ({ onNavigate }) => (
     className="w-full max-w-6xl mx-auto grid lg:grid-cols-12 gap-16 items-center"
   >
     <div className="lg:col-span-12 text-center flex flex-col items-center">
-      <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-[10px] uppercase tracking-[0.3em] mb-8 font-bold">
+      <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] mb-6 md:mb-8 font-bold">
         <Activity size={12} />
         Forensic Market Intelligence Engine
       </div>
       
-      <h1 className="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-8 leading-[1.1] tracking-tighter uppercase">
-        Institutionalizing <br />
+      <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-8 leading-[1.1] tracking-tighter uppercase px-2">
+        Institutionalizing <br className="hidden sm:block" />
         <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand-gold via-brand-light_steel to-white glow-text">
           Successor-in-Interest
         </span>
       </h1>
       
-      <p className="text-brand-steel text-lg md:text-xl max-w-4xl mx-auto mb-14 leading-relaxed font-light">
+      <p className="text-brand-steel text-base sm:text-lg md:text-xl max-w-4xl mx-auto mb-10 md:mb-14 leading-relaxed font-light px-4">
         Ideated, architected, and engineered a one-of-a-kind, context- and domain-aware forensic market intelligence engine that uses Generative AI and advanced data waterfalls to synthesize and automate the full lifecycle and ecosystem of SBIR M&A. 
         <br/><br/>
         By fusing frontier technology with deep federal context, transactivate identifies, validates, and institutionalizes the path to non-competitive, <strong className="text-white font-medium">unlimited-value "successor-in-interest" funding.</strong>
       </p>
       
-      <div className="flex flex-col sm:flex-row gap-6 justify-center w-full max-w-2xl">
+      <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-2xl px-4">
         <button 
           onClick={() => onNavigate(SECTIONS.BUYERS)} 
-          className="flex-1 btn-primary flex items-center justify-center gap-3 group"
+          className="w-full sm:flex-1 btn-primary flex items-center justify-center gap-3 group"
         >
           Buy-Side <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
         </button>
@@ -176,19 +241,19 @@ const BuyersKey = () => (
     transition={{ duration: 0.6 }}
     className="w-full max-w-7xl mx-auto"
   >
-    <div className="flex flex-col items-center mb-16 text-center">
+    <div className="flex flex-col items-center mb-12 md:mb-16 text-center">
       <div className="w-16 h-px bg-brand-gold mb-6"></div>
-      <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">Buy-Side Engine</h2>
-      <p className="text-brand-gold tracking-[0.2em] text-sm uppercase font-semibold">Surgical Path To Unlimited Sole-Source Funding</p>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4 px-2">Buy-Side Engine</h2>
+      <p className="text-brand-gold tracking-[0.15em] sm:tracking-[0.2em] text-xs sm:text-sm uppercase font-semibold text-center px-4">Surgical Path To Unlimited Sole-Source Funding</p>
     </div>
 
-    <div className="max-w-4xl mx-auto text-center mb-16">
-      <p className="text-xl text-brand-light_steel font-light leading-relaxed">
+    <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16 px-4">
+      <p className="text-lg md:text-xl text-brand-light_steel font-light leading-relaxed">
         Algorithmically identifies and ranks the massive universe of SBIRs based on capability and mission overlap, desired customer, SBIR Phase III program intent, and a high-fidelity evaluation of remaining data rights (20-year forensic look-back).
       </p>
     </div>
 
-    <div className="grid md:grid-cols-3 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 px-4">
       <div className="glass-card flex flex-col items-start text-left">
         <Crosshair className="text-brand-gold mb-6" size={40} strokeWidth={1} />
         <h3 className="text-xl font-bold text-white mb-4 uppercase tracking-wider">Algorithmic Ranking</h3>
@@ -231,19 +296,19 @@ const SellersKey = () => (
     transition={{ duration: 0.6 }}
     className="w-full max-w-7xl mx-auto"
   >
-    <div className="flex flex-col items-center mb-16 text-center">
+    <div className="flex flex-col items-center mb-12 md:mb-16 text-center">
       <div className="w-16 h-px bg-brand-gold mb-6"></div>
-      <h2 className="text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4">Sell-Side Engine</h2>
-      <p className="text-brand-gold tracking-[0.2em] text-sm uppercase font-semibold">Strategic Liquidity For Asset Holders</p>
+      <h2 className="text-3xl sm:text-4xl md:text-5xl font-black text-white uppercase tracking-tighter mb-4 px-2">Sell-Side Engine</h2>
+      <p className="text-brand-gold tracking-[0.15em] sm:tracking-[0.2em] text-xs sm:text-sm uppercase font-semibold px-4">Strategic Liquidity For Asset Holders</p>
     </div>
 
-    <div className="max-w-4xl mx-auto text-center mb-16">
-      <p className="text-xl text-brand-light_steel font-light leading-relaxed">
+    <div className="max-w-4xl mx-auto text-center mb-12 md:mb-16 px-4">
+      <p className="text-lg md:text-xl text-brand-light_steel font-light leading-relaxed">
         Merges and synthesizes disparate datasets to forensically discover companies that have successfully acquired SBIRs and turned them into multi-million-dollar Phase III programs, and Primes facing ongoing or imminent material procurement challenges for which a sole-source SBIR Phase III could be the best solution.
       </p>
     </div>
 
-    <div className="grid md:grid-cols-2 gap-8">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 px-4">
       <div className="glass-card">
         <div className="flex items-center gap-4 mb-8">
            <div className="w-12 h-12 flex items-center justify-center border border-brand-gold/30 bg-brand-gold/5">
@@ -279,15 +344,15 @@ const FaqKey = () => (
     transition={{ duration: 0.6 }}
     className="w-full max-w-4xl mx-auto"
   >
-    <div className="text-center mb-16">
+    <div className="text-center mb-12 md:mb-16 px-4">
       <div className="flex justify-center mb-6">
-         <FileText className="text-brand-gold" size={48} strokeWidth={1} />
+         <FileText className="text-brand-gold" size={40} md:size={48} strokeWidth={1} />
       </div>
-      <h2 className="text-4xl font-black text-white uppercase tracking-tighter mb-4">Intelligence & Authority</h2>
-      <p className="text-brand-steel uppercase tracking-[0.2em] text-xs font-bold">Statutory Citations & Verification</p>
+      <h2 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-tighter mb-4">Intelligence & Authority</h2>
+      <p className="text-brand-steel uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[10px] sm:text-xs font-bold px-2">Statutory Citations & Verification</p>
     </div>
 
-    <div className="space-y-4">
+    <div className="space-y-4 px-4">
       <FaqItem 
         question="Is it legal to transfer 'successor-in-interest' rights?"
         answer="Yes. The Federal Register explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete."
@@ -352,18 +417,18 @@ const ContactKey = () => (
     transition={{ duration: 0.5 }}
     className="w-full max-w-2xl mx-auto text-center"
   >
-    <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-[10px] uppercase tracking-[0.3em] mb-8 font-bold">
+    <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-[10px] uppercase tracking-[0.3em] mb-8 font-bold mt-4 md:mt-0">
         Status: Online
     </div>
     
-    <h2 className="text-5xl font-black text-white uppercase tracking-tighter mb-6">
+    <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter mb-6 px-4">
       Initiate Protocol
     </h2>
-    <p className="text-brand-steel mb-12 font-light text-lg">
+    <p className="text-brand-steel mb-10 md:mb-12 font-light text-base sm:text-lg px-6">
       By connecting the right buyer and seller to the right asset at the right time, transactivate provides a surgical, streamlined path.
     </p>
 
-    <div className="glass-card p-12 max-w-md mx-auto flex flex-col items-center relative overflow-hidden group">
+    <div className="glass-card p-8 md:p-12 max-w-md mx-auto flex flex-col items-center relative overflow-hidden group mx-4 md:mx-auto">
       <div className="absolute inset-0 bg-brand-gold/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
       
       <div className="w-20 h-20 border border-brand-gold/30 flex items-center justify-center mb-8 relative z-10 bg-brand-black">
