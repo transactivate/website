@@ -97,31 +97,6 @@ function App() {
              background: 'radial-gradient(ellipse at center, rgba(184,153,71,0.25) 0%, transparent 50%)'
           }}
         />
-
-        {/* Forensic Matrix: Abstract Calculating Nodes */}
-        <div className="absolute inset-0 z-[25] overflow-hidden pointer-events-none hidden md:block">
-           <motion.div 
-             className="absolute top-[18%] left-[8%] text-brand-gold/30 font-mono text-[9px] tracking-[0.3em] font-bold"
-             animate={{ opacity: [0, 0.8, 0] }}
-             transition={{ duration: 8, ease: "easeInOut", repeat: Infinity, delay: 1 }}
-           >
-              [AUTH.NODE.77]
-           </motion.div>
-           <motion.div 
-             className="absolute top-[65%] right-[10%] text-brand-steel/30 font-mono text-[9px] tracking-[0.3em] font-bold"
-             animate={{ opacity: [0, 0.5, 0] }}
-             transition={{ duration: 12, ease: "easeInOut", repeat: Infinity, delay: 4 }}
-           >
-              [SYNC_VALIDATED]
-           </motion.div>
-           <motion.div 
-             className="absolute bottom-[25%] left-[20%] text-brand-gold/20 font-mono text-[9px] tracking-[0.3em] font-bold"
-             animate={{ opacity: [0, 0.6, 0] }}
-             transition={{ duration: 10, ease: "easeInOut", repeat: Infinity, delay: 2 }}
-           >
-              [COORD.99.301]
-           </motion.div>
-        </div>
       </div>
 
       <nav className="fixed top-0 left-0 right-0 z-50 flex flex-wrap justify-between items-center px-6 md:px-8 py-6 md:py-8 max-w-[90rem] mx-auto w-full bg-brand-black/50 backdrop-blur-md border-b border-brand-steel/10 transition-all duration-300">
