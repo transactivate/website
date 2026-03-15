@@ -55,18 +55,21 @@ function App() {
   return (
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-brand-black text-brand-steel font-sans selection:bg-brand-gold selection:text-brand-black">
       {/* Background Layer Group */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden">
-        {/* Hero Image Parallax */}
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-brand-black flex items-center justify-center">
+        {/* Hero Image Parallax - Bounded to prevent excessive zoom */}
         <div 
-           className="absolute inset-0 bg-cover bg-center opacity-40 mix-blend-luminosity grayscale transition-transform duration-1000 ease-out z-10"
+           className="w-full h-full max-w-[120rem] opacity-35 mix-blend-luminosity grayscale transition-transform duration-1000 ease-out z-10"
            style={{ 
              backgroundImage: 'url(/hero-bg.jpg)',
+             backgroundPosition: 'center 30%', 
+             backgroundSize: 'cover',
              transform: `scale(${1 + scrollY * 0.0002})`
            }}
         ></div>
         
         {/* Deep Gradients for Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/70 via-brand-black/95 to-brand-black z-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/90 via-brand-black/95 to-brand-black z-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent z-20 h-32 bottom-0"></div>
 
         {/* Forensic Matrix: Architectural Grid Overlay */}
         <div 
@@ -125,8 +128,9 @@ function App() {
           className="text-xl md:text-2xl font-bold tracking-[0.2em] text-white cursor-pointer flex items-center gap-3 uppercase z-50"
           onClick={() => handleNavClick('landing')}
         >
-          <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center border border-brand-gold/50 bg-brand-gold/10">
-            <Hexagon size={16} className="text-brand-gold" />
+          <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center border border-brand-gold/50 bg-brand-gold/10 overflow-hidden relative group">
+            <div className="absolute inset-0 bg-brand-gold/10 group-hover:bg-brand-gold/20 transition-colors"></div>
+            <span className="text-brand-gold font-mono font-black text-[10px] md:text-xs">TA</span>
           </div>
           transactivate
         </div>
