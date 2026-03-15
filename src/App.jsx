@@ -259,9 +259,9 @@ const LandingKey = ({ onNavigate }) => (
       </div>
       
       {/* V2 Header Sizing Adjustment - Scaled down to prevent blowing out the viewport */}
-      <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-10 leading-[1] tracking-tighter uppercase px-2 w-full max-w-6xl">
+      <h1 className="text-[2.2rem] sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-10 leading-[1] tracking-tighter uppercase px-2 w-full max-w-6xl">
         Institutionalize<br className="hidden md:block"/> 
-        <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text">
+        <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text whitespace-nowrap md:whitespace-normal">
           Succession
         </span>
       </h1>
@@ -279,7 +279,7 @@ const LandingKey = ({ onNavigate }) => (
         </button>
         <button 
           onClick={() => onNavigate('sellers')} 
-          className="w-full sm:flex-1 px-8 py-4 border border-brand-steel/40 text-brand-light_steel bg-brand-graphite/50 backdrop-blur-sm font-bold uppercase tracking-[0.2em] text-sm hover:bg-brand-steel/10 transition-colors flex items-center justify-center gap-3 group"
+          className="w-full sm:flex-1 px-4 sm:px-8 py-3 sm:py-4 border border-brand-steel/40 text-brand-light_steel bg-brand-graphite/50 backdrop-blur-sm font-bold uppercase tracking-[0.2em] text-xs sm:text-sm hover:bg-brand-steel/10 transition-colors flex items-center justify-center gap-2 group"
         >
           Sell-Side <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
         </button>
@@ -297,15 +297,15 @@ const BuyersKey = () => (
   >
     <div className="grid lg:grid-cols-12 gap-16 lg:gap-8">
       <div className="lg:col-span-6 flex flex-col items-start pr-0 lg:pr-12">
-        <div className="w-16 h-px bg-brand-gold mb-8"></div>
-        <h2 className="text-4xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[0.9]">Buy-Side<br/><span className="text-brand-steel">Engine</span></h2>
-        <p className="text-brand-gold tracking-[0.2em] text-xs uppercase font-bold mb-8">Surgical Path To Sole-Source</p>
-        <p className="text-xl md:text-2xl text-brand-light_steel font-light leading-relaxed mb-8">
+        <div className="w-16 h-px bg-brand-gold mb-6 md:mb-8"></div>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[0.9]">Buy-Side<br/><span className="text-brand-steel">Engine</span></h2>
+        <p className="text-brand-gold tracking-[0.2em] text-[10px] md:text-xs uppercase font-bold mb-6 md:mb-8">Surgical Path To Sole-Source</p>
+        <p className="text-lg sm:text-xl md:text-2xl text-brand-light_steel font-light leading-relaxed mb-8">
           Algorithmic identification and ranking of the massive SBIR universe. We map capabilities to desired customers and intent.
         </p>
       </div>
       
-      <div className="lg:col-span-6 flex flex-col justify-center gap-12 sm:pl-8 lg:pl-16 lg:border-l border-brand-steel/10">
+      <div className="lg:col-span-6 flex flex-col justify-center gap-8 md:gap-12 sm:pl-8 lg:pl-16 lg:border-l border-brand-steel/10">
         <div className="group border-l border-brand-steel/30 pl-6 hover:border-brand-gold transition-colors duration-500">
            <span className="text-brand-gold font-mono text-xs font-bold mb-2 block tracking-widest">01 / ALGORITHM</span>
            <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2">Precision Ranking</h3>
@@ -338,15 +338,15 @@ const SellersKey = () => (
       
       {/* Mobile Title (shows first on small screens) */}
       <div className="lg:hidden col-span-12 flex flex-col items-start pr-0">
-        <div className="w-16 h-px bg-brand-gold mb-8"></div>
-        <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 leading-[0.9]">Sell-Side<br/><span className="text-brand-steel">Engine</span></h2>
-        <p className="text-brand-gold tracking-[0.2em] text-xs uppercase font-bold mb-8">Strategic Liquidity</p>
-        <p className="text-xl md:text-2xl text-brand-light_steel font-light leading-relaxed">
+        <div className="w-16 h-px bg-brand-gold mb-6"></div>
+        <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-[0.9]">Sell-Side<br/><span className="text-brand-steel">Engine</span></h2>
+        <p className="text-brand-gold tracking-[0.2em] text-[10px] uppercase font-bold mb-6">Strategic Liquidity</p>
+        <p className="text-lg sm:text-xl text-brand-light_steel font-light leading-relaxed">
           We find the Primes facing revenue cliffs. Your dormant Phase III asset is their solution.
         </p>
       </div>
 
-      <div className="lg:col-span-6 flex flex-col justify-center gap-12 sm:pr-8 lg:pr-16 lg:border-r border-brand-steel/10 relative">
+      <div className="lg:col-span-6 flex flex-col justify-center gap-8 md:gap-12 sm:pr-8 lg:pr-16 lg:border-r border-brand-steel/10 relative">
         <div className="group">
            <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-3 block tracking-widest border border-brand-gold/30 px-3 py-1 inline-block">A / DATA SYNTHESIS</span>
            <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-4">Federal Data Ingestion</h3>
@@ -387,12 +387,13 @@ const FaqKey = () => (
     className="w-full container mx-auto px-6 md:px-8 py-24 md:py-32 border-t border-brand-steel/10 relative"
   >
     <div className="max-w-4xl mx-auto">
-      <div className="text-center mb-16 md:mb-24">
-        <div className="mx-auto w-16 h-16 border border-brand-gold/30 flex items-center justify-center mb-8 relative z-10 bg-brand-black rotate-45 group hover:bg-brand-gold/10 transition-colors">
-          <FileText className="text-brand-gold -rotate-45" size={24} strokeWidth={1} />
+      <div className="text-center mb-12 md:mb-24">
+        <div className="mx-auto w-12 h-12 md:w-16 md:h-16 border border-brand-gold/30 flex items-center justify-center mb-6 md:mb-8 relative z-10 bg-brand-black rotate-45 group hover:bg-brand-gold/10 transition-colors">
+          <FileText className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
+          <FileText className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
         </div>
-        <h2 className="text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">Intelligence</h2>
-        <p className="text-brand-steel uppercase tracking-[0.3em] text-xs font-bold">Statutory Authority</p>
+        <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">Intelligence</h2>
+        <p className="text-brand-steel uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs font-bold">Statutory Authority</p>
       </div>
 
       <div className="border-t border-brand-steel/20">
@@ -423,9 +424,9 @@ const FaqItem = ({ question, answer, citations }) => {
 
   return (
     <div className="border-b border-brand-steel/20 overflow-hidden cursor-pointer group" onClick={() => setIsOpen(!isOpen)}>
-      <div className="py-6 md:py-8 flex justify-between items-center pr-4">
-        <h3 className={`text-lg md:text-2xl font-black uppercase tracking-wider transition-colors ${isOpen ? 'text-brand-gold' : 'text-white group-hover:text-brand-light_steel'}`}>{question}</h3>
-        <ChevronRight className={`text-brand-steel transition-transform duration-300 flex-shrink-0 ml-4 ${isOpen ? 'rotate-90 text-brand-gold' : ''}`} size={24} />
+      <div className="py-5 md:py-8 flex justify-between items-center pr-2 md:pr-4">
+        <h3 className={`text-base sm:text-lg md:text-2xl font-black uppercase tracking-wider transition-colors ${isOpen ? 'text-brand-gold' : 'text-white group-hover:text-brand-light_steel'}`}>{question}</h3>
+        <ChevronRight className={`text-brand-steel transition-transform duration-300 flex-shrink-0 ml-2 md:ml-4 ${isOpen ? 'rotate-90 text-brand-gold' : ''}`} size={20} />
       </div>
       <AnimatePresence>
         {isOpen && (
@@ -433,14 +434,14 @@ const FaqItem = ({ question, answer, citations }) => {
              initial={{ height: 0, opacity: 0 }}
              animate={{ height: 'auto', opacity: 1 }}
              exit={{ height: 0, opacity: 0 }}
-             className="pb-8"
+             className="pb-6 md:pb-8"
            >
-             <p className="text-brand-steel text-base md:text-lg leading-relaxed mb-6 font-light max-w-3xl border-l border-brand-gold/50 pl-6 lg:pl-8">
+             <p className="text-brand-steel text-sm sm:text-base md:text-lg leading-relaxed mb-6 font-light max-w-3xl border-l border-brand-gold/50 pl-4 lg:pl-8">
                {answer}
              </p>
-             <div className="flex gap-3 flex-wrap pl-6 lg:pl-8 mt-4">
+             <div className="flex gap-2 md:gap-3 flex-wrap pl-4 lg:pl-8 mt-4">
                 {citations.map((cite, i) => (
-                  <span key={i} className="px-3 py-1 border border-brand-steel/30 text-brand-steel/80 text-[9px] uppercase font-bold tracking-[0.2em] bg-white/5">
+                  <span key={i} className="px-2 py-1 md:px-3 md:py-1 border border-brand-steel/30 text-brand-steel/80 text-[8px] md:text-[9px] uppercase font-bold tracking-[0.1em] md:tracking-[0.2em] bg-white/5">
                     {cite}
                   </span>
                 ))}
@@ -458,22 +459,22 @@ const ContactKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full container mx-auto px-6 md:px-8 py-32 md:py-48 border-t border-brand-steel/10 text-center"
+    className="w-full container mx-auto px-6 md:px-8 py-24 md:py-48 border-t border-brand-steel/10 text-center"
   >
-    <Crosshair className="text-brand-gold mx-auto mb-8" size={40} strokeWidth={1} />
-    <h2 className="text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-6">
+    <Crosshair className="text-brand-gold mx-auto mb-6 md:mb-8" size={32} strokeWidth={1} />
+    <h2 className="text-4xl sm:text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-4 md:mb-6">
       Initiate Protocol
     </h2>
-    <p className="text-brand-steel mb-12 font-light text-lg md:text-2xl max-w-2xl mx-auto tracking-wide">
+    <p className="text-brand-steel mb-8 md:mb-12 font-light text-base sm:text-lg md:text-2xl max-w-2xl mx-auto tracking-wide px-4">
       Connect the right buyer, <br className="hidden md:block"/>to the right asset, at the exact right moment.
     </p>
 
     <a 
       href="mailto:founder@transactivate.ai" 
-      className="inline-flex btn-primary items-center justify-center gap-4 text-base md:text-lg px-8 py-5 md:px-12 md:py-6 relative group border border-brand-gold hover:border-white transition-colors"
+      className="inline-flex btn-primary items-center justify-center gap-3 md:gap-4 text-xs sm:text-sm md:text-lg px-6 py-4 md:px-12 md:py-6 relative group border border-brand-gold hover:border-white transition-colors"
     >
-      <span className="relative z-10 uppercase tracking-[0.2em] font-black">founder@transactivate.ai</span>
-      <ArrowUpRight size={20} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+      <span className="relative z-10 uppercase tracking-[0.15em] md:tracking-[0.2em] font-black">founder@transactivate.ai</span>
+      <ArrowUpRight size={16} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
     </a>
   </motion.div>
 );
