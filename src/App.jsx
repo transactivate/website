@@ -260,9 +260,9 @@ const LandingKey = ({ onNavigate }) => (
       
       {/* V2 Header Sizing Adjustment - Scaled down to prevent blowing out the viewport */}
       <h1 className="text-[2.2rem] sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-10 leading-[1] tracking-tighter uppercase px-2 w-full max-w-6xl">
-        Institutionalize<br className="hidden md:block"/> 
+        Sole-Source <br className="hidden md:block"/> 
         <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text whitespace-nowrap md:whitespace-normal">
-          Succession
+          Authority
         </span>
       </h1>
       
