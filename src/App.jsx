@@ -56,13 +56,14 @@ function App() {
     <div className="min-h-screen flex flex-col relative overflow-hidden bg-brand-black text-brand-steel font-sans selection:bg-brand-gold selection:text-brand-black">
       {/* Background Layer Group */}
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-brand-black flex items-center justify-center">
-        {/* Hero Image Parallax - Bounded to prevent excessive zoom */}
+        {/* Hero Image Parallax - Contained to prevent ANY cropping */}
         <div 
-           className="w-full h-full max-w-[120rem] opacity-35 mix-blend-luminosity grayscale transition-transform duration-1000 ease-out z-10"
+           className="w-full h-full opacity-35 mix-blend-luminosity grayscale transition-transform duration-1000 ease-out z-10"
            style={{ 
              backgroundImage: 'url(/hero-bg.jpg)',
-             backgroundPosition: 'center 30%', 
-             backgroundSize: 'cover',
+             backgroundPosition: 'center center', 
+             backgroundSize: 'contain',
+             backgroundRepeat: 'no-repeat',
              transform: `scale(${1 + scrollY * 0.0002})`
            }}
         ></div>
