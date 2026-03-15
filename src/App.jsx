@@ -253,13 +253,13 @@ const LandingKey = ({ onNavigate }) => (
     transition={{ duration: 0.8, ease: "easeOut" }}
     className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[90vh] px-6 md:px-8 text-center pb-20"
   >
-      <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-[8px] md:text-[10px] uppercase tracking-[0.2em] md:tracking-[0.3em] mb-6 md:mb-12 font-bold">
-        <Activity size={12} />
-        Intelligence Engine Active
+      <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-[8px] md:text-[10px] uppercase tracking-[0.15em] md:tracking-[0.3em] mb-6 md:mb-12 font-bold max-w-full text-center whitespace-normal">
+        <Activity size={12} className="flex-shrink-0" />
+        <span className="break-words">Intelligence Engine Active</span>
       </div>
       
-      {/* V2 Header Sizing Adjustment - Scaled down to prevent blowing out the viewport */}
-      <h1 className="text-[2.2rem] sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-10 leading-[1] tracking-tighter uppercase px-2 w-full max-w-6xl">
+      {/* V2 Header Sizing Adjustment - Bulletproof mobile wrapping */}
+      <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] tracking-tighter uppercase px-2 w-full max-w-6xl break-words sm:break-normal">
         Sole-Source <br className="hidden md:block"/> 
         <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text whitespace-nowrap md:whitespace-normal">
           Authority
@@ -298,8 +298,8 @@ const BuyersKey = () => (
     <div className="grid lg:grid-cols-12 gap-16 lg:gap-8">
       <div className="lg:col-span-6 flex flex-col items-start pr-0 lg:pr-12">
         <div className="w-16 h-px bg-brand-gold mb-6 md:mb-8"></div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[0.9]">Buy-Side<br/><span className="text-brand-steel">Engine</span></h2>
-        <p className="text-brand-gold tracking-[0.2em] text-[10px] md:text-xs uppercase font-bold mb-6 md:mb-8">Surgical Path To Sole-Source</p>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">Buy-Side<br/><span className="text-brand-steel">Engine</span></h2>
+        <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] md:text-xs uppercase font-bold mb-6 md:mb-8 break-words text-balance">Surgical Path To Sole-Source</p>
         <p className="text-lg sm:text-xl md:text-2xl text-brand-light_steel font-light leading-relaxed mb-8">
           Algorithmic identification and ranking of the massive SBIR universe. We map capabilities to desired customers and intent.
         </p>
@@ -339,8 +339,8 @@ const SellersKey = () => (
       {/* Mobile Title (shows first on small screens) */}
       <div className="lg:hidden col-span-12 flex flex-col items-start pr-0">
         <div className="w-16 h-px bg-brand-gold mb-6"></div>
-        <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-[0.9]">Sell-Side<br/><span className="text-brand-steel">Engine</span></h2>
-        <p className="text-brand-gold tracking-[0.2em] text-[10px] uppercase font-bold mb-6">Strategic Liquidity</p>
+        <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">Sell-Side<br/><span className="text-brand-steel">Engine</span></h2>
+        <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] uppercase font-bold mb-6 break-words text-balance">Strategic Liquidity</p>
         <p className="text-lg sm:text-xl text-brand-light_steel font-light leading-relaxed">
           We find the Primes facing revenue cliffs. Your dormant Phase III asset is their solution.
         </p>
@@ -386,14 +386,14 @@ const FaqKey = () => (
     transition={{ duration: 0.8 }}
     className="w-full container mx-auto px-6 md:px-8 py-24 md:py-32 border-t border-brand-steel/10 relative"
   >
-    <div className="max-w-4xl mx-auto">
-      <div className="text-center mb-12 md:mb-24">
+    <div className="max-w-4xl mx-auto px-2">
+      <div className="text-center mb-12 md:mb-24 px-2">
         <div className="mx-auto w-12 h-12 md:w-16 md:h-16 border border-brand-gold/30 flex items-center justify-center mb-6 md:mb-8 relative z-10 bg-brand-black rotate-45 group hover:bg-brand-gold/10 transition-colors">
           <FileText className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
           <FileText className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
         </div>
-        <h2 className="text-3xl sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4">Intelligence</h2>
-        <p className="text-brand-steel uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs font-bold">Statutory Authority</p>
+        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 break-words">Intelligence</h2>
+        <p className="text-brand-steel uppercase tracking-[0.15em] md:tracking-[0.3em] text-[9px] sm:text-[10px] md:text-xs font-bold break-words">Statutory Authority</p>
       </div>
 
       <div className="border-t border-brand-steel/20">
