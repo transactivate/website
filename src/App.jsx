@@ -126,12 +126,22 @@ function App() {
 
       <nav className="fixed top-0 left-0 right-0 z-50 flex flex-wrap justify-between items-center px-6 md:px-8 py-6 md:py-8 max-w-[90rem] mx-auto w-full bg-brand-black/50 backdrop-blur-md border-b border-brand-steel/10 transition-all duration-300">
         <div 
-          className="text-xl md:text-2xl font-bold tracking-[0.2em] text-white cursor-pointer flex items-center gap-3 uppercase z-50"
+          className="text-xl md:text-2xl font-bold tracking-[0.2em] text-white cursor-pointer flex items-center gap-4 uppercase z-50"
           onClick={() => handleNavClick('landing')}
         >
-          <div className="w-6 h-6 md:w-8 md:h-8 flex items-center justify-center border border-brand-gold/50 bg-brand-gold/10 overflow-hidden relative group">
-            <div className="absolute inset-0 bg-brand-gold/10 group-hover:bg-brand-gold/20 transition-colors"></div>
-            <span className="text-brand-gold font-mono font-black text-[10px] md:text-xs">TA</span>
+          {/* Custom V3 Logo: Abstract 'T' Crosshair/Shield */}
+          <div className="w-8 h-8 md:w-10 md:h-10 relative group">
+            {/* Outer Target Box */}
+            <div className="absolute inset-0 border-[1.5px] border-brand-gold/30 group-hover:border-brand-gold transition-colors duration-500"></div>
+            {/* Corner Bracket Accents */}
+            <div className="absolute top-0 left-0 w-2 h-2 border-t-[1.5px] border-l-[1.5px] border-brand-gold"></div>
+            <div className="absolute top-0 right-0 w-2 h-2 border-t-[1.5px] border-r-[1.5px] border-brand-gold"></div>
+            <div className="absolute bottom-0 left-0 w-2 h-2 border-b-[1.5px] border-l-[1.5px] border-brand-gold"></div>
+            <div className="absolute bottom-0 right-0 w-2 h-2 border-b-[1.5px] border-r-[1.5px] border-brand-gold"></div>
+            
+            {/* Inner Geometric 'T' */}
+            <div className="absolute top-2 left-2 right-2 h-[1.5px] bg-white group-hover:bg-brand-gold transition-colors duration-500"></div>
+            <div className="absolute top-2 bottom-3 left-1/2 -translate-x-1/2 w-[1.5px] bg-white group-hover:bg-brand-gold transition-colors duration-500"></div>
           </div>
           transactivate
         </div>
@@ -248,14 +258,15 @@ const LandingKey = ({ onNavigate }) => (
         Intelligence Engine Active
       </div>
       
-      <h1 className="text-4xl sm:text-6xl md:text-8xl lg:text-[10rem] font-black text-white mb-6 md:mb-10 leading-[0.9] tracking-tighter uppercase px-2 w-full">
+      {/* V2 Header Sizing Adjustment - Scaled down to prevent blowing out the viewport */}
+      <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-10 leading-[1] tracking-tighter uppercase px-2 w-full max-w-6xl">
         Institutionalize<br className="hidden md:block"/> 
         <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text">
           Succession
         </span>
       </h1>
       
-      <p className="text-brand-steel text-base sm:text-xl md:text-2xl max-w-4xl mx-auto mb-10 md:mb-16 leading-relaxed font-light px-4">
+      <p className="text-brand-steel text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-16 leading-relaxed font-light px-4">
         The forensic market intelligence engine for SBIR M&A. Fusing frontier technology with federal context to secure non-competitive, <strong className="text-white font-medium">unlimited-value sole-source funding.</strong>
       </p>
       
