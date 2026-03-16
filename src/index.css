@@ -39,3 +39,22 @@
 ::-webkit-scrollbar-thumb:hover {
   @apply bg-[#888C8D]/40;
 }
+
+/* ----------------------------------
+   GLOBAL PRINT SANITIZATION (PDF GEN)
+   ---------------------------------- */
+@media print {
+  html, body, #root {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    height: auto !important;
+    min-height: 100% !important;
+  }
+  
+  /* Nuke the Framer Motion aura, footers, and fixed navigation */
+  canvas, footer, header, nav, [style*="position: fixed"], [style*="position: absolute"] {
+    display: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+  }
+}

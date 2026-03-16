@@ -2,7 +2,7 @@ import React from 'react';
 
 const IntelligenceBriefPDF = () => {
   return (
-    <div className="min-h-screen bg-brand-black text-brand-steel font-sans print:bg-white print:text-slate-900">
+    <div className="min-h-screen print:min-h-0 bg-brand-black print:bg-white text-brand-steel font-sans print:text-slate-900">
       
       {/* Web UI: A simple header with a Print Button (hidden on print) */}
       <div className="print:hidden max-w-4xl mx-auto px-8 py-8 flex justify-between items-center border-b border-brand-steel/10 mb-12">
