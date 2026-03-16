@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, ChevronRight, Activity, Cpu, Hexagon, Crosshair, Network, FileText, ArrowUpRight, Menu, X } from 'lucide-react';
+import { Shield, ChevronRight, Activity, Cpu, Hexagon, Crosshair, Network, FileText, ArrowUpRight, ArrowRight, Menu, X } from 'lucide-react';
 import IntelligenceBriefPDF from './IntelligenceBriefPDF';
 
 function App() {
@@ -204,6 +204,10 @@ function App() {
 
         <section id="faq">
            <FaqKey />
+        </section>
+
+        <section id="whitepapers">
+           <WhitepapersKey />
         </section>
 
         <section id="contact">
@@ -440,6 +444,45 @@ const FaqItem = ({ question, answer, citations }) => {
     </div>
   );
 };
+
+const WhitepapersKey = () => (
+  <motion.div 
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 0.8 }}
+    className="w-full xl:container mx-auto px-6 md:px-8 py-16 md:py-24 border-t border-brand-steel/10 relative print:hidden"
+  >
+    <div className="max-w-5xl mx-auto">
+      <div className="mb-12 md:mb-16">
+        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 break-words">Strategic White Papers</h2>
+      </div>
+
+      <div className="border border-brand-steel/20 bg-brand-black/50 p-6 sm:p-8 md:p-12 hover:border-brand-gold/50 transition-colors duration-500 group flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start lg:items-center relative overflow-hidden">
+        {/* Subtle background glow effect on hover */}
+        <div className="absolute inset-0 bg-gradient-to-br from-brand-gold/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+        
+        <div className="flex-1 relative z-10">
+          <span className="text-brand-steel uppercase tracking-[0.2em] md:tracking-[0.3em] text-[10px] md:text-xs font-bold mb-4 md:mb-6 block border border-brand-steel/30 px-2 py-1 max-w-max">WHITE PAPER</span>
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-black text-white uppercase tracking-wider mb-4 leading-snug">
+            The M&A-Driven Capture Playbook:<br/>
+            <span className="text-brand-steel text-lg lg:text-xl block mt-2 whitespace-normal">Bypassing Competition via Phase III Authority</span>
+          </h3>
+          <p className="text-brand-steel font-light text-sm md:text-lg leading-relaxed max-w-2xl">
+            A strategic and legal framework for executing Phase III asset acquisitions to establish statutory sole-source authority (15 U.S.C. § 638).
+          </p>
+        </div>
+        
+        <a 
+          href="mailto:advisory@transactivate.ai?subject=Requesting Access: M&A-Driven Capture White Paper"
+          className="relative z-10 flex-shrink-0 px-6 md:px-8 py-3 md:py-4 border border-brand-steel/40 text-brand-gold bg-brand-gold/5 uppercase tracking-[0.2em] text-xs font-bold hover:bg-brand-gold hover:text-brand-black transition-all duration-300 flex items-center gap-3 group-hover:border-brand-gold w-full lg:w-auto justify-center"
+        >
+          Request Access <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
+        </a>
+      </div>
+    </div>
+  </motion.div>
+);
 
 const ContactKey = () => (
    <motion.div 
