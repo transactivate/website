@@ -320,7 +320,7 @@ const SellersKey = () => (
         <div className="w-16 h-px bg-brand-gold mb-6"></div>
         <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words max-w-full">Sell-Side<br/><span className="text-brand-steel">Engine</span></h2>
         <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] uppercase font-bold mb-6 break-words text-balance max-w-full">Strategic Liquidity</p>
-        <p className="text-lg sm:text-xl text-brand-light_steel font-light leading-relaxed max-w-full break-words pr-2">
+        <p className="text-lg sm:text-xl text-brand-light_steel font-light leading-relaxed max-w-full break-words whitespace-normal text-balance pr-2 relative w-full block">
           We find the Primes facing revenue cliffs. Your dormant Phase III asset is their solution.
         </p>
       </div>
