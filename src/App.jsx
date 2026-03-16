@@ -60,7 +60,7 @@ function App() {
         <div 
            className="w-full h-full opacity-35 mix-blend-luminosity grayscale transition-transform duration-1000 ease-out z-10"
            style={{ 
-             backgroundImage: 'url(/hero-bg.jpg)',
+             backgroundImage: 'url(/hero-bg.png)',
              backgroundPosition: 'center center', 
              backgroundSize: 'contain',
              backgroundRepeat: 'no-repeat',
