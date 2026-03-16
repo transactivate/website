@@ -1,8 +1,15 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Shield, ChevronRight, Activity, Cpu, Hexagon, Crosshair, Network, FileText, ArrowUpRight, Menu, X } from 'lucide-react';
+import IntelligenceBriefPDF from './IntelligenceBriefPDF';
 
 function App() {
+  const [currentPath] = useState(window.location.pathname);
+
+  if (currentPath === '/playbook-pdf') {
+    return <IntelligenceBriefPDF />;
+  }
+
   const [scrollY, setScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
