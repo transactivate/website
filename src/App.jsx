@@ -268,13 +268,13 @@ const BuyersKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full container mx-auto px-6 md:px-8 py-24 md:py-32 border-t border-brand-steel/10"
+    className="w-full container mx-auto px-6 md:px-8 py-12 md:py-24 border-t border-brand-steel/10"
   >
     <div className="grid lg:grid-cols-12 gap-16 lg:gap-8">
       <div className="lg:col-span-6 flex flex-col items-start pr-0 lg:pr-12 w-full overflow-hidden">
         <div className="w-16 h-px bg-brand-gold mb-6 md:mb-8"></div>
         <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words max-w-full">Buy-Side<br/><span className="text-brand-steel">Engine</span></h2>
-        <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] md:text-xs uppercase font-bold mb-6 md:mb-8 break-words text-balance max-w-full">Surgical Path To Sole-Source</p>
+        <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] md:text-xs uppercase font-bold mb-6 md:mb-8 break-words max-w-full whitespace-normal">Surgical Path To Sole-Source</p>
         <p className="text-lg sm:text-xl md:text-2xl text-brand-light_steel font-light leading-relaxed mb-8 max-w-full break-words pr-2">
           Mapping uncommercialized DoD/IC funded IP against live federal requirements, generating high-conviction pipeline matches.
         </p>
@@ -311,16 +311,16 @@ const SellersKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full container mx-auto px-6 md:px-8 py-24 md:py-32 border-t border-brand-steel/10"
+    className="w-full container mx-auto px-6 md:px-8 py-12 md:py-24 border-t border-brand-steel/10"
   >
     <div className="grid lg:grid-cols-12 gap-16 lg:gap-8 flex-col-reverse lg:flex-row">
       
       {/* Mobile Title (shows first on small screens) */}
-      <div className="lg:hidden col-span-12 flex flex-col items-start pr-0 w-full overflow-hidden">
+      <div className="lg:hidden col-span-12 flex flex-col items-start pr-0 w-full overflow-hidden pb-4">
         <div className="w-16 h-px bg-brand-gold mb-6"></div>
-        <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words max-w-full">Sell-Side<br/><span className="text-brand-steel">Engine</span></h2>
-        <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] uppercase font-bold mb-6 break-words text-balance max-w-full">Strategic Liquidity</p>
-        <p className="text-lg sm:text-xl text-brand-light_steel font-light leading-relaxed max-w-full break-words whitespace-normal text-balance pr-2 relative w-full block">
+        <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words max-w-full w-full">Sell-Side<br/><span className="text-brand-steel">Engine</span></h2>
+        <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] uppercase font-bold mb-4 break-words max-w-full w-full whitespace-normal">Strategic Liquidity</p>
+        <p className="text-lg sm:text-xl text-brand-light_steel font-light leading-relaxed max-w-full break-words whitespace-normal relative w-full block">
           We find the Primes facing revenue cliffs. Your dormant Phase III asset is their solution.
         </p>
       </div>
@@ -363,16 +363,16 @@ const FaqKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full container mx-auto px-6 md:px-8 py-24 md:py-32 border-t border-brand-steel/10 relative"
+    className="w-full container mx-auto px-6 md:px-8 py-12 md:py-24 border-t border-brand-steel/10 relative"
   >
     <div className="max-w-4xl mx-auto px-2">
-      <div className="text-center mb-12 md:mb-24 px-2">
+      <div className="text-center mb-12 md:mb-16 px-2">
         <div className="mx-auto w-12 h-12 md:w-16 md:h-16 border border-brand-gold/30 flex items-center justify-center mb-6 md:mb-8 relative z-10 bg-brand-black rotate-45 group hover:bg-brand-gold/10 transition-colors">
           <FileText className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
           <FileText className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
         </div>
         <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 break-words">Intelligence</h2>
-        <p className="text-brand-steel uppercase tracking-[0.15em] md:tracking-[0.3em] text-[9px] sm:text-[10px] md:text-xs font-bold break-words">Statutory Authority</p>
+        <p className="text-brand-steel uppercase tracking-[0.15em] md:tracking-[0.3em] text-[9px] sm:text-[10px] md:text-xs font-bold break-words whitespace-normal">Statutory Authority</p>
       </div>
 
       <div className="border-t border-brand-steel/20">
@@ -438,7 +438,7 @@ const ContactKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full container mx-auto px-6 md:px-8 py-24 md:py-48 border-t border-brand-steel/10 text-center"
+    className="w-full container mx-auto px-6 md:px-8 py-16 md:py-32 border-t border-brand-steel/10 text-center"
   >
     <Crosshair className="text-brand-gold mx-auto mb-6 md:mb-8" size={32} strokeWidth={1} />
     <h2 className="text-4xl sm:text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-4 md:mb-6">
