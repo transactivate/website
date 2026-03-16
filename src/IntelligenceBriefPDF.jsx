@@ -131,16 +131,25 @@ const IntelligenceBriefPDF = () => {
           {/* Section 5 */}
           <section className="mb-16 print:mb-12 break-inside-avoid print:mt-12">
             <h2 className="text-2xl font-black uppercase tracking-widest text-white print:text-slate-900 mb-6 flex items-center gap-4 border-b border-brand-steel/10 print:border-slate-200 pb-4">
-              <span className="text-brand-gold print:text-slate-400">05.</span> transactivate's Advisory Role
+              <span className="text-brand-gold print:text-slate-400">05.</span> transactivate's Role
             </h2>
-            <div className="text-base md:text-lg leading-relaxed text-brand-light_steel print:text-slate-700 space-y-6 font-light">
+            <div className="text-base md:text-lg leading-relaxed text-brand-light_steel print:text-slate-700 space-y-6 font-light mb-6">
               <p>
-                Identifying, valuing, and successfully transitioning Phase III assets requires exact precision. The intellectual property must directly align with the target agency's requirements, and the asset acquisition must be structured to flawlessly satisfy the Successor-in-Interest legal standards.
-              </p>
-              <p>
-                transactivate provides elite, end-to-end M&A and Strategic Capture advisory to Federal Primes and Private Equity sponsors. Through deep federal domain expertise and proprietary procurement forensics, we identify the exact dormant Phase III assets required to execute a sole-source capture for specific agency targets. We advise Corporate Development and Capture teams throughout the transaction lifecycle—from initial asset targeting to the structuring of the intellectual property transfer—ensuring our clients establish the statutory authority necessary to dominate their targeted markets.
+                Executing SBIR M&A requires exact timing and precision. transactivate fuses deep federal context and domain experience with advanced data forensics to create non-competitive, unlimited-value, sole-source outcomes through a three-step process:
               </p>
             </div>
+            
+            <ol className="text-base md:text-lg leading-relaxed text-brand-light_steel print:text-slate-700 space-y-6 font-light list-decimal pl-6 print:pl-8">
+              <li className="pl-2">
+                <span className="font-bold text-white print:text-slate-900">Federal Context & Transaction Experience:</span> We leverage deep federal domain expertise and specialized SBIR transaction experience to navigate the deluge of open-source data and determine what data matters, why it matters, and how it matters.
+              </li>
+              <li className="pl-2">
+                <span className="font-bold text-white print:text-slate-900">AI-Driven Data Synthesis:</span> We continuously ingest, analyze, and synthesize the data to create Generative AI-based custom solutions that track companies that have acquired SBIRs and successfully turned them into multi-million-dollar Phase IIIs (i.e., been there, done that, likely to do it again), pinpoint Primes facing immediate procurement challenges (e.g., active protests, ongoing bridge contracts, expiring vehicles), and (for buyers) mathematically rank the entire "dormant" SBIR universe (i.e., those that did not advance to Phase III and that are therefore still actionable) based on agency, Phase III technology / capability / mission intent (for your derivation / extension / completion claim), and time-relevance (to ensure you have a long runway of data rights to secure and monetize your Phase III).
+              </li>
+              <li className="pl-2">
+                <span className="font-bold text-white print:text-slate-900">Customized Execution:</span> We operationalize our intelligence through customized, timely outreach directly to executive decision-makers. The result is absolute alignment: the right buyer, the right seller, and the right asset, at the exact right time.
+              </li>
+            </ol>
           </section>
 
         </div>
