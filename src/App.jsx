@@ -58,7 +58,7 @@ function App() {
       <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-brand-black flex items-center justify-center">
         {/* Hero Image Parallax - Contained to prevent ANY cropping */}
         <div 
-           className="w-full h-full opacity-35 mix-blend-luminosity grayscale transition-transform duration-1000 ease-out z-10"
+           className="w-full h-full opacity-60 mix-blend-luminosity transition-transform duration-1000 ease-out z-10"
            style={{ 
              backgroundImage: 'url(/hero-bg.png)',
              backgroundPosition: 'center center', 
@@ -69,7 +69,7 @@ function App() {
         ></div>
         
         {/* Deep Gradients for Readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/90 via-brand-black/95 to-brand-black z-20"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-brand-black/60 via-brand-black/95 to-brand-black z-20"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-brand-black via-transparent to-transparent z-20 h-32 bottom-0"></div>
 
         {/* Forensic Matrix: Architectural Grid Overlay */}
