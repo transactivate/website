@@ -271,30 +271,34 @@ const BuyersKey = () => (
     className="w-full container mx-auto px-6 md:px-8 py-24 md:py-32 border-t border-brand-steel/10"
   >
     <div className="grid lg:grid-cols-12 gap-16 lg:gap-8">
-      <div className="lg:col-span-6 flex flex-col items-start pr-0 lg:pr-12">
+      <div className="lg:col-span-6 flex flex-col items-start pr-0 lg:pr-12 w-full overflow-hidden">
         <div className="w-16 h-px bg-brand-gold mb-6 md:mb-8"></div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">Buy-Side<br/><span className="text-brand-steel">Engine</span></h2>
-        <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] md:text-xs uppercase font-bold mb-6 md:mb-8 break-words text-balance">Surgical Path To Sole-Source</p>
-        <p className="text-lg sm:text-xl md:text-2xl text-brand-light_steel font-light leading-relaxed mb-8">
-          Algorithmic identification and ranking of the massive SBIR universe. We map capabilities to desired customers and intent.
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words max-w-full">Buy-Side<br/><span className="text-brand-steel">Engine</span></h2>
+        <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] md:text-xs uppercase font-bold mb-6 md:mb-8 break-words text-balance max-w-full">Surgical Path To Sole-Source</p>
+        <p className="text-lg sm:text-xl md:text-2xl text-brand-light_steel font-light leading-relaxed mb-8 max-w-full break-words pr-2">
+          Mapping uncommercialized DoD/IC funded IP against live federal requirements, generating high-conviction pipeline matches.
         </p>
       </div>
       
-      <div className="lg:col-span-6 flex flex-col justify-center gap-8 md:gap-12 sm:pl-8 lg:pl-16 lg:border-l border-brand-steel/10">
-        <div className="group border-l border-brand-steel/30 pl-6 hover:border-brand-gold transition-colors duration-500">
-           <span className="text-brand-gold font-mono text-xs font-bold mb-2 block tracking-widest">01 / ALGORITHM</span>
-           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2">Precision Ranking</h3>
-           <p className="text-brand-steel font-light text-lg">We process and rank the entire SBIR universe based on capability and agency mission overlap.</p>
+      <div className="lg:col-span-6 flex flex-col justify-center gap-8 md:gap-12 sm:pl-8 lg:pl-16 lg:border-l border-brand-steel/10 w-full overflow-hidden">
+        <div className="group border-l border-brand-steel/30 pl-4 sm:pl-6 hover:border-brand-gold transition-colors duration-500 w-full max-w-full">
+           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-2 tracking-[0.1em] md:tracking-widest inline-flex max-w-full break-words">01 / ALGORITHM</span>
+           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2 break-words">Precision Ranking</h3>
+           <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed break-words pr-2">
+             We process and rank the entire SBIR universe based on capability and agency mission overlap.
+           </p>
         </div>
-        <div className="group border-l border-brand-steel/30 pl-6 hover:border-brand-gold transition-colors duration-500">
-           <span className="text-brand-gold font-mono text-xs font-bold mb-2 block tracking-widest">02 / MAP</span>
-           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2">Transition Intent</h3>
-           <p className="text-brand-steel font-light text-lg">Evaluate structural potential against your target customer and Phase III transition intent.</p>
+        <div className="group border-l border-brand-steel/30 pl-4 sm:pl-6 hover:border-brand-gold transition-colors duration-500 w-full max-w-full">
+           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-2 tracking-[0.1em] md:tracking-widest inline-flex max-w-full break-words">02 / C-SUITE</span>
+           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2 break-words">Direct Engagement</h3>
+           <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed break-words pr-2">
+             Evaluate structural potential against your target customer and Phase III transition intent.
+           </p>
         </div>
-        <div className="group border-l border-brand-steel/30 pl-6 hover:border-brand-gold transition-colors duration-500">
-           <span className="text-brand-gold font-mono text-xs font-bold mb-2 block tracking-widest">03 / VERIFY</span>
-           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2">Forensic Review</h3>
-           <p className="text-brand-steel font-light text-lg">Rigorous 20-year evaluation of remaining data rights ensuring unassailable sole-source authority.</p>
+        <div className="group border-l border-brand-steel/30 pl-4 sm:pl-6 hover:border-brand-gold transition-colors duration-500 w-full max-w-full">
+           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-2 tracking-[0.1em] md:tracking-widest inline-flex max-w-full break-words">03 / VERIFY</span>
+           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2 break-words">Forensic Review</h3>
+           <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed break-words pr-2">Rigorous 20-year evaluation of remaining data rights ensuring unassailable sole-source authority.</p>
         </div>
       </div>
     </div>
@@ -312,28 +316,28 @@ const SellersKey = () => (
     <div className="grid lg:grid-cols-12 gap-16 lg:gap-8 flex-col-reverse lg:flex-row">
       
       {/* Mobile Title (shows first on small screens) */}
-      <div className="lg:hidden col-span-12 flex flex-col items-start pr-0">
+      <div className="lg:hidden col-span-12 flex flex-col items-start pr-0 w-full overflow-hidden">
         <div className="w-16 h-px bg-brand-gold mb-6"></div>
-        <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">Sell-Side<br/><span className="text-brand-steel">Engine</span></h2>
-        <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] uppercase font-bold mb-6 break-words text-balance">Strategic Liquidity</p>
-        <p className="text-lg sm:text-xl text-brand-light_steel font-light leading-relaxed">
+        <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words max-w-full">Sell-Side<br/><span className="text-brand-steel">Engine</span></h2>
+        <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] uppercase font-bold mb-6 break-words text-balance max-w-full">Strategic Liquidity</p>
+        <p className="text-lg sm:text-xl text-brand-light_steel font-light leading-relaxed max-w-full break-words pr-2">
           We find the Primes facing revenue cliffs. Your dormant Phase III asset is their solution.
         </p>
       </div>
 
-      <div className="lg:col-span-6 flex flex-col justify-center gap-8 md:gap-12 sm:pr-8 lg:pr-16 lg:border-r border-brand-steel/10 relative">
-        <div className="group">
-           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-3 block tracking-widest border border-brand-gold/30 px-3 py-1 inline-block">A / DATA SYNTHESIS</span>
-           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-4">Federal Data Ingestion</h3>
-           <p className="text-brand-steel font-light text-lg leading-relaxed">
+      <div className="lg:col-span-6 flex flex-col justify-center gap-8 md:gap-12 sm:pr-8 lg:pr-16 lg:border-r border-brand-steel/10 relative w-full overflow-hidden">
+        <div className="group w-full max-w-full">
+           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-3 tracking-[0.1em] md:tracking-widest border border-brand-gold/30 px-2 py-1 inline-flex max-w-full break-words">A / DATA SYNTHESIS</span>
+           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-4 break-words">Federal Data Ingestion</h3>
+           <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed break-words pr-2">
              We ingest and merge vast federal datasets, forensically uncovering organizations with a proven track record of acquiring SBIR assets and scaling them into massive Phase III programs. We know exactly who buys and how they scale.
            </p>
         </div>
         <div className="w-1/4 h-px bg-brand-steel/30"></div>
-        <div className="group">
-           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-3 block tracking-widest border border-brand-gold/30 px-3 py-1 inline-block">B / RESCUE</span>
-           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-4">Challenge Modeling</h3>
-           <p className="text-brand-steel font-light text-lg leading-relaxed">
+        <div className="group w-full max-w-full">
+           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-3 tracking-[0.1em] md:tracking-widest border border-brand-gold/30 px-2 py-1 inline-flex max-w-full break-words">B / RESCUE</span>
+           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-4 break-words">Challenge Modeling</h3>
+           <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed break-words pr-2">
              We identify Prime contractors facing imminent, material procurement vulnerabilities (expiring contracts, protests). Your Phase III authority is injected as the ultimate strategic rescue mechanism.
            </p>
         </div>
