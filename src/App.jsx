@@ -233,13 +233,15 @@ const LandingKey = ({ onNavigate }) => (
         <span className="break-words">Intelligence Engine Active</span>
       </div>
       
+      <h1 className="sr-only">Transactivate</h1>
+      
       {/* V2 Header Sizing Adjustment - Bulletproof mobile wrapping */}
-      <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] tracking-tighter uppercase px-2 w-full max-w-6xl break-words sm:break-normal">
+      <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] tracking-tighter uppercase px-2 w-full max-w-6xl break-words sm:break-normal">
         Sole-Source <br className="hidden md:block"/> 
         <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text whitespace-nowrap md:whitespace-normal">
           Authority
         </span>
-      </h1>
+      </h2>
       
       <p className="text-brand-steel text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-16 leading-relaxed font-light px-4">
         The forensic market intelligence engine for SBIR M&A. Fusing frontier technology with federal context to secure non-competitive, <strong className="text-white font-medium">unlimited-value sole-source funding.</strong>
@@ -273,7 +275,7 @@ const BuyersKey = () => (
     <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-16">
       <div className="lg:col-span-6 flex flex-col items-start pr-0 lg:pr-12">
         <div className="w-16 h-px bg-brand-gold mb-6 md:mb-8"></div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">Buy-Side<br/><span className="text-brand-steel">Engine</span></h2>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">Buy-Side Advisory:<br/><span className="text-brand-steel text-3xl sm:text-4xl md:text-5xl lg:text-6xl block mt-2">Strategic Phase III Transition</span></h2>
         <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] md:text-xs uppercase font-bold mb-6 md:mb-8 whitespace-normal">Surgical Path To Sole-Source</p>
         <p className="text-lg sm:text-xl md:text-2xl text-brand-light_steel font-light leading-relaxed mb-4 md:mb-8 whitespace-normal">
           Mapping uncommercialized DoD/IC funded IP against live federal requirements, generating high-conviction pipeline matches.
@@ -283,14 +285,14 @@ const BuyersKey = () => (
       <div className="lg:col-span-6 flex flex-col justify-center gap-8 md:gap-12 sm:pl-8 lg:pl-16 lg:border-l border-brand-steel/10">
         <div className="group border-l border-brand-steel/30 pl-4 sm:pl-6 hover:border-brand-gold transition-colors duration-500">
            <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-2 tracking-[0.1em] md:tracking-widest inline-flex break-words">01 / ALGORITHM</span>
-           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2 break-words">Precision Ranking</h3>
+           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2 break-words">Algorithmic Pipeline Generation</h3>
            <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed whitespace-normal pr-2">
              We process and rank the entire SBIR universe based on capability and agency mission overlap.
            </p>
         </div>
         <div className="group border-l border-brand-steel/30 pl-4 sm:pl-6 hover:border-brand-gold transition-colors duration-500">
            <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-2 tracking-[0.1em] md:tracking-widest inline-flex break-words">02 / C-SUITE</span>
-           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2 break-words">Direct Engagement</h3>
+           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-2 break-words">Direct C-Suite Engagement</h3>
            <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed whitespace-normal pr-2">
              Evaluate structural potential against your target customer and Phase III transition intent.
            </p>
@@ -318,7 +320,7 @@ const SellersKey = () => (
       {/* Mobile Title (shows first on small screens) */}
       <div className="lg:hidden col-span-12 flex flex-col items-start pr-0">
         <div className="w-16 h-px bg-brand-gold mb-6"></div>
-        <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">Sell-Side<br/><span className="text-brand-steel">Engine</span></h2>
+        <h2 className="text-4xl sm:text-5xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">Sell-Side Advisory:<br/><span className="text-brand-steel text-2xl sm:text-3xl block mt-2 whitespace-normal">Phase III Asset Valuation & Liquidity</span></h2>
         <p className="text-brand-gold tracking-[0.1em] md:tracking-[0.2em] text-[10px] uppercase font-bold mb-4 whitespace-normal">Strategic Liquidity</p>
         <p className="text-lg sm:text-xl text-brand-light_steel font-light leading-relaxed whitespace-normal pr-2">
           We find the Primes facing revenue cliffs. Your dormant Phase III asset is their solution.
@@ -328,7 +330,7 @@ const SellersKey = () => (
       <div className="lg:col-span-6 flex flex-col justify-center gap-8 md:gap-12 sm:pr-8 lg:pr-16 lg:border-r border-brand-steel/10 relative">
         <div className="group">
            <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-3 tracking-[0.1em] md:tracking-widest border border-brand-gold/30 px-2 py-1 inline-flex break-words">A / DATA SYNTHESIS</span>
-           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-4 break-words">Federal Data Ingestion</h3>
+           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-4 break-words">Federal Data Ingestion & Synthesis</h3>
            <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed whitespace-normal pr-2">
              We ingest and merge vast federal datasets, forensically uncovering organizations with a proven track record of acquiring SBIR assets and scaling them into massive Phase III programs. We know exactly who buys and how they scale.
            </p>
@@ -336,7 +338,7 @@ const SellersKey = () => (
         <div className="w-1/4 h-px bg-brand-steel/30"></div>
         <div className="group">
            <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-3 tracking-[0.1em] md:tracking-widest border border-brand-gold/30 px-2 py-1 inline-flex break-words">B / RESCUE</span>
-           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-4 break-words">Challenge Modeling</h3>
+           <h3 className="text-2xl md:text-3xl font-black text-white uppercase tracking-wider mb-4 break-words">Vulnerability Rescue Modeling</h3>
            <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed whitespace-normal pr-2">
              We identify Prime contractors facing imminent, material procurement vulnerabilities (expiring contracts, protests). Your Phase III authority is injected as the ultimate strategic rescue mechanism.
            </p>
@@ -346,7 +348,7 @@ const SellersKey = () => (
       {/* Desktop Title (right aligned) */}
       <div className="hidden lg:flex lg:col-span-6 flex-col items-end text-right pl-0 lg:pl-12">
         <div className="w-16 h-px bg-brand-gold mb-8 ml-auto"></div>
-        <h2 className="text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[0.9]">Sell-Side<br/><span className="text-brand-steel">Engine</span></h2>
+        <h2 className="text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[0.9]">Sell-Side Advisory:<br/><span className="text-brand-steel text-4xl lg:text-5xl block mt-4">Phase III Asset Valuation & Liquidity</span></h2>
         <p className="text-brand-gold tracking-[0.2em] text-xs uppercase font-bold mb-8">Strategic Liquidity</p>
         <p className="text-2xl text-brand-light_steel font-light leading-relaxed text-right">
           We find the Primes facing revenue cliffs. Your dormant Phase III asset is their solution.
@@ -371,19 +373,19 @@ const FaqKey = () => (
           <FileText className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
           <FileText className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
         </div>
-        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 break-words">Intelligence</h2>
+        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 break-words">Intelligence:<br/><span className="text-brand-steel text-xl sm:text-2xl md:text-3xl block mt-2 whitespace-normal">Strategic Capture Methodology & FAR Compliance</span></h2>
         <p className="text-brand-steel uppercase tracking-[0.15em] md:tracking-[0.3em] text-[9px] sm:text-[10px] md:text-xs font-bold break-words whitespace-normal">Statutory Authority</p>
       </div>
 
       <div className="border-t border-brand-steel/20">
         <FaqItem 
-          question="Is it legal to transfer 'successor-in-interest' rights?"
+          question="Successor-in-Interest Precedents"
           answer="The Federal Register explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete."
           citations={['85 FR 50062', 'SBIR Policy Directive § 6(a)(5)']}
         />
         
         <FaqItem 
-          question="Does this justify a Sole-Source award?"
+          question="Statutory Authority Exceptions"
           answer="Phase III awards are statutorily authorized to be made on a sole-source basis. The competition requirement is considered satisfied by the original Phase I/II competition. No further J&A (Justification and Approval) is typically needed beyond citing the statute."
           citations={['15 U.S.C. § 638(r)(4)', 'FAR 6.302-5']}
         />
