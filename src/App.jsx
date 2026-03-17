@@ -140,7 +140,8 @@ function App() {
         <div className="hidden md:flex gap-10 text-xs items-center tracking-widest font-semibold uppercase">
           <button onClick={() => handleNavClick('buyers')} className="nav-link">Buy-Side Engine</button>
           <button onClick={() => handleNavClick('sellers')} className="nav-link">Sell-Side Engine</button>
-          <button onClick={() => handleNavClick('faq')} className="nav-link">Intelligence</button>
+          <button onClick={() => handleNavClick('faq')} className="nav-link">FAQ</button>
+          <button onClick={() => handleNavClick('whitepapers')} className="nav-link">Strategic White Papers</button>
           <button 
             onClick={() => handleNavClick('contact')} 
             className="px-6 py-2 border border-brand-steel/30 text-brand-light_steel hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
@@ -176,7 +177,13 @@ function App() {
                 onClick={() => handleNavClick('faq')} 
                 className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
               >
-                Intelligence
+                FAQ
+              </button>
+              <button 
+                onClick={() => handleNavClick('whitepapers')} 
+                className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
+              >
+                Strategic White Papers
               </button>
               <button 
                 onClick={() => handleNavClick('contact')} 
@@ -384,7 +391,7 @@ const FaqKey = () => (
           <FileText className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
           <FileText className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
         </div>
-        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 break-words">Intelligence:<br/><span className="text-brand-steel text-xl sm:text-2xl md:text-3xl block mt-2 whitespace-normal">Strategic Capture Methodology & FAR Compliance</span></h2>
+        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase mb-4 break-words tracking-normal">FAQ:<br/><span className="text-brand-steel text-xl sm:text-2xl md:text-3xl block mt-4 whitespace-normal leading-snug tracking-wide mb-6">Strategic Capture Methodology & FAR Compliance</span></h2>
         <p className="text-brand-steel uppercase tracking-[0.15em] md:tracking-[0.3em] text-[9px] sm:text-[10px] md:text-xs font-bold break-words whitespace-normal">Statutory Authority</p>
       </div>
 
@@ -420,13 +427,19 @@ const FaqItem = ({ question, answer, citations }) => {
         <h3 className={`text-base sm:text-lg md:text-2xl font-black uppercase tracking-wider transition-colors ${isOpen ? 'text-brand-gold' : 'text-white group-hover:text-brand-light_steel'}`}>{question}</h3>
         <ChevronRight className={`text-brand-steel transition-transform duration-300 flex-shrink-0 ml-2 md:ml-4 ${isOpen ? 'rotate-90 text-brand-gold' : ''}`} size={20} />
       </div>
-      <AnimatePresence>
+      <AnimatePresence initial={false}>
         {isOpen && (
            <motion.div 
-             initial={{ height: 0, opacity: 0 }}
-             animate={{ height: 'auto', opacity: 1 }}
-             exit={{ height: 0, opacity: 0 }}
-             className="pb-6 md:pb-8"
+             key="content"
+             initial="collapsed"
+             animate="open"
+             exit="collapsed"
+             variants={{
+               open: { opacity: 1, height: "auto" },
+               collapsed: { opacity: 0, height: 0 }
+             }}
+             transition={{ duration: 0.4, ease: "easeInOut" }}
+             className="pb-6 md:pb-8 overflow-hidden"
            >
              <p className="text-brand-steel text-sm sm:text-base md:text-lg leading-relaxed mb-6 font-light max-w-3xl border-l border-brand-gold/50 pl-4 lg:pl-8">
                {answer}
