@@ -17,7 +17,7 @@
   }
 
   .nav-link {
-    @apply text-[#888C8D] uppercase tracking-widest text-xs font-semibold hover:text-[#D1D5DB] transition-colors cursor-pointer;
+    @apply text-[#888C8D] uppercase tracking-widest text-xs font-semibold hover:text-white transition-colors duration-300 cursor-pointer;
   }
 
   /* Steel Glow Effect */

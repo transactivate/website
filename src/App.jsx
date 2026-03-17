@@ -288,7 +288,7 @@ const BuyersKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full xl:container mx-auto px-6 md:px-8 py-8 md:py-24 border-t border-brand-steel/10"
+    className="w-full xl:container mx-auto px-6 md:px-8 py-16 md:py-32 border-t border-brand-steel/10"
   >
     <div className="flex flex-col lg:grid lg:grid-cols-12 gap-8 lg:gap-16">
       <div className="lg:col-span-6 flex flex-col items-start pr-0 lg:pr-12">
@@ -333,7 +333,7 @@ const SellersKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full xl:container mx-auto px-6 md:px-8 py-8 md:py-24 border-t border-brand-steel/10"
+    className="w-full xl:container mx-auto px-6 md:px-8 py-16 md:py-32 border-t border-brand-steel/10"
   >
     <div className="flex flex-col-reverse lg:grid lg:grid-cols-12 gap-8 lg:gap-16">
       
@@ -385,7 +385,7 @@ const FaqKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full xl:container mx-auto px-6 md:px-8 py-8 md:py-24 border-t border-brand-steel/10 relative"
+    className="w-full xl:container mx-auto px-6 md:px-8 py-16 md:py-32 border-t border-brand-steel/10 relative"
   >
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-10 md:mb-16">
@@ -393,7 +393,7 @@ const FaqKey = () => (
           <FileText className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
           <FileText className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
         </div>
-        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase mb-4 break-words tracking-normal">FAQ</h2>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">FAQ</h2>
         <p className="text-brand-steel uppercase tracking-[0.15em] md:tracking-[0.3em] text-[9px] sm:text-[10px] md:text-xs font-bold break-words whitespace-normal">Statutory Authority</p>
       </div>
 
@@ -466,11 +466,11 @@ const WhitepapersKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full xl:container mx-auto px-6 md:px-8 py-16 md:py-24 border-t border-brand-steel/10 relative print:hidden"
+    className="w-full xl:container mx-auto px-6 md:px-8 py-16 md:py-32 border-t border-brand-steel/10 relative print:hidden"
   >
     <div className="max-w-5xl mx-auto">
       <div className="mb-12 md:mb-16">
-        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 break-words"><span className="lowercase">transactivate</span> white paper</h2>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words"><span className="lowercase">transactivate</span> white paper</h2>
       </div>
 
       <div className="border border-brand-steel/20 bg-brand-black/50 p-6 sm:p-8 md:p-12 hover:border-brand-gold/50 transition-colors duration-500 group flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start lg:items-center relative overflow-hidden">
@@ -489,7 +489,7 @@ const WhitepapersKey = () => (
         </div>
         
         <a 
-          href="mailto:advisory@transactivate.ai?subject=Requesting Access: M&A-Driven Capture White Paper"
+          href="mailto:founder@transactivate.ai?subject=Requesting Access: M&A-Driven Capture White Paper"
           className="relative z-10 flex-shrink-0 px-6 md:px-8 py-3 md:py-4 border border-brand-steel/40 text-brand-gold bg-brand-gold/5 uppercase tracking-[0.2em] text-xs font-bold hover:bg-brand-gold hover:text-brand-black transition-all duration-300 flex items-center gap-3 group-hover:border-brand-gold w-full lg:w-auto justify-center"
         >
           Request Access <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
