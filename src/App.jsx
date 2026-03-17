@@ -402,20 +402,26 @@ const FaqKey = () => (
           question="Successor-in-Interest Precedents"
           answer={
             <>
-              The <a href="https://www.federalregister.gov/d/2020-18652/p-490" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:text-white underline underline-offset-4 decoration-brand-gold/30 hover:decoration-white transition-colors duration-300">Federal Register</a> explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete.
+              The <a href="https://www.federalregister.gov/documents/2020/08/17/2020-18652/small-business-innovation-research-program-and-small-business-technology-transfer-program-policy" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:text-white underline underline-offset-4 decoration-brand-gold/30 hover:decoration-white transition-colors duration-300">Federal Register</a> explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete.
             </>
           }
-          citations={['85 FR 50062', 'SBIR Policy Directive § 6(a)(5)']}
+          citations={[
+            <a href="https://www.federalregister.gov/documents/2020/08/17/2020-18652/small-business-innovation-research-program-and-small-business-technology-transfer-program-policy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">85 FR 50062</a>, 
+            <a href="https://www.sbir.gov/policy-directive" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">SBIR Policy Directive § 6(a)(5)</a>
+          ]}
         />
         
         <FaqItem 
           question="Statutory Authority Exceptions"
           answer={
             <>
-              Phase III awards are statutorily authorized to be made on a sole-source basis. The competition requirement is considered satisfied by the original Phase I/II competition. No further J&A (Justification and Approval) is typically needed beyond citing the <a href="https://uscode.house.gov/view.xhtml?req=(title:15%20section:638%20edition:prelim)" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:text-white underline underline-offset-4 decoration-brand-gold/30 hover:decoration-white transition-colors duration-300">statute</a>.
+              Phase III awards are statutorily authorized to be made on a sole-source basis. The competition requirement is considered satisfied by the original Phase I/II competition. No further J&A (Justification and Approval) is typically needed beyond citing the <a href="https://www.law.cornell.edu/uscode/text/15/638" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:text-white underline underline-offset-4 decoration-brand-gold/30 hover:decoration-white transition-colors duration-300">statute</a>.
             </>
           }
-          citations={['15 U.S.C. § 638(r)(4)', 'FAR 6.302-5']}
+          citations={[
+            <a href="https://www.law.cornell.edu/uscode/text/15/638" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">15 U.S.C. § 638(r)(4)</a>, 
+            <a href="https://www.acquisition.gov/far/6.302-5" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">FAR 6.302-5</a>
+          ]}
         />
 
         <FaqItem 
@@ -425,7 +431,9 @@ const FaqKey = () => (
               Unlike Phase I and II awards, which have caps, Phase III awards have no statutory dollar limit. They are intended for commercialization and full-scale deployment.
             </>
           }
-          citations={['SBIR Policy Directive § 4(c)(5)']}
+          citations={[
+            <a href="https://www.sbir.gov/policy-directive" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">SBIR Policy Directive § 4(c)(5)</a>
+          ]}
         />
       </div>
     </div>
