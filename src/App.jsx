@@ -402,12 +402,12 @@ const FaqKey = () => (
           question="Successor-in-Interest Precedents"
           answer={
             <>
-              The <a href="https://www.federalregister.gov/documents/2020/08/17/2020-18652/small-business-innovation-research-program-and-small-business-technology-transfer-program-policy" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:text-white underline underline-offset-4 decoration-brand-gold/30 hover:decoration-white transition-colors duration-300">Federal Register</a> explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete.
+              The Federal Register explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete.
             </>
           }
           citations={[
-            <a href="https://www.federalregister.gov/documents/2020/08/17/2020-18652/small-business-innovation-research-program-and-small-business-technology-transfer-program-policy" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">85 FR 50062</a>, 
-            <a href="https://www.sbir.gov/policy-directive" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">SBIR Policy Directive § 6(a)(5)</a>
+            <a href="https://www.federalregister.gov/citation/85-FR-50062" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="text-slate-400 hover:text-white transition-colors underline decoration-slate-600 hover:decoration-slate-400 underline-offset-4">85 FR 50062</a>, 
+            <a href="https://www.sbir.gov/sites/default/files/SBIR-STTR_Policy_Directive_2023.pdf" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="text-slate-400 hover:text-white transition-colors underline decoration-slate-600 hover:decoration-slate-400 underline-offset-4">SBIR Policy Directive § 6(a)(5)</a>
           ]}
         />
         
@@ -415,12 +415,12 @@ const FaqKey = () => (
           question="Statutory Authority Exceptions"
           answer={
             <>
-              Phase III awards are statutorily authorized to be made on a sole-source basis. The competition requirement is considered satisfied by the original Phase I/II competition. No further J&A (Justification and Approval) is typically needed beyond citing the <a href="https://www.law.cornell.edu/uscode/text/15/638" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:text-white underline underline-offset-4 decoration-brand-gold/30 hover:decoration-white transition-colors duration-300">statute</a>.
+              Phase III awards are statutorily authorized to be made on a sole-source basis. The competition requirement is considered satisfied by the original Phase I/II competition. No further J&A (Justification and Approval) is typically needed beyond citing the statute.
             </>
           }
           citations={[
-            <a href="https://www.law.cornell.edu/uscode/text/15/638" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">15 U.S.C. § 638(r)(4)</a>, 
-            <a href="https://www.acquisition.gov/far/6.302-5" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">FAR 6.302-5</a>
+            <a href="https://www.law.cornell.edu/uscode/text/15/638#r_4" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="text-slate-400 hover:text-white transition-colors underline decoration-slate-600 hover:decoration-slate-400 underline-offset-4">15 U.S.C. § 638(r)(4)</a>, 
+            <a href="https://www.acquisition.gov/far/6.302-5" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="text-slate-400 hover:text-white transition-colors underline decoration-slate-600 hover:decoration-slate-400 underline-offset-4">FAR 6.302-5</a>
           ]}
         />
 
@@ -432,7 +432,7 @@ const FaqKey = () => (
             </>
           }
           citations={[
-            <a href="https://www.sbir.gov/policy-directive" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">SBIR Policy Directive § 4(c)(5)</a>
+            <a href="https://www.sbir.gov/sites/default/files/SBIR-STTR_Policy_Directive_2023.pdf" target="_blank" rel="noopener noreferrer" onClick={(e) => e.stopPropagation()} className="text-slate-400 hover:text-white transition-colors underline decoration-slate-600 hover:decoration-slate-400 underline-offset-4">SBIR Policy Directive § 4(c)(5)</a>
           ]}
         />
       </div>
@@ -469,9 +469,9 @@ const FaqItem = ({ question, answer, citations }) => {
              <div className="text-brand-steel text-sm sm:text-base md:text-lg leading-relaxed mb-6 font-light max-w-3xl border-l border-brand-gold/50 pl-4 lg:pl-8 faq-answer-block">
                {answer}
              </div>
-             <div className="flex gap-2 md:gap-3 flex-wrap pl-4 lg:pl-8 mt-4">
+             <div className="mt-4 flex flex-wrap gap-4 pl-4 lg:pl-8">
                 {citations.map((cite, i) => (
-                  <span key={i} className="px-2 py-1 md:px-3 md:py-1 border border-brand-steel/30 text-brand-steel/80 text-[8px] md:text-[9px] uppercase font-bold tracking-[0.1em] md:tracking-[0.2em] bg-white/5">
+                  <span key={i} className="text-[10px] md:text-xs font-semibold tracking-wider">
                     {cite}
                   </span>
                 ))}
