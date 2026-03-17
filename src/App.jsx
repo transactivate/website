@@ -400,19 +400,31 @@ const FaqKey = () => (
       <div className="border-t border-brand-steel/20">
         <FaqItem 
           question="Successor-in-Interest Precedents"
-          answer="The Federal Register explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete."
+          answer={
+            <>
+              The <a href="https://www.federalregister.gov/d/2020-18652/p-490" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:text-white underline underline-offset-4 decoration-brand-gold/30 hover:decoration-white transition-colors duration-300">Federal Register</a> explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete.
+            </>
+          }
           citations={['85 FR 50062', 'SBIR Policy Directive § 6(a)(5)']}
         />
         
         <FaqItem 
           question="Statutory Authority Exceptions"
-          answer="Phase III awards are statutorily authorized to be made on a sole-source basis. The competition requirement is considered satisfied by the original Phase I/II competition. No further J&A (Justification and Approval) is typically needed beyond citing the statute."
+          answer={
+            <>
+              Phase III awards are statutorily authorized to be made on a sole-source basis. The competition requirement is considered satisfied by the original Phase I/II competition. No further J&A (Justification and Approval) is typically needed beyond citing the <a href="https://uscode.house.gov/view.xhtml?req=(title:15%20section:638%20edition:prelim)" target="_blank" rel="noopener noreferrer" className="text-brand-gold hover:text-white underline underline-offset-4 decoration-brand-gold/30 hover:decoration-white transition-colors duration-300">statute</a>.
+            </>
+          }
           citations={['15 U.S.C. § 638(r)(4)', 'FAR 6.302-5']}
         />
 
         <FaqItem 
           question="Is there a dollar limit on Phase III awards?"
-          answer="Unlike Phase I and II awards, which have caps, Phase III awards have no statutory dollar limit. They are intended for commercialization and full-scale deployment."
+          answer={
+            <>
+              Unlike Phase I and II awards, which have caps, Phase III awards have no statutory dollar limit. They are intended for commercialization and full-scale deployment.
+            </>
+          }
           citations={['SBIR Policy Directive § 4(c)(5)']}
         />
       </div>
@@ -446,9 +458,9 @@ const FaqItem = ({ question, answer, citations }) => {
              transition={{ duration: 0.4, ease: "easeInOut" }}
              className="pb-6 md:pb-8 overflow-hidden"
            >
-             <p className="text-brand-steel text-sm sm:text-base md:text-lg leading-relaxed mb-6 font-light max-w-3xl border-l border-brand-gold/50 pl-4 lg:pl-8">
+             <div className="text-brand-steel text-sm sm:text-base md:text-lg leading-relaxed mb-6 font-light max-w-3xl border-l border-brand-gold/50 pl-4 lg:pl-8 faq-answer-block">
                {answer}
-             </p>
+             </div>
              <div className="flex gap-2 md:gap-3 flex-wrap pl-4 lg:pl-8 mt-4">
                 {citations.map((cite, i) => (
                   <span key={i} className="px-2 py-1 md:px-3 md:py-1 border border-brand-steel/30 text-brand-steel/80 text-[8px] md:text-[9px] uppercase font-bold tracking-[0.1em] md:tracking-[0.2em] bg-white/5">
