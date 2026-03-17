@@ -393,7 +393,7 @@ const FaqKey = () => (
           <FileText className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
           <FileText className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
         </div>
-        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase mb-4 break-words tracking-normal">FAQ:<br/><span className="text-brand-steel text-xl sm:text-2xl md:text-3xl block mt-4 whitespace-normal leading-snug tracking-wide mb-6">Strategic Capture Methodology & FAR Compliance</span></h2>
+        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase mb-4 break-words tracking-normal">FAQ</h2>
         <p className="text-brand-steel uppercase tracking-[0.15em] md:tracking-[0.3em] text-[9px] sm:text-[10px] md:text-xs font-bold break-words whitespace-normal">Statutory Authority</p>
       </div>
 
