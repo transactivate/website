@@ -141,7 +141,7 @@ function App() {
           <button onClick={() => handleNavClick('buyers')} className="nav-link">Buy-Side Engine</button>
           <button onClick={() => handleNavClick('sellers')} className="nav-link">Sell-Side Engine</button>
           <button onClick={() => handleNavClick('faq')} className="nav-link">FAQ</button>
-          <button onClick={() => handleNavClick('whitepapers')} className="nav-link">Strategic White Papers</button>
+          <button onClick={() => handleNavClick('whitepapers')} className="nav-link"><span className="lowercase">transactivate</span> white paper</button>
           <button 
             onClick={() => handleNavClick('contact')} 
             className="px-6 py-2 border border-brand-steel/30 text-brand-light_steel hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
@@ -183,7 +183,7 @@ function App() {
                 onClick={() => handleNavClick('whitepapers')} 
                 className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
               >
-                Strategic White Papers
+                <span className="lowercase">transactivate</span> white paper
               </button>
               <button 
                 onClick={() => handleNavClick('contact')} 
@@ -468,7 +468,7 @@ const WhitepapersKey = () => (
   >
     <div className="max-w-5xl mx-auto">
       <div className="mb-12 md:mb-16">
-        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 break-words">Strategic White Papers</h2>
+        <h2 className="text-[2rem] sm:text-4xl md:text-6xl font-black text-white uppercase tracking-tighter mb-4 break-words"><span className="lowercase">transactivate</span> white paper</h2>
       </div>
 
       <div className="border border-brand-steel/20 bg-brand-black/50 p-6 sm:p-8 md:p-12 hover:border-brand-gold/50 transition-colors duration-500 group flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start lg:items-center relative overflow-hidden">
