@@ -424,8 +424,11 @@ const FaqItem = ({ question, answer, citations }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="border-b border-brand-steel/20 overflow-hidden cursor-pointer group" onClick={() => setIsOpen(!isOpen)}>
-      <div className="py-5 md:py-8 flex justify-between items-center pr-2 md:pr-4">
+    <div className="border-b border-brand-steel/20 overflow-hidden group">
+      <div 
+        className="py-5 md:py-8 flex justify-between items-center pr-2 md:pr-4 cursor-pointer" 
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <h3 className={`text-base sm:text-lg md:text-2xl font-black uppercase tracking-wider transition-colors ${isOpen ? 'text-brand-gold' : 'text-white group-hover:text-brand-light_steel'}`}>{question}</h3>
         <ChevronRight className={`text-brand-steel transition-transform duration-300 flex-shrink-0 ml-2 md:ml-4 ${isOpen ? 'rotate-90 text-brand-gold' : ''}`} size={20} />
       </div>
