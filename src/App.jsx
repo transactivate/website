@@ -277,78 +277,102 @@ const LandingKey = ({ onNavigate }) => (
 );
 
 const MethodologyKey = () => (
-  <section className="py-24 relative z-10 w-full xl:container mx-auto px-6 md:px-8 border-t border-brand-steel/10">
+  <section className="py-24 relative z-10 flex flex-col items-center px-4 sm:px-6 lg:px-8 border-t border-brand-steel/10">
     <motion.div 
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true, margin: "-100px" }}
-      transition={{ duration: 0.8 }}
-      className="flex flex-col mb-16 md:mb-24 text-center max-w-4xl mx-auto"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      className="text-center w-full max-w-4xl mx-auto"
     >
       <div className="w-16 h-px bg-brand-gold mb-6 md:mb-8 mx-auto"></div>
-      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-6 leading-[1] md:leading-[0.9] break-words">
         <span className="lowercase">transactivate</span>'s Role
       </h2>
-      <p className="text-lg sm:text-xl md:text-2xl text-brand-light_steel font-light leading-relaxed whitespace-normal px-4">
+      <p className="text-slate-400 text-center max-w-3xl mx-auto text-lg mb-16 leading-relaxed font-light">
         Executing SBIR M&A requires exact timing and precision. <span className="lowercase">transactivate</span> fuses deep federal context and domain experience with advanced data forensics to create non-competitive, unlimited-value, sole-source outcomes through a three-step process:
       </p>
     </motion.div>
 
-    <div id="buyers" className="mt-16 scroll-mt-32">
-      <div className="mb-12">
-        <h3 className="text-3xl sm:text-4xl md:text-5xl border-l-[3px] border-brand-gold pl-4 font-black text-white uppercase tracking-tighter break-words">Buy-Side</h3>
-      </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
-        <div className="group border-l border-brand-steel/30 pl-4 sm:pl-6 hover:border-brand-gold transition-colors duration-500">
-           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-4 tracking-[0.1em] md:tracking-widest inline-flex break-words">01 / CONTEXT</span>
-           <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed whitespace-normal pr-2">
-             We leverage deep federal domain expertise and specialized SBIR transaction experience to navigate the deluge of open-source data and determine what data matters, why it matters, and how it matters.
-           </p>
-        </div>
-        <div className="group border-l border-brand-steel/30 pl-4 sm:pl-6 hover:border-brand-gold transition-colors duration-500">
-           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-4 tracking-[0.1em] md:tracking-widest inline-flex break-words">02 / SYNTHESIS</span>
-           <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed whitespace-normal pr-2">
-             We continuously ingest, analyze, and synthesize the data to create Generative AI-based custom solutions that mathematically rank the entire "dormant" SBIR universe (i.e., those that did not advance to Phase III and that are therefore still actionable) based on agency, Phase III technology / capability / mission intent (for your derivation / extension / completion claim), and time-relevance (to ensure you have a long runway of data rights to secure and monetize your Phase III).
-           </p>
-        </div>
-        <div className="group border-l border-brand-steel/30 pl-4 sm:pl-6 hover:border-brand-gold transition-colors duration-500">
-           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-4 tracking-[0.1em] md:tracking-widest inline-flex break-words">03 / EXECUTION</span>
-           <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed whitespace-normal pr-2">
-             We operationalize our intelligence through customized, timely outreach directly to executive decision-makers. The result is absolute alignment: the right buyer, the right seller, and the right asset, at the exact right time.
-           </p>
-        </div>
-      </div>
-    </div>
+    {/* Pipeline Node 01: Context */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.1 }}
+      className="w-full max-w-3xl mx-auto bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors rounded-xl p-8 text-center"
+    >
+      <h3 className="text-xl font-medium text-white mb-4">01 / Federal Context & Transaction Experience</h3>
+      <p className="text-slate-400 leading-relaxed font-light text-base md:text-lg">
+        We leverage deep federal domain expertise and specialized SBIR transaction experience to navigate the deluge of open-source data and determine what data matters, why it matters, and how it matters.
+      </p>
+    </motion.div>
 
-    <hr className="border-brand-steel/10 my-20 w-full" />
+    {/* Downward Flow Connector */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.2 }}
+      className="w-px bg-gradient-to-b from-slate-700 to-transparent my-4 mx-auto block h-16 origin-top"
+    ></motion.div>
 
-    <div id="sellers" className="scroll-mt-32">
-      <div className="mb-12">
-        <h3 className="text-3xl sm:text-4xl md:text-5xl border-l-[3px] border-brand-gold pl-4 font-black text-white uppercase tracking-tighter break-words">Sell-Side</h3>
+    {/* Pipeline Node 02: Synthesis & Bifurcation */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.3 }}
+      className="w-full max-w-5xl mx-auto"
+    >
+      <h3 className="text-xl font-medium text-white text-center mb-4">02 / AI-Driven Data Synthesis</h3>
+      <p className="text-slate-400 text-center max-w-2xl mx-auto mb-10 leading-relaxed font-light text-base md:text-lg">
+        We continuously ingest, analyze, and synthesize the data to create Generative AI-based custom solutions that:
+      </p>
+
+      {/* The Split (Buy/Sell Tracks) */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+        <div id="buyers" className="scroll-mt-32 p-8 rounded-xl bg-slate-900/40 border border-slate-800 hover:border-slate-600 transition-colors relative">
+          <h4 className="text-sm font-bold tracking-widest text-slate-300 uppercase mb-4 flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-slate-500"></div> [ BUY-SIDE TRACK ]
+          </h4>
+          <p className="text-slate-400 leading-relaxed font-light text-base">
+            ...mathematically rank the entire "dormant" SBIR universe (i.e., those that did not advance to Phase III and that are therefore still actionable) based on agency, Phase III technology / capability / mission intent (for your derivation / extension / completion claim), and time-relevance (to ensure you have a long runway of data rights to secure and monetize your Phase III).
+          </p>
+        </div>
+
+        <div id="sellers" className="scroll-mt-32 p-8 rounded-xl bg-slate-900/40 border border-slate-800 hover:border-slate-600 transition-colors relative">
+          <h4 className="text-sm font-bold tracking-widest text-slate-300 uppercase mb-4 flex items-center gap-2">
+            <div className="w-1.5 h-1.5 rounded-full bg-slate-500"></div> [ SELL-SIDE TRACK ]
+          </h4>
+          <p className="text-slate-400 leading-relaxed font-light text-base">
+            ...track companies that have acquired SBIRs and successfully turned them into multi-million-dollar Phase IIIs (i.e., been there, done that, likely to do it again), and pinpoint Primes facing immediate procurement challenges (e.g., active protests, ongoing bridge contracts, expiring vehicles).
+          </p>
+        </div>
       </div>
-      
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
-        <div className="group border-l border-brand-steel/30 pl-4 sm:pl-6 hover:border-brand-gold transition-colors duration-500">
-           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-4 tracking-[0.1em] md:tracking-widest inline-flex break-words">01 / CONTEXT</span>
-           <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed whitespace-normal pr-2">
-             We leverage deep federal domain expertise and specialized SBIR transaction experience to navigate the deluge of open-source data and determine what data matters, why it matters, and how it matters.
-           </p>
-        </div>
-        <div className="group border-l border-brand-steel/30 pl-4 sm:pl-6 hover:border-brand-gold transition-colors duration-500">
-           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-4 tracking-[0.1em] md:tracking-widest inline-flex break-words">02 / SYNTHESIS</span>
-           <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed whitespace-normal pr-2">
-             We continuously ingest, analyze, and synthesize the data to create Generative AI-based custom solutions that track companies that have acquired SBIRs and successfully turned them into multi-million-dollar Phase IIIs (i.e., been there, done that, likely to do it again), and pinpoint Primes facing immediate procurement challenges (e.g., active protests, ongoing bridge contracts, expiring vehicles).
-           </p>
-        </div>
-        <div className="group border-l border-brand-steel/30 pl-4 sm:pl-6 hover:border-brand-gold transition-colors duration-500">
-           <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold mb-4 tracking-[0.1em] md:tracking-widest inline-flex break-words">03 / EXECUTION</span>
-           <p className="text-brand-steel font-light text-base md:text-lg leading-relaxed whitespace-normal pr-2">
-             We operationalize our intelligence through customized, timely outreach directly to executive decision-makers. The result is absolute alignment: the right buyer, the right seller, and the right asset, at the exact right time.
-           </p>
-        </div>
-      </div>
-    </div>
+    </motion.div>
+
+    {/* Upward Merging Connector */}
+    <motion.div
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.4 }}
+      className="w-px bg-gradient-to-t from-slate-700 to-transparent my-4 mx-auto block h-16 origin-bottom"
+    ></motion.div>
+
+    {/* Pipeline Node 03: Unified Execution */}
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: 0.5 }}
+      className="w-full max-w-3xl mx-auto bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors rounded-xl p-8 text-center"
+    >
+      <h3 className="text-xl font-medium text-white mb-4">03 / Customized Execution</h3>
+      <p className="text-slate-400 leading-relaxed font-light text-base md:text-lg">
+        We operationalize our intelligence through customized, timely outreach directly to executive decision-makers. The result is absolute alignment: the right buyer, the right seller, and the right asset, at the exact right time.
+      </p>
+    </motion.div>
   </section>
 );
 
