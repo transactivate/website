@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Shield, ChevronRight, Activity, Cpu, Hexagon, Crosshair, Network, FileText, ArrowUpRight, ArrowRight, Menu, X } from 'lucide-react';
+import { Shield, ChevronRight, Activity, Cpu, Hexagon, Crosshair, Network, FileText, ArrowUpRight, ArrowRight, Menu, X, Database, Radar, GitMerge } from 'lucide-react';
 import IntelligenceBriefPDF from './IntelligenceBriefPDF';
 
 function App() {
@@ -140,6 +140,7 @@ function App() {
         <div className="hidden md:flex gap-10 text-xs items-center tracking-widest font-semibold uppercase">
           <button onClick={() => handleNavClick('buyers')} className="nav-link">Buy-Side Engine</button>
           <button onClick={() => handleNavClick('sellers')} className="nav-link">Sell-Side Engine</button>
+          <button onClick={() => handleNavClick('engine')} className="nav-link">The Engine</button>
           <button onClick={() => handleNavClick('faq')} className="nav-link">FAQ</button>
           <button onClick={() => handleNavClick('whitepapers')} className="nav-link"><span className="lowercase">transactivate</span> white paper</button>
           <button 
@@ -172,6 +173,12 @@ function App() {
                 className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
               >
                 Sell-Side Engine
+              </button>
+              <button 
+                onClick={() => handleNavClick('engine')} 
+                className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
+              >
+                The Engine
               </button>
               <button 
                 onClick={() => handleNavClick('faq')} 
@@ -207,6 +214,10 @@ function App() {
 
         <section id="sellers">
            <SellersKey />
+        </section>
+
+        <section id="engine">
+           <EngineKey />
         </section>
 
         <section id="faq">
@@ -373,6 +384,112 @@ const SellersKey = () => (
         <p className="text-2xl text-brand-light_steel font-light leading-relaxed text-right">
           We identify Primes facing procurement challenges (active protests, ongoing bridge contracts). Your asset is their solution.
         </p>
+      </div>
+
+    </div>
+  </motion.div>
+);
+
+const EngineKey = () => (
+  <motion.div 
+    initial={{ opacity: 0 }}
+    whileInView={{ opacity: 1 }}
+    viewport={{ once: true, margin: "-100px" }}
+    transition={{ duration: 0.8 }}
+    className="w-full xl:container mx-auto px-6 md:px-8 py-16 md:py-32 border-t border-brand-steel/10 relative print:hidden"
+  >
+    <div className="text-center mb-16 md:mb-24">
+      <div className="mx-auto w-12 h-12 md:w-16 md:h-16 border border-brand-gold/30 flex items-center justify-center mb-6 md:mb-8 relative z-10 bg-brand-black rotate-45 group hover:bg-brand-gold/10 transition-colors">
+        <Cpu className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
+        <Cpu className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
+      </div>
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">The <span className="lowercase">transactivate</span> Engine</h2>
+      <p className="text-brand-steel uppercase tracking-[0.15em] md:tracking-[0.3em] text-[10px] sm:text-xs font-bold break-words whitespace-normal max-w-3xl mx-auto leading-relaxed">
+        A proprietary, closed-loop intelligence architecture fusing raw federal data with algorithmic M&A matchmaking.
+      </p>
+    </div>
+
+    <div className="flex flex-col lg:grid lg:grid-cols-3 items-center gap-12 lg:gap-8 relative z-10">
+      
+      {/* Left Column: Inputs */}
+      <div className="flex flex-col gap-8 w-full lg:text-right">
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="border border-brand-steel/20 bg-brand-black/50 p-6 md:p-8 hover:border-brand-gold/50 transition-colors flex flex-col lg:items-end group"
+        >
+          <Database className="text-brand-steel mb-4 group-hover:text-brand-gold transition-colors" size={24} strokeWidth={1.5} />
+          <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-wider mb-3">Federal Data Ingestion</h3>
+          <p className="text-brand-steel font-light text-sm md:text-base leading-relaxed">Continuous, automated ingestion of disparate federal procurement datasets, SBIR award registries, and active GAO protest dockets. We capture the raw signals of market vulnerability.</p>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="border border-brand-steel/20 bg-brand-black/50 p-6 md:p-8 hover:border-brand-gold/50 transition-colors flex flex-col lg:items-end group"
+        >
+          <Radar className="text-brand-steel mb-4 group-hover:text-brand-gold transition-colors" size={24} strokeWidth={1.5} />
+          <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-wider mb-3">Signal Forensics</h3>
+          <p className="text-brand-steel font-light text-sm md:text-base leading-relaxed">Real-time monitoring of Prime procurement vulnerabilities, expiring contract vehicles, and active bridge contracts to identify imminent revenue cliffs.</p>
+        </motion.div>
+      </div>
+
+      {/* Center Column: Core Brain */}
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.9 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+        className="w-full flex justify-center py-8 lg:py-0 relative"
+      >
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_60%)] -z-10 animate-pulse"></div>
+        <div className="flex flex-col items-center max-w-sm mx-auto text-center border-y border-brand-steel/10 py-12 lg:border-none lg:py-0">
+          <motion.div
+            animate={{ y: [-10, 10, -10] }}
+            transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
+            className="relative"
+          >
+             <div className="absolute inset-0 bg-brand-gold/5 blur-3xl rounded-full"></div>
+             <img src="/engine-brain.svg" alt="transactivate AI Brain" className="w-full max-w-[240px] lg:max-w-[320px] mx-auto relative z-10 drop-shadow-[0_0_30px_rgba(212,175,55,0.15)]" />
+          </motion.div>
+          
+          <div className="mt-8 relative z-20">
+             <span className="text-brand-gold font-mono text-[10px] md:text-xs font-bold tracking-[0.2em] border border-brand-gold/30 px-3 py-1 inline-block mb-3 bg-brand-black">SYNTHESIS</span>
+             <h3 className="text-xl font-black text-white uppercase tracking-wider mb-3">Generative AI Kernel</h3>
+             <p className="text-brand-steel font-light text-xs md:text-sm leading-relaxed px-4">Mathematical ranking of the dormant SBIR universe based on mission intent, time-relevance, and derivation/extension claims.</p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Right Column: Outputs */}
+      <div className="flex flex-col gap-8 w-full">
+        <motion.div 
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.6 }}
+          className="border border-brand-steel/20 bg-brand-black/50 p-6 md:p-8 hover:border-brand-gold/50 transition-colors flex flex-col items-start group"
+        >
+          <GitMerge className="text-brand-steel mb-4 group-hover:text-brand-gold transition-colors" size={24} strokeWidth={1.5} />
+          <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-wider mb-3">Dual-Sided Matching</h3>
+          <p className="text-brand-steel font-light text-sm md:text-base leading-relaxed"><strong className="text-white/80">Buy-Side:</strong> Identifying the exact dormant asset to rescue an expiring recompete.<br/><br/><strong className="text-white/80">Sell-Side:</strong> Identifying the precise Prime who urgently requires your dormant data rights.</p>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, x: 20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="border border-brand-steel/20 bg-brand-black/50 p-6 md:p-8 hover:border-brand-gold/50 transition-colors flex flex-col items-start group"
+        >
+          <Crosshair className="text-brand-steel mb-4 group-hover:text-brand-gold transition-colors" size={24} strokeWidth={1.5} />
+          <h3 className="text-xl md:text-2xl font-black text-white uppercase tracking-wider mb-3">Algorithmic Origination</h3>
+          <p className="text-brand-steel font-light text-sm md:text-base leading-relaxed">Intelligence is operationalized into highly targeted, firewall-compliant executive briefings. We bypass traditional friction to initiate direct dialogue with C-level decision-makers at the exact moment of strategic vulnerability.</p>
+        </motion.div>
       </div>
 
     </div>
