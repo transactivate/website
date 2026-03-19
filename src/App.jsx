@@ -277,102 +277,71 @@ const LandingKey = ({ onNavigate }) => (
 );
 
 const MethodologyKey = () => (
-  <section className="py-24 relative z-10 flex flex-col items-center px-4 sm:px-6 lg:px-8 border-t border-brand-steel/10">
-    <motion.div 
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      className="text-center w-full max-w-4xl mx-auto"
-    >
-      <div className="w-16 h-px bg-brand-gold mb-6 md:mb-8 mx-auto"></div>
-      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-6 leading-[1] md:leading-[0.9] break-words">
-        <span className="lowercase">transactivate</span>'s Role
-      </h2>
-      <p className="text-slate-400 text-center max-w-3xl mx-auto text-lg mb-16 leading-relaxed font-light">
-        Executing SBIR M&A requires exact timing and precision. <span className="lowercase">transactivate</span> fuses deep federal context and domain experience with advanced data forensics to create non-competitive, unlimited-value, sole-source outcomes through a three-step process:
-      </p>
-    </motion.div>
+  <section className="py-24 relative z-10 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto border-t border-brand-steel/10">
+    <h2 className="text-3xl md:text-4xl font-light text-white tracking-[0.15em] uppercase mb-8 text-center text-brand-steel">
+      <span className="lowercase">transactivate</span>'s Role
+    </h2>
+    <p className="text-slate-400 text-center max-w-3xl mx-auto text-lg mb-16 leading-relaxed">
+      Executing SBIR M&A requires exact timing and precision. <span className="lowercase">transactivate</span> fuses deep federal context and domain experience with advanced data forensics to create non-competitive, unlimited-value, sole-source outcomes through a three-step process:
+    </p>
 
-    {/* Pipeline Node 01: Context */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.1 }}
-      className="w-full max-w-3xl mx-auto bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors rounded-xl p-8 text-center"
-    >
-      <h3 className="text-xl font-medium text-white mb-4">01 / Federal Context & Transaction Experience</h3>
-      <p className="text-slate-400 leading-relaxed font-light text-base md:text-lg">
-        We leverage deep federal domain expertise and specialized SBIR transaction experience to navigate the deluge of open-source data and determine what data matters, why it matters, and how it matters.
-      </p>
-    </motion.div>
+    {/* The Industrial Ledger (The Main Container) */}
+    <div className="w-full border border-slate-800 bg-black shadow-2xl flex flex-col">
+      
+      {/* ROW 01: UNIFIED CONTEXT */}
+      <div className="p-8 lg:p-12 border-b border-slate-800">
+        <div className="font-mono text-[10px] tracking-[0.2em] text-slate-500 uppercase mb-4">/// Phase 01 : Foundation</div>
+        <h3 className="text-2xl font-light text-white mb-4">Federal Context & Transaction Experience</h3>
+        <p className="text-slate-400 text-lg leading-relaxed max-w-4xl">
+          We leverage deep federal domain expertise and specialized SBIR transaction experience to navigate the deluge of open-source data and determine what data matters, why it matters, and how it matters.
+        </p>
+      </div>
 
-    {/* Downward Flow Connector */}
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.2 }}
-      className="w-px bg-gradient-to-b from-slate-700 to-transparent my-4 mx-auto block h-16 origin-top"
-    ></motion.div>
-
-    {/* Pipeline Node 02: Synthesis & Bifurcation */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.3 }}
-      className="w-full max-w-5xl mx-auto"
-    >
-      <h3 className="text-xl font-medium text-white text-center mb-4">02 / AI-Driven Data Synthesis</h3>
-      <p className="text-slate-400 text-center max-w-2xl mx-auto mb-10 leading-relaxed font-light text-base md:text-lg">
-        We continuously ingest, analyze, and synthesize the data to create Generative AI-based custom solutions that:
-      </p>
-
-      {/* The Split (Buy/Sell Tracks) */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
-        <div id="buyers" className="scroll-mt-32 p-8 rounded-xl bg-slate-900/40 border border-slate-800 hover:border-slate-600 transition-colors relative">
-          <h4 className="text-sm font-bold tracking-widest text-slate-300 uppercase mb-4 flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-500"></div> [ BUY-SIDE TRACK ]
-          </h4>
-          <p className="text-slate-400 leading-relaxed font-light text-base">
-            ...mathematically rank the entire "dormant" SBIR universe (i.e., those that did not advance to Phase III and that are therefore still actionable) based on agency, Phase III technology / capability / mission intent (for your derivation / extension / completion claim), and time-relevance (to ensure you have a long runway of data rights to secure and monetize your Phase III).
+      {/* ROW 02: SYNTHESIS (The Engine & Bifurcation) */}
+      <div className="flex flex-col border-b border-slate-800">
+        {/* The Shared Header Area */}
+        <div className="p-8 lg:p-12 border-b border-slate-800 bg-slate-900/20">
+          <div className="font-mono text-[10px] tracking-[0.2em] text-slate-500 uppercase mb-4">/// Phase 02 : The Engine</div>
+          <h3 className="text-2xl font-light text-white mb-4">AI-Driven Data Synthesis</h3>
+          <p className="text-slate-400 text-lg leading-relaxed max-w-4xl">
+            We continuously ingest, analyze, and synthesize the data to create Generative AI-based custom solutions that:
           </p>
         </div>
 
-        <div id="sellers" className="scroll-mt-32 p-8 rounded-xl bg-slate-900/40 border border-slate-800 hover:border-slate-600 transition-colors relative">
-          <h4 className="text-sm font-bold tracking-widest text-slate-300 uppercase mb-4 flex items-center gap-2">
-            <div className="w-1.5 h-1.5 rounded-full bg-slate-500"></div> [ SELL-SIDE TRACK ]
-          </h4>
-          <p className="text-slate-400 leading-relaxed font-light text-base">
-            ...track companies that have acquired SBIRs and successfully turned them into multi-million-dollar Phase IIIs (i.e., been there, done that, likely to do it again), and pinpoint Primes facing immediate procurement challenges (e.g., active protests, ongoing bridge contracts, expiring vehicles).
-          </p>
+        {/* The Bifurcation (Split Columns) */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 divide-y lg:divide-y-0 lg:divide-x divide-slate-800">
+          {/* Left Column (Buy-Side) */}
+          <div id="buyers" className="p-8 lg:p-12 scroll-mt-32 bg-black hover:bg-slate-900/40 transition-colors duration-500 group">
+            <div className="inline-block border border-slate-700 bg-slate-950 px-3 py-1.5 mb-6 group-hover:border-slate-500 transition-colors">
+              <span className="font-mono text-[10px] tracking-[0.2em] text-white uppercase">[ TARGET: BUY-SIDE ]</span>
+            </div>
+            <p className="text-slate-400 leading-relaxed text-[15px]">
+              ...mathematically rank the entire "dormant" SBIR universe (i.e., those that did not advance to Phase III and that are therefore still actionable) based on agency, Phase III technology / capability / mission intent (for your derivation / extension / completion claim), and time-relevance (to ensure you have a long runway of data rights to secure and monetize your Phase III).
+            </p>
+          </div>
+
+          {/* Right Column (Sell-Side) */}
+          <div id="sellers" className="p-8 lg:p-12 scroll-mt-32 bg-black hover:bg-slate-900/40 transition-colors duration-500 group">
+            <div className="inline-block border border-slate-700 bg-slate-950 px-3 py-1.5 mb-6 group-hover:border-slate-500 transition-colors">
+              <span className="font-mono text-[10px] tracking-[0.2em] text-white uppercase">[ TARGET: SELL-SIDE ]</span>
+            </div>
+            <p className="text-slate-400 leading-relaxed text-[15px]">
+              ...track companies that have acquired SBIRs and successfully turned them into multi-million-dollar Phase IIIs (i.e., been there, done that, likely to do it again), and pinpoint Primes facing immediate procurement challenges (e.g., active protests, ongoing bridge contracts, expiring vehicles).
+            </p>
+          </div>
         </div>
       </div>
-    </motion.div>
 
-    {/* Upward Merging Connector */}
-    <motion.div
-      initial={{ opacity: 0 }}
-      whileInView={{ opacity: 1 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.4 }}
-      className="w-px bg-gradient-to-t from-slate-700 to-transparent my-4 mx-auto block h-16 origin-bottom"
-    ></motion.div>
-
-    {/* Pipeline Node 03: Unified Execution */}
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ delay: 0.5 }}
-      className="w-full max-w-3xl mx-auto bg-slate-900/50 border border-slate-800 hover:border-slate-700 transition-colors rounded-xl p-8 text-center"
-    >
-      <h3 className="text-xl font-medium text-white mb-4">03 / Customized Execution</h3>
-      <p className="text-slate-400 leading-relaxed font-light text-base md:text-lg">
-        We operationalize our intelligence through customized, timely outreach directly to executive decision-makers. The result is absolute alignment: the right buyer, the right seller, and the right asset, at the exact right time.
-      </p>
-    </motion.div>
+      {/* ROW 03: UNIFIED EXECUTION */}
+      <div className="p-8 lg:p-12">
+        <div className="font-mono text-[10px] tracking-[0.2em] text-slate-500 uppercase mb-4">/// Phase 03 : The Strike</div>
+        <h3 className="text-2xl font-light text-white mb-4">Customized Execution</h3>
+        <p className="text-slate-400 text-lg leading-relaxed max-w-4xl">
+          We operationalize our intelligence through customized, timely outreach directly to executive decision-makers. The result is absolute alignment: the right buyer, the right seller, and the right asset, at the exact right time.
+        </p>
+      </div>
+      
+    </div>
   </section>
 );
 
