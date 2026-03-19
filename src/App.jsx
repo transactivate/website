@@ -140,7 +140,7 @@ function App() {
         <div className="hidden md:flex gap-10 text-xs items-center tracking-widest font-semibold uppercase">
           <button onClick={() => handleNavClick('solution')} className="nav-link">Solution</button>
           <button onClick={() => handleNavClick('faq')} className="nav-link">FAQ</button>
-          <button onClick={() => handleNavClick('whitepapers')} className="nav-link"><span className="lowercase">transactivate</span> white paper</button>
+          <button onClick={() => handleNavClick('whitepapers')} className="nav-link">White Paper</button>
           <button 
             onClick={() => handleNavClick('contact')} 
             className="px-6 py-2 border border-brand-steel/30 text-brand-light_steel hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
@@ -176,7 +176,7 @@ function App() {
                 onClick={() => handleNavClick('whitepapers')} 
                 className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
               >
-                <span className="lowercase">transactivate</span> white paper
+                White Paper
               </button>
               <button 
                 onClick={() => handleNavClick('contact')} 
@@ -244,7 +244,7 @@ const LandingKey = ({ onNavigate }) => (
       <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] tracking-tighter uppercase px-2 w-full max-w-6xl break-words sm:break-normal">
         Sole-Source <br className="hidden md:block"/> 
         <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text whitespace-nowrap md:whitespace-normal">
-          Authority
+          M&A.
         </span>
       </h2>
       
@@ -253,18 +253,9 @@ const LandingKey = ({ onNavigate }) => (
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-xl mx-auto px-4">
-        <button 
-          onClick={() => onNavigate('buyers')} 
-          className="w-full sm:flex-1 btn-primary flex items-center justify-center gap-3 group"
-        >
-          Buy-Side <ArrowUpRight size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-        </button>
-        <button 
-          onClick={() => onNavigate('sellers')} 
-          className="w-full sm:flex-1 px-4 sm:px-8 py-3 sm:py-4 border border-brand-steel/40 text-brand-light_steel bg-brand-graphite/50 backdrop-blur-sm font-bold uppercase tracking-[0.2em] text-xs sm:text-sm hover:bg-brand-steel/10 transition-colors flex items-center justify-center gap-2 group"
-        >
-          Sell-Side <ChevronRight size={18} className="group-hover:translate-x-1 transition-transform" />
-        </button>
+        <a href="#solution" className="inline-flex items-center justify-center px-8 py-4 text-sm font-bold tracking-[0.2em] text-black uppercase transition-all duration-300 bg-[#d4af37] border border-[#d4af37] rounded-none hover:bg-transparent hover:text-[#d4af37] shadow-[0_0_20px_rgba(212,175,55,0.3)] hover:shadow-[0_0_30px_rgba(212,175,55,0.5)]">
+          Explore the Solution
+        </a>
       </div>
   </motion.div>
 );
@@ -514,7 +505,7 @@ const WhitepapersKey = () => (
   >
     <div className="max-w-5xl mx-auto">
       <div className="mb-12 md:mb-16">
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words"><span className="lowercase">transactivate</span> white paper</h2>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">White Paper</h2>
       </div>
 
       <div className="border border-brand-steel/20 bg-brand-black/50 p-6 sm:p-8 md:p-12 hover:border-brand-gold/50 transition-colors duration-500 group flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start lg:items-center relative overflow-hidden">
