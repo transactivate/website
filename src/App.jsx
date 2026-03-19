@@ -138,8 +138,7 @@ function App() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-10 text-xs items-center tracking-widest font-semibold uppercase">
-          <button onClick={() => handleNavClick('buyers')} className="nav-link">Buy-Side</button>
-          <button onClick={() => handleNavClick('sellers')} className="nav-link">Sell-Side</button>
+          <button onClick={() => handleNavClick('solution')} className="nav-link">Solution</button>
           <button onClick={() => handleNavClick('faq')} className="nav-link">FAQ</button>
           <button onClick={() => handleNavClick('whitepapers')} className="nav-link"><span className="lowercase">transactivate</span> white paper</button>
           <button 
@@ -162,16 +161,10 @@ function App() {
           >
             <div className="flex flex-col items-center gap-8 w-full max-w-sm">
               <button 
-                onClick={() => handleNavClick('buyers')} 
+                onClick={() => handleNavClick('solution')} 
                 className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
               >
-                Buy-Side
-              </button>
-              <button 
-                onClick={() => handleNavClick('sellers')} 
-                className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
-              >
-                Sell-Side
+                Solution
               </button>
               <button 
                 onClick={() => handleNavClick('faq')} 
@@ -277,8 +270,8 @@ const LandingKey = ({ onNavigate }) => (
 );
 
 const MethodologyKey = () => (
-  <section className="py-32 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
-    <h2 className="text-3xl md:text-4xl font-light text-white tracking-[0.2em] uppercase mb-12 text-center">transactivate's Role</h2>
+  <section id="solution" className="scroll-mt-24 py-32 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+    <h2 className="text-3xl md:text-4xl font-light text-white tracking-[0.2em] uppercase mb-12 text-center">transactivate's Solution</h2>
 
     {/* PHASE 01: UNIFIED CONTEXT */}
     <div className="w-full max-w-4xl bg-black/50 border border-slate-800 rounded-none p-8 lg:p-10 mb-0 relative overflow-hidden group hover:border-slate-600 transition-colors duration-500">
@@ -308,40 +301,40 @@ const MethodologyKey = () => (
 
       {/* LEFT COLUMN (BUY-SIDE) */}
       <div id="buyers" className="scroll-mt-32 flex flex-col gap-5 lg:pr-8">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-1.5 h-1.5 bg-white animate-pulse rounded-full"></div>
-          <h4 className="font-mono text-[11px] tracking-[0.2em] text-white uppercase">[ Buy-Side : Asset Targeting ]</h4>
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-1.5 h-1.5 bg-[#d4af37] animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
+          <h4 className="font-mono text-[11px] md:text-[12px] tracking-[0.2em] text-[#d4af37] uppercase font-bold">[ TARGET PATH: BUY-SIDE ]</h4>
         </div>
 
         <motion.div 
-          whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#64748b" }} 
+          whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#d4af37" }} 
           className="p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row"
         >
-          <Building2 className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-white transition-colors" />
+          <Building2 className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
           <div>
-            <h5 className="text-white font-medium mb-1 tracking-wide">Agency Origin</h5>
+            <h5 className="text-white font-medium mb-1 tracking-wide">Desired Agency</h5>
             <p className="text-sm text-slate-400 leading-relaxed">Filtering the dormant SBIR universe by specific federal agency.</p>
           </div>
         </motion.div>
 
         <motion.div 
-          whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#64748b" }} 
+          whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#d4af37" }} 
           className="p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row"
         >
-          <Crosshair className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-white transition-colors" />
+          <Crosshair className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
           <div>
-            <h5 className="text-white font-medium mb-1 tracking-wide">Phase III Intent</h5>
+            <h5 className="text-white font-medium mb-1 tracking-wide">Common Mission</h5>
             <p className="text-sm text-slate-400 leading-relaxed">Mathematical alignment of capability and tech fit to validate your derivation or extension claims.</p>
           </div>
         </motion.div>
 
         <motion.div 
-          whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#64748b" }} 
+          whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#d4af37" }} 
           className="p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row"
         >
-          <Clock className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-white transition-colors" />
+          <Clock className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
           <div>
-            <h5 className="text-white font-medium mb-1 tracking-wide">Time Relevance</h5>
+            <h5 className="text-white font-medium mb-1 tracking-wide">Long Runway</h5>
             <p className="text-sm text-slate-400 leading-relaxed">Calculating expiration horizons per data rights to ensure a long, protected sole-source runway.</p>
           </div>
         </motion.div>
@@ -349,29 +342,37 @@ const MethodologyKey = () => (
 
       {/* RIGHT COLUMN (SELL-SIDE) */}
       <div id="sellers" className="scroll-mt-32 flex flex-col gap-5 lg:pl-8">
-        <div className="flex items-center gap-3 mb-2">
-          <div className="w-1.5 h-1.5 bg-slate-500 animate-pulse rounded-full"></div>
-          <h4 className="font-mono text-[11px] tracking-[0.2em] text-slate-400 uppercase">[ Sell-Side : Buyer Targeting ]</h4>
+        <div className="flex items-center gap-3 mb-6">
+          <div className="w-1.5 h-1.5 bg-[#d4af37] animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
+          <h4 className="font-mono text-[11px] md:text-[12px] tracking-[0.2em] text-[#d4af37] uppercase font-bold">[ TARGET PATH: SELL-SIDE ]</h4>
         </div>
 
         <motion.div 
-          whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#64748b" }} 
+          whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#d4af37" }} 
           className="p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row lg:h-[calc(50%-0.625rem)]"
         >
-          <History className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-white transition-colors" />
+          <History className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
           <div>
             <h5 className="text-white font-medium mb-1 tracking-wide">Previous Successful Buyers</h5>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 mt-3 mb-4 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/10">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse shrink-0 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
+              <span className="text-[#d4af37] text-[9px] sm:text-[10px] font-mono uppercase tracking-widest leading-snug text-left">been there, done that, likely to do it again</span>
+            </div>
             <p className="text-sm text-slate-400 leading-relaxed">Tracking companies that have acquired SBIRs and successfully turned them into multi-million-dollar Phase IIIs.</p>
           </div>
         </motion.div>
 
         <motion.div 
-          whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#64748b" }} 
+          whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#d4af37" }} 
           className="p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row lg:h-[calc(50%-0.625rem)]"
         >
-          <AlertTriangle className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-white transition-colors" />
+          <AlertTriangle className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
           <div>
             <h5 className="text-white font-medium mb-1 tracking-wide">Procurement Situations</h5>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 mt-3 mb-4 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/10">
+              <div className="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse shrink-0 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
+              <span className="text-[#d4af37] text-[9px] sm:text-[10px] font-mono uppercase tracking-widest leading-snug text-left">in a situation right now in which a SBIR could be the optimal solution</span>
+            </div>
             <p className="text-sm text-slate-400 leading-relaxed">Pinpointing Primes facing immediate challenges: active GAO protests, ongoing bridge contracts, or expiring vehicles.</p>
           </div>
         </motion.div>
