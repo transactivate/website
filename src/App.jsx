@@ -138,9 +138,9 @@ function App() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-10 text-xs items-center tracking-widest font-semibold uppercase">
-          <button onClick={() => handleNavClick('buyers')} className="nav-link">Buy-Side Engine</button>
-          <button onClick={() => handleNavClick('sellers')} className="nav-link">Sell-Side Engine</button>
-          <button onClick={() => handleNavClick('engine')} className="nav-link">The Engine</button>
+          <button onClick={() => handleNavClick('buyers')} className="nav-link">Buy-Side</button>
+          <button onClick={() => handleNavClick('sellers')} className="nav-link">Sell-Side</button>
+          <button onClick={() => handleNavClick('engine')} className="nav-link">The Solution</button>
           <button onClick={() => handleNavClick('faq')} className="nav-link">FAQ</button>
           <button onClick={() => handleNavClick('whitepapers')} className="nav-link"><span className="lowercase">transactivate</span> white paper</button>
           <button 
@@ -166,19 +166,19 @@ function App() {
                 onClick={() => handleNavClick('buyers')} 
                 className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
               >
-                Buy-Side Engine
+                Buy-Side
               </button>
               <button 
                 onClick={() => handleNavClick('sellers')} 
                 className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
               >
-                Sell-Side Engine
+                Sell-Side
               </button>
               <button 
                 onClick={() => handleNavClick('engine')} 
                 className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
               >
-                The Engine
+                The Solution
               </button>
               <button 
                 onClick={() => handleNavClick('faq')} 
@@ -259,7 +259,7 @@ const LandingKey = ({ onNavigate }) => (
   >
       <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-[8px] md:text-[10px] uppercase tracking-[0.15em] md:tracking-[0.3em] mb-6 md:mb-12 font-bold max-w-full text-center whitespace-normal">
         <Activity size={12} className="flex-shrink-0" />
-        <span className="break-words">Intelligence Engine Active</span>
+        <span className="break-words">High-Fidelity, Timely Intelligence</span>
       </div>
       
       <h1 className="sr-only">Transactivate</h1>
@@ -403,7 +403,7 @@ const EngineKey = () => (
         <Cpu className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
         <Cpu className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
       </div>
-      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">The <span className="lowercase">transactivate</span> Engine</h2>
+      <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">The Solution</h2>
       <p className="text-brand-steel uppercase tracking-[0.15em] md:tracking-[0.3em] text-[10px] sm:text-xs font-bold break-words whitespace-normal max-w-3xl mx-auto leading-relaxed">
         A proprietary, closed-loop intelligence architecture fusing raw federal data with algorithmic M&A matchmaking.
       </p>
@@ -454,7 +454,7 @@ const EngineKey = () => (
             className="relative"
           >
              <div className="absolute inset-0 bg-brand-gold/5 blur-3xl rounded-full"></div>
-             <img src="/engine-brain.svg" alt="transactivate AI Brain" className="w-full max-w-[240px] lg:max-w-[320px] mx-auto relative z-10 drop-shadow-[0_0_30px_rgba(212,175,55,0.15)]" />
+             <img src="/engine-brain.png" alt="transactivate AI Brain" className="w-full max-w-[280px] lg:max-w-[350px] mx-auto relative z-10 drop-shadow-[0_0_30px_rgba(212,175,55,0.15)]" />
           </motion.div>
           
           <div className="mt-8 relative z-20">
