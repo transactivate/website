@@ -448,13 +448,16 @@ const EngineKey = () => (
       >
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,175,55,0.05)_0%,transparent_60%)] -z-10 animate-pulse"></div>
         <div className="flex flex-col items-center max-w-sm mx-auto text-center border-y border-brand-steel/10 py-12 lg:border-none lg:py-0">
-          <motion.div
-            animate={{ y: [-10, 10, -10] }}
+          <motion.div 
+            animate={{ y: [-10, 10, -10] }} 
             transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-            className="relative"
+            className="flex justify-center w-full mb-8 lg:mb-12 relative z-10"
           >
-             <div className="absolute inset-0 bg-brand-gold/5 blur-3xl rounded-full"></div>
-             <img src="/engine-brain.png" alt="transactivate AI Brain" className="w-full max-w-[280px] lg:max-w-[350px] mx-auto relative z-10 drop-shadow-[0_0_30px_rgba(212,175,55,0.15)]" />
+            <img 
+              src="/hero-bg.png" 
+              alt="transactivate AI Synthesis Brain" 
+              className="w-full max-w-[280px] lg:max-w-[350px] mx-auto drop-shadow-[0_0_30px_rgba(212,175,55,0.15)] object-contain" 
+            />
           </motion.div>
           
           <div className="mt-8 relative z-20">
