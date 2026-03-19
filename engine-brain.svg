@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#D4AF37" stop-opacity="0.3" />
+      <stop offset="100%" stop-color="#000000" stop-opacity="0" />
+    </radialGradient>
+    <filter id="blur">
+      <feGaussianBlur stdDeviation="15" />
+    </filter>
+  </defs>
+  <!-- Background Glow -->
+  <circle cx="200" cy="200" r="150" fill="url(#glow)" filter="url(#blur)" />
+  
+  <!-- Abstract Brain Structure -->
+  <g stroke="#888C8D" stroke-width="1.5" fill="none" opacity="0.8">
+    <!-- Left Hemisphere -->
+    <path d="M200 80 C 120 80, 80 140, 80 200 C 80 260, 140 300, 195 320" />
+    <path d="M200 100 C 140 100, 110 150, 110 200 C 110 240, 150 280, 195 295" />
+    <!-- Right Hemisphere -->
+    <path d="M200 80 C 280 80, 320 140, 320 200 C 320 260, 260 300, 205 320" />
+    <path d="M200 100 C 260 100, 290 150, 290 200 C 290 240, 250 280, 205 295" />
+    
+    <!-- Central Cortex / Circuit lines -->
+    <path d="M200 80 L 200 320" stroke="#D4AF37" stroke-width="2" opacity="0.9" />
+    <path d="M140 160 L 200 180 L 260 160" />
+    <path d="M120 220 L 200 240 L 280 220" />
+    
+    <!-- Connecting Nodes -->
+    <circle cx="200" cy="180" r="4" fill="#D4AF37" stroke="none" />
+    <circle cx="200" cy="240" r="4" fill="#D4AF37" stroke="none" />
+    <circle cx="140" cy="160" r="3" fill="#888C8D" stroke="none" />
+    <circle cx="260" cy="160" r="3" fill="#888C8D" stroke="none" />
+    <circle cx="120" cy="220" r="3" fill="#888C8D" stroke="none" />
+    <circle cx="280" cy="220" r="3" fill="#888C8D" stroke="none" />
+  </g>
+  
+  <!-- Inner core energy -->
+  <circle cx="200" cy="210" r="25" fill="#D4AF37" opacity="0.15" filter="url(#blur)" />
+  <circle cx="200" cy="210" r="8" fill="#D4AF37" opacity="0.8" />
+  
+</svg>
