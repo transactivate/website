@@ -241,15 +241,12 @@ const LandingKey = ({ onNavigate }) => (
       <h1 className="sr-only">Transactivate</h1>
       
       {/* V2 Header Sizing Adjustment - Bulletproof mobile wrapping */}
-      <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] tracking-tighter uppercase px-2 w-full max-w-6xl break-words sm:break-normal">
-        Sole-Source <br className="hidden md:block"/> 
-        <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text whitespace-nowrap md:whitespace-normal">
-          M&A.
-        </span>
+      <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] tracking-tight uppercase px-2 w-full max-w-7xl md:whitespace-nowrap break-words sm:break-normal">
+        Sole-Source <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text">M&A.</span>
       </h2>
       
       <p className="text-brand-steel text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-16 leading-relaxed font-light px-4">
-        The forensic market intelligence engine for SBIR M&A. Leveraging deep federal context and domain experience, we build Generative AI-based custom solutions to secure non-competitive, <strong className="text-white font-medium">unlimited-value sole-source funding.</strong>
+        The Generative AI-driven market intelligence solution for SBIR M&A. <span className="lowercase">transactivate</span> continuously ingests and synthesizes disparate federal datasets to help sellers commercialize their assets and buyers acquire the exact Phase III data rights required to bypass competition and secure uncapped, unlimited funding.
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-xl mx-auto px-4">
