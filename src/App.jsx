@@ -13,6 +13,7 @@ function App() {
   const [scrollY, setScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [activeSection, setActiveSection] = useState('landing');
 
   // Handle scroll parallax and monitoring
   useEffect(() => {
@@ -49,13 +50,40 @@ function App() {
     }
   }, [isMobileMenuOpen]);
 
+  // Handle Intersection Observer for Active Nav State
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+            window.history.replaceState(null, '', `#${entry.target.id}`);
+          }
+        });
+      },
+      { rootMargin: '-20% 0px -80% 0px' }
+    );
+
+    const sections = ['landing', 'solution', 'faq', 'whitepapers', 'contact'];
+    sections.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleNavClick = (id) => {
     setIsMobileMenuOpen(false);
     const element = document.getElementById(id);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
+      window.history.pushState(null, '', `#${id}`);
+      setActiveSection(id);
     } else if (id === 'landing') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
+      window.history.pushState(null, '', '#landing');
+      setActiveSection('landing');
     }
   };
 
@@ -138,9 +166,9 @@ function App() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-10 text-xs items-center tracking-widest font-semibold uppercase">
-          <button onClick={() => handleNavClick('solution')} className="nav-link">Solution</button>
-          <button onClick={() => handleNavClick('faq')} className="nav-link">FAQ</button>
-          <button onClick={() => handleNavClick('whitepapers')} className="nav-link">White Paper</button>
+          <button onClick={() => handleNavClick('solution')} className={`nav-link ${activeSection === 'solution' ? '!text-brand-gold' : ''}`}>Solution</button>
+          <button onClick={() => handleNavClick('faq')} className={`nav-link ${activeSection === 'faq' ? '!text-brand-gold' : ''}`}>FAQ</button>
+          <button onClick={() => handleNavClick('whitepapers')} className={`nav-link ${activeSection === 'whitepapers' ? '!text-brand-gold' : ''}`}>White Paper</button>
           <button 
             onClick={() => handleNavClick('contact')} 
             className="px-6 py-2 border border-brand-steel/30 text-brand-light_steel hover:bg-brand-gold hover:text-brand-black hover:border-brand-gold transition-all duration-300"
@@ -162,19 +190,19 @@ function App() {
             <div className="flex flex-col items-center gap-8 w-full max-w-sm">
               <button 
                 onClick={() => handleNavClick('solution')} 
-                className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
+                className={`w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 transition-colors ${activeSection === 'solution' ? 'text-brand-gold' : 'text-white hover:text-brand-gold'}`}
               >
                 Solution
               </button>
               <button 
                 onClick={() => handleNavClick('faq')} 
-                className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
+                className={`w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 transition-colors ${activeSection === 'faq' ? 'text-brand-gold' : 'text-white hover:text-brand-gold'}`}
               >
                 FAQ
               </button>
               <button 
                 onClick={() => handleNavClick('whitepapers')} 
-                className="w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 text-white hover:text-brand-gold transition-colors"
+                className={`w-full py-4 text-center uppercase tracking-[0.2em] font-bold text-sm border-b border-brand-steel/20 transition-colors ${activeSection === 'whitepapers' ? 'text-brand-gold' : 'text-white hover:text-brand-gold'}`}
               >
                 White Paper
               </button>
