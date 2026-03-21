@@ -245,8 +245,8 @@ const LandingKey = ({ onNavigate }) => (
         Sole-Source <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text">M&A.</span>
       </h2>
       
-      <p className="text-brand-steel text-base sm:text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-16 leading-relaxed font-light px-4">
-        The Generative AI-driven market intelligence solution for SBIR M&A. <span className="lowercase">transactivate</span> continuously ingests and synthesizes disparate federal datasets to help sellers commercialize their assets and buyers acquire the exact Phase III data rights required to bypass competition and secure uncapped, unlimited funding.
+      <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-16 leading-relaxed font-normal px-4">
+        <span className="font-bold lowercase">transactivate</span> helps sellers commercialize their SBIRs and buyers acquire the Phase III data rights required to bypass competition and secure uncapped, unlimited SBIR Phase III funding.
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-xl mx-auto px-4">
