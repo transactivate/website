@@ -265,7 +265,7 @@ const LandingKey = ({ onNavigate }) => (
       <h1 className="sr-only">Transactivate</h1>
       
       {/* V2 Header Sizing Adjustment - Bulletproof mobile wrapping */}
-      <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] tracking-tight uppercase px-2 w-full max-w-7xl md:whitespace-nowrap break-words sm:break-normal">
+      <h2 className="text-[2.5rem] sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] tracking-tight uppercase px-2 w-full max-w-7xl md:whitespace-nowrap break-words sm:break-normal">
         Sole-Source <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text">SBIR M&A.</span>
       </h2>
       
@@ -424,7 +424,8 @@ const FaqKey = () => (
           <FileText className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
           <FileText className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
         </div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">[ Statutory Authority ]</h2>
+        <p className="font-mono text-[10px] sm:text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] font-bold text-[#d4af37] uppercase mb-4 break-words whitespace-normal">[ FAQ ]</p>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">Statutory Authority on Phase III Rights and Awards</h2>
         <p className="text-slate-400 max-w-2xl mx-auto text-center mt-4 mb-12">
           The federal statutes, FAR directives, and policy precedents that explicitly authorize Prime Contractors to bypass traditional competition and secure non-competitive, unlimited-value awards.
         </p>
