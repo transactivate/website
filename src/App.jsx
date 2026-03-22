@@ -261,20 +261,22 @@ const LandingKey = ({ onNavigate }) => (
     transition={{ duration: 0.8, ease: "easeOut" }}
     className="w-full max-w-7xl mx-auto flex flex-col items-center justify-center min-h-[90vh] px-6 md:px-8 text-center pb-20"
   >
-      <div className="inline-flex items-center gap-2 px-3 py-1.5 md:px-4 border border-brand-gold/30 bg-brand-gold/5 text-brand-gold text-[8px] md:text-[10px] uppercase tracking-[0.15em] md:tracking-[0.3em] mb-6 md:mb-12 font-bold max-w-full text-center whitespace-normal">
-        <Activity size={12} className="flex-shrink-0" />
-        <span className="break-words">High-Fidelity, Timely Intelligence</span>
+      <div className="flex justify-center mb-6">
+        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/10">
+          <div className="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
+          <span className="text-[#d4af37] text-[10px] sm:text-xs font-mono uppercase tracking-widest font-bold">High-Fidelity, Timely SBIR Intelligence</span>
+        </div>
       </div>
       
       <h1 className="sr-only">Transactivate</h1>
       
       {/* V2 Header Sizing Adjustment - Bulletproof mobile wrapping */}
       <h2 className="text-4xl sm:text-5xl md:text-7xl lg:text-[5.5rem] font-black text-white mb-6 md:mb-10 leading-[1.1] md:leading-[1] tracking-tight uppercase px-2 w-full max-w-7xl md:whitespace-nowrap break-words sm:break-normal">
-        Sole-Source <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text">M&A.</span>
+        Sole-Source <span className="text-transparent bg-clip-text bg-gradient-to-br from-brand-gold via-brand-light_steel to-white glow-text">SBIR M&A.</span>
       </h2>
       
       <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-16 leading-relaxed font-normal px-4">
-        <span className="font-bold lowercase">transactivate</span> helps sellers commercialize their SBIRs and buyers acquire the Phase III data rights required to bypass competition and secure uncapped, unlimited SBIR Phase III funding.
+        Powered by Generative AI, <span className="font-bold lowercase">transactivate</span> helps sellers commercialize their SBIRs and buyers acquire the Phase III data rights required to bypass competition and secure uncapped, unlimited, sole-source Phase III funding.
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-xl mx-auto px-4">
