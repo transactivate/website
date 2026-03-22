@@ -309,7 +309,7 @@ const MethodologyKey = () => (
     <div className="w-full max-w-5xl text-center mb-12 mt-8">
       <h3 className="text-2xl font-light text-white mb-4">02 // AI-Driven Data Synthesis</h3>
       <p className="text-slate-400 text-lg max-w-3xl mx-auto">
-        We continuously ingest, analyze, and synthesize federal data. We mathematically rank and match the market using these precise targeting vectors:
+        We then use Generative AI to synthesize myriad structured and unstructured federal data sources to architect an optimized origination strategy based on the following precise targeting vectors:
       </p>
     </div>
 
@@ -407,7 +407,7 @@ const MethodologyKey = () => (
       </div>
       <h3 className="text-xl font-medium text-white mb-4">Customized Execution</h3>
       <p className="text-slate-400 text-lg leading-relaxed">
-        We operationalize our intelligence through customized, timely outreach directly to executive decision-makers. The result is absolute alignment: the right buyer, the right seller, and the right asset, at the exact right time.
+        We operationalize our intelligence via customized, timely outreach to key decision-makers. The right buyer, the right seller, and the right asset, at the exact right time.
       </p>
     </div>
 
