@@ -60,7 +60,7 @@ const IntelligenceBriefPDF = () => {
         <div className="max-w-none">
           
           {/* Section 1 */}
-          <section className="mb-16 print:mb-10 print:break-inside-avoid">
+          <section className="mb-16 print:mb-10 print:break-inside-auto print:break-before-auto print:break-after-auto print:min-h-0 print:h-auto print:block">
             <h2 className="text-2xl font-black uppercase tracking-widest text-white print:text-slate-900 mb-6 flex items-center gap-4 border-b border-brand-steel/10 print:border-slate-200 pb-4">
               <span className="text-brand-gold print:text-slate-400">01.</span> Executive Summary
             </h2>
@@ -75,7 +75,7 @@ const IntelligenceBriefPDF = () => {
           </section>
 
           {/* Section 2 */}
-          <section className="mb-16 print:mb-10 print:break-inside-avoid">
+          <section className="mb-16 print:mb-10 print:break-inside-auto print:break-before-auto print:break-after-auto print:min-h-0 print:h-auto print:block">
             <h2 className="text-2xl font-black uppercase tracking-widest text-white print:text-slate-900 mb-6 flex items-center gap-4 border-b border-brand-steel/10 print:border-slate-200 pb-4">
               <span className="text-brand-gold print:text-slate-400">02.</span> The Capture Dilemma
             </h2>
@@ -90,7 +90,7 @@ const IntelligenceBriefPDF = () => {
           </section>
 
           {/* Section 3 */}
-          <section className="mb-16 print:mb-10 print:break-inside-avoid">
+          <section className="mb-16 print:mb-10 print:break-inside-auto print:break-before-auto print:break-after-auto print:min-h-0 print:h-auto print:block">
             <h2 className="text-2xl font-black uppercase tracking-widest text-white print:text-slate-900 mb-6 flex items-center gap-4 border-b border-brand-steel/10 print:border-slate-200 pb-4">
               <span className="text-brand-gold print:text-slate-400">03.</span> The Phase III Statutory Exception
             </h2>
@@ -108,7 +108,7 @@ const IntelligenceBriefPDF = () => {
           </section>
 
           {/* Section 4 */}
-          <section className="mb-16 print:mb-10 print:break-inside-avoid">
+          <section className="mb-16 print:mb-10 print:break-inside-auto print:break-before-auto print:break-after-auto print:min-h-0 print:h-auto print:block">
             <h2 className="text-2xl font-black uppercase tracking-widest text-white print:text-slate-900 mb-6 flex items-center gap-4 border-b border-brand-steel/10 print:border-slate-200 pb-4">
               <span className="text-brand-gold print:text-slate-400">04.</span> The M&A Bypass (Successor-in-Interest)
             </h2>
@@ -129,7 +129,7 @@ const IntelligenceBriefPDF = () => {
           </section>
 
           {/* Section 5 */}
-          <section className="mb-16 print:mb-10 print:break-inside-avoid">
+          <section className="mb-16 print:mb-10 print:break-inside-auto print:break-before-auto print:break-after-auto print:min-h-0 print:h-auto print:block">
             <h2 className="text-2xl font-black uppercase tracking-widest text-white print:text-slate-900 mb-6 flex items-center gap-4 border-b border-brand-steel/10 print:border-slate-200 pb-4">
               <span className="text-brand-gold print:text-slate-400">05.</span> transactivate's Role
             </h2>
