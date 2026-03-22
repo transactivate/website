@@ -296,12 +296,12 @@ const MethodologyKey = () => (
       </div>
       <h3 className="text-xl font-medium text-white mb-4">Federal Context & Transaction Experience</h3>
       <p className="text-slate-400 text-lg leading-relaxed">
-        We leverage deep federal domain expertise and specialized SBIR transaction experience to navigate the deluge of open-source data and determine what data matters, why it matters, and how it matters.
+        We leverage deep federal domain expertise and specialized SBIR transaction experience to navigate the deluge of open-source data and determine what data matter and why.
       </p>
     </div>
 
     {/* THE DATA SPINE */}
-    <div className="w-px h-16 bg-gradient-to-b from-slate-600 to-transparent my-2"></div>
+    <div className="w-[2px] h-16 bg-gradient-to-b from-[#d4af37]/80 via-slate-500 to-transparent my-4"></div>
 
     {/* PHASE 02: AI-DRIVEN SYNTHESIS */}
     <div className="w-full max-w-5xl text-center mb-12 mt-8">
@@ -319,7 +319,7 @@ const MethodologyKey = () => (
       <div id="buyers" className="scroll-mt-32 flex flex-col gap-5 lg:pr-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-1.5 h-1.5 bg-[#d4af37] animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
-          <h4 className="font-mono text-[11px] md:text-[12px] tracking-[0.2em] text-[#d4af37] uppercase font-bold">[ TARGET PATH: BUY-SIDE ]</h4>
+          <h4 className="font-mono text-xs md:text-sm tracking-[0.2em] text-[#d4af37] uppercase font-bold drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]">[ TARGET PATH: BUY-SIDE ]</h4>
         </div>
 
         <motion.div 
@@ -360,7 +360,7 @@ const MethodologyKey = () => (
       <div id="sellers" className="scroll-mt-32 flex flex-col gap-5 lg:pl-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-1.5 h-1.5 bg-[#d4af37] animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
-          <h4 className="font-mono text-[11px] md:text-[12px] tracking-[0.2em] text-[#d4af37] uppercase font-bold">[ TARGET PATH: SELL-SIDE ]</h4>
+          <h4 className="font-mono text-xs md:text-sm tracking-[0.2em] text-[#d4af37] uppercase font-bold drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]">[ TARGET PATH: SELL-SIDE ]</h4>
         </div>
 
         <motion.div 
@@ -396,7 +396,7 @@ const MethodologyKey = () => (
     </div>
 
     {/* THE DATA SPINE */}
-    <div className="w-px h-16 bg-gradient-to-t from-slate-600 to-transparent my-2"></div>
+    <div className="w-[2px] h-16 bg-gradient-to-t from-[#d4af37]/80 via-slate-500 to-transparent my-4"></div>
 
     {/* PHASE 03: UNIFIED EXECUTION */}
     <div className="w-full max-w-4xl bg-black/50 border border-slate-800 rounded-none p-8 lg:p-10 mb-0 relative overflow-hidden group hover:border-slate-600 transition-colors duration-500 mt-8">
