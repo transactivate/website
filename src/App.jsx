@@ -270,7 +270,7 @@ const LandingKey = ({ onNavigate }) => (
       </h2>
       
       <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-16 leading-relaxed font-normal px-4">
-        Powered by Generative AI, <span className="font-bold lowercase">transactivate</span> helps sellers commercialize and monetize their SBIRs and buyers acquire the Phase III rights required to bypass competition and secure uncapped, unlimited, sole-source Phase III funding.
+        Powered by Generative AI, <span className="font-bold lowercase">transactivate</span> helps sellers commercialize and monetize their SBIRs and buyers acquire the Phase III rights required to bypass competition and secure unlimited, sole-source Phase III funding.
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-xl mx-auto px-4">
@@ -424,8 +424,10 @@ const FaqKey = () => (
           <FileText className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
           <FileText className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
         </div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">[ Frequently Asked Questions ]</h2>
-        <p className="text-brand-steel uppercase tracking-[0.15em] md:tracking-[0.3em] text-[9px] sm:text-[10px] md:text-xs font-bold break-words whitespace-normal">Statutory Authority</p>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">[ Statutory Authority ]</h2>
+        <p className="text-slate-400 max-w-2xl mx-auto text-center mt-4 mb-12">
+          The federal statutes, FAR directives, and policy precedents that explicitly authorize Prime Contractors to bypass traditional competition and secure non-competitive, unlimited-value awards.
+        </p>
       </div>
 
       <div className="border-t border-brand-steel/20">
@@ -545,7 +547,7 @@ const WhitepapersKey = () => (
         </div>
         
         <a 
-          href="mailto:chris@transactivate.ai?subject=Requesting Access: M&A-Driven Capture White Paper"
+          href="mailto:founder@transactivate.ai?subject=Requesting Access: M&A-Driven Capture White Paper"
           className="relative z-10 flex-shrink-0 px-6 md:px-8 py-3 md:py-4 border border-brand-steel/40 text-brand-gold bg-brand-gold/5 uppercase tracking-[0.2em] text-xs font-bold hover:bg-brand-gold hover:text-brand-black transition-all duration-300 flex items-center gap-3 group-hover:border-brand-gold w-full lg:w-auto justify-center"
         >
           Request Access <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -572,10 +574,10 @@ const ContactKey = () => (
     </p>
 
     <a 
-      href="mailto:chris@transactivate.ai" 
+      href="mailto:founder@transactivate.ai" 
       className="inline-flex btn-primary items-center justify-center gap-3 md:gap-4 text-xs sm:text-sm md:text-lg px-6 py-4 md:px-12 md:py-6 relative group border border-brand-gold hover:border-white transition-colors"
     >
-      <span className="relative z-10 uppercase tracking-[0.15em] md:tracking-[0.2em] font-black">chris@transactivate.ai</span>
+      <span className="relative z-10 uppercase tracking-[0.15em] md:tracking-[0.2em] font-black">founder@transactivate.ai</span>
       <ArrowUpRight size={16} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
     </a>
   </motion.div>
