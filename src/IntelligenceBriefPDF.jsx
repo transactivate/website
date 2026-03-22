@@ -137,19 +137,26 @@ const IntelligenceBriefPDF = () => {
               <p>
                 Executing SBIR M&A requires exact timing and precision. transactivate fuses deep federal context and domain experience with advanced data forensics to create non-competitive, unlimited-value, sole-source outcomes through a three-step process:
               </p>
+
+              <div className="space-y-4 mt-6">
+                <p><span className="font-bold text-white print:text-slate-900">Federal Context & Transaction Experience:</span> We leverage deep federal domain expertise and specialized SBIR transaction experience to navigate the deluge of open-source data and determine what data matter and why.</p>
+                
+                <p><span className="font-bold text-white print:text-slate-900">AI-Driven Data Synthesis:</span> We then use Generative AI to synthesize myriad structured and unstructured federal data sources to architect an optimized origination strategy based on the following vectors:</p>
+                
+                <div className="pl-4 md:pl-8 border-l border-brand-gold/30 print:border-slate-300 space-y-4 my-6">
+                  <p className="text-xs uppercase tracking-widest font-mono text-brand-gold print:text-slate-500 font-bold mb-2">[ TARGET PATH: BUY-SIDE ]</p>
+                  <p><span className="font-bold text-white print:text-slate-900">Desired Agency:</span> Filtering the SBIR universe by your chosen customer.</p>
+                  <p><span className="font-bold text-white print:text-slate-900">Common Mission:</span> Ranking fit to validate your derivation or extension claim.</p>
+                  <p><span className="font-bold text-white print:text-slate-900">Long Runway:</span> Ensuring you have a long, protected Phase III runway.</p>
+                  
+                  <p className="text-xs uppercase tracking-widest font-mono text-brand-gold print:text-slate-500 font-bold mb-2 mt-8">[ TARGET PATH: SELL-SIDE ]</p>
+                  <p><span className="font-bold text-white print:text-slate-900">Previous Successful Buyers (been there, done that... likely to do it again):</span> Discovering companies that have acquired SBIRs and successfully turned them into multi-million-dollar Phase IIIs.</p>
+                  <p><span className="font-bold text-white print:text-slate-900">Pressing Procurement Situations (Facing a contracting problem a SBIR could solve):</span> Pinpointing prime contractors facing relevant procurement challenges: contract protests, bridges, extensions, etc.</p>
+                </div>
+                
+                <p><span className="font-bold text-white print:text-slate-900">Customized Execution:</span> We operationalize our intelligence via customized, timely outreach to key decision-makers. The right buyer, the right seller, and the right asset, at the exact right time.</p>
+              </div>
             </div>
-            
-            <ol className="text-base md:text-lg leading-relaxed text-brand-light_steel print:text-slate-700 space-y-6 font-light list-decimal pl-6 print:pl-8">
-              <li className="pl-2">
-                <span className="font-bold text-white print:text-slate-900">Federal Context & Transaction Experience:</span> We leverage deep federal domain expertise and specialized SBIR transaction experience to navigate the deluge of open-source data and determine what data matters, why it matters, and how it matters.
-              </li>
-              <li className="pl-2">
-                <span className="font-bold text-white print:text-slate-900">AI-Driven Data Synthesis:</span> We continuously ingest, analyze, and synthesize the data to create Generative AI-based custom solutions that track companies that have acquired SBIRs and successfully turned them into multi-million-dollar Phase IIIs (i.e., been there, done that, likely to do it again), pinpoint Primes facing immediate procurement challenges (e.g., active protests, ongoing bridge contracts, expiring vehicles), and (for buyers) mathematically rank the entire "dormant" SBIR universe (i.e., those that did not advance to Phase III and that are therefore still actionable) based on agency, Phase III technology / capability / mission intent (for your derivation / extension / completion claim), and time-relevance (to ensure you have a long runway of data rights to secure and monetize your Phase III).
-              </li>
-              <li className="pl-2">
-                <span className="font-bold text-white print:text-slate-900">Customized Execution:</span> We operationalize our intelligence through customized, timely outreach directly to executive decision-makers. The result is absolute alignment: the right buyer, the right seller, and the right asset, at the exact right time.
-              </li>
-            </ol>
           </section>
 
         </div>

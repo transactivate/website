@@ -424,11 +424,8 @@ const FaqKey = () => (
           <FileText className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
           <FileText className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
         </div>
-        <p className="font-mono text-[10px] sm:text-xs md:text-sm tracking-[0.2em] md:tracking-[0.3em] font-bold text-[#d4af37] uppercase mb-4 break-words whitespace-normal">[ FAQ ]</p>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">Statutory Authority on Phase III Rights and Awards</h2>
-        <p className="text-slate-400 max-w-2xl mx-auto text-center mt-4 mb-12">
-          The federal statutes, FAR directives, and policy precedents that explicitly authorize Prime Contractors to bypass traditional competition and secure non-competitive, unlimited-value awards.
-        </p>
+        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight uppercase mb-2">FAQ</h2>
+        <p className="text-[#d4af37] font-mono tracking-widest uppercase text-sm md:text-base mt-4 mb-12">Statutory Authority on Phase III Rights and Awards</p>
       </div>
 
       <div className="border-t border-brand-steel/20">
