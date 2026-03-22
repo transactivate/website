@@ -318,7 +318,7 @@ const MethodologyKey = () => (
       <div className="hidden lg:block absolute inset-y-0 left-1/2 w-px bg-slate-800/50"></div>
 
       {/* LEFT COLUMN (BUY-SIDE) */}
-      <div id="buyers" className="scroll-mt-32 flex flex-col gap-5 lg:pr-8">
+      <div id="buyers" className="scroll-mt-32 flex flex-col h-full gap-5 lg:pr-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-1.5 h-1.5 bg-[#d4af37] animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
           <h4 className="font-mono text-xs md:text-sm tracking-[0.2em] text-[#d4af37] uppercase font-bold drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]">[ TARGET PATH: BUY-SIDE ]</h4>
@@ -326,10 +326,10 @@ const MethodologyKey = () => (
 
         <motion.div 
           whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#d4af37" }} 
-          className="p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row"
+          className="flex-1 p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row"
         >
           <Building2 className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
-          <div>
+          <div className="flex flex-col justify-center">
             <h5 className="text-white font-medium mb-1 tracking-wide">Desired Agency</h5>
             <p className="text-sm text-slate-400 leading-relaxed">Filtering the SBIR universe by your chosen customer.</p>
           </div>
@@ -337,10 +337,10 @@ const MethodologyKey = () => (
 
         <motion.div 
           whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#d4af37" }} 
-          className="p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row"
+          className="flex-1 p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row"
         >
           <Crosshair className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
-          <div>
+          <div className="flex flex-col justify-center">
             <h5 className="text-white font-medium mb-1 tracking-wide">Common Mission</h5>
             <p className="text-sm text-slate-400 leading-relaxed">Ranking fit to validate your derivation or extension claim.</p>
           </div>
@@ -348,18 +348,18 @@ const MethodologyKey = () => (
 
         <motion.div 
           whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#d4af37" }} 
-          className="p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row"
+          className="flex-1 p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row"
         >
           <Clock className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
-          <div>
+          <div className="flex flex-col justify-center">
             <h5 className="text-white font-medium mb-1 tracking-wide">Long Runway</h5>
-            <p className="text-sm text-slate-400 leading-relaxed">Calculating data rights to ensure you have a long Phase III runway.</p>
+            <p className="text-sm text-slate-400 leading-relaxed">Ensuring you have a long, protected Phase III runway.</p>
           </div>
         </motion.div>
       </div>
 
       {/* RIGHT COLUMN (SELL-SIDE) */}
-      <div id="sellers" className="scroll-mt-32 flex flex-col gap-5 lg:pl-8">
+      <div id="sellers" className="scroll-mt-32 flex flex-col h-full gap-5 lg:pl-8">
         <div className="flex items-center gap-3 mb-6">
           <div className="w-1.5 h-1.5 bg-[#d4af37] animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
           <h4 className="font-mono text-xs md:text-sm tracking-[0.2em] text-[#d4af37] uppercase font-bold drop-shadow-[0_0_8px_rgba(212,175,55,0.8)]">[ TARGET PATH: SELL-SIDE ]</h4>
@@ -367,10 +367,10 @@ const MethodologyKey = () => (
 
         <motion.div 
           whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#d4af37" }} 
-          className="p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row lg:h-[calc(50%-0.625rem)]"
+          className="flex-1 p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row"
         >
           <History className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
-          <div>
+          <div className="flex flex-col justify-center">
             <h5 className="text-white font-medium mb-1 tracking-wide">Previous Successful Buyers</h5>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 mt-3 mb-4 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/10">
               <div className="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse shrink-0 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
@@ -382,10 +382,10 @@ const MethodologyKey = () => (
 
         <motion.div 
           whileHover={{ scale: 1.02, backgroundColor: "rgba(15, 23, 42, 0.8)", borderColor: "#d4af37" }} 
-          className="p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row lg:h-[calc(50%-0.625rem)]"
+          className="flex-1 p-6 rounded-none border border-slate-800 bg-black/40 transition-all duration-300 group cursor-default flex flex-col sm:flex-row"
         >
           <AlertTriangle className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
-          <div>
+          <div className="flex flex-col justify-center">
             <h5 className="text-white font-medium mb-1 tracking-wide">Immediate Procurement Situations</h5>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 mt-3 mb-4 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/10">
               <div className="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse shrink-0 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
