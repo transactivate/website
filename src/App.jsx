@@ -309,7 +309,7 @@ const MethodologyKey = () => (
     <div className="w-full max-w-5xl text-center mb-12 mt-8">
       <h3 className="text-2xl font-light text-white mb-4">02 // AI-Driven Data Synthesis</h3>
       <p className="text-slate-400 text-lg max-w-3xl mx-auto">
-        We then use Generative AI to synthesize myriad structured and unstructured federal data sources to architect an optimized origination strategy based on the following precise targeting vectors:
+        We then use Generative AI to synthesize myriad structured and unstructured federal data sources to architect an optimized origination strategy based on the following vectors:
       </p>
     </div>
 
@@ -374,9 +374,9 @@ const MethodologyKey = () => (
             <h5 className="text-white font-medium mb-1 tracking-wide">Previous Successful Buyers</h5>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 mt-3 mb-4 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/10">
               <div className="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse shrink-0 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
-              <span className="text-[#d4af37] text-[9px] sm:text-[10px] font-mono uppercase tracking-widest leading-snug text-left">been there, done that, likely to do it again</span>
+              <span className="text-[#d4af37] text-[9px] sm:text-[10px] font-mono uppercase tracking-widest leading-snug text-left">been there, done that... likely to do it again</span>
             </div>
-            <p className="text-sm text-slate-400 leading-relaxed">Tracking companies that have acquired SBIRs and successfully turned them into multi-million-dollar Phase IIIs.</p>
+            <p className="text-sm text-slate-400 leading-relaxed">Discovering companies that have acquired SBIRs and successfully turned them into multi-million-dollar Phase IIIs.</p>
           </div>
         </motion.div>
 
@@ -389,9 +389,9 @@ const MethodologyKey = () => (
             <h5 className="text-white font-medium mb-1 tracking-wide">Procurement Situations</h5>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 mt-3 mb-4 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/10">
               <div className="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse shrink-0 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
-              <span className="text-[#d4af37] text-[9px] sm:text-[10px] font-mono uppercase tracking-widest leading-snug text-left">in a situation right now in which a SBIR could be the optimal solution</span>
+              <span className="text-[#d4af37] text-[9px] sm:text-[10px] font-mono uppercase tracking-widest leading-snug text-left">in a situation right now a SBIR could solve</span>
             </div>
-            <p className="text-sm text-slate-400 leading-relaxed">Pinpointing Primes facing immediate challenges: active GAO protests, ongoing bridge contracts, or expiring vehicles.</p>
+            <p className="text-sm text-slate-400 leading-relaxed">Pinpointing prime contractors facing relevant procurement challenges: contract protests, bridges, extensions, etc.</p>
           </div>
         </motion.div>
       </div>
