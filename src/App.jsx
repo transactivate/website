@@ -224,28 +224,22 @@ function App() {
         
         <MethodologyKey />
 
-        <section id="faq">
+        <section id="faq" className="scroll-mt-32">
            <FaqKey />
         </section>
 
-        <section id="whitepapers">
+        <section id="whitepapers" className="scroll-mt-32">
            <WhitepapersKey />
         </section>
 
-        <section id="contact">
+        <section id="contact" className="scroll-mt-32">
            <ContactKey />
         </section>
       </main>
 
       <footer className="relative z-50 py-12 md:py-24 border-t border-brand-steel/10 text-center flex flex-col items-center gap-6 md:gap-8">
-        <div className="flex gap-2 text-brand-gold mb-4">
-           <div className="w-1 h-1 bg-brand-gold rounded-full"></div>
-           <div className="w-1 h-1 bg-brand-gold/50 rounded-full"></div>
-           <div className="w-1 h-1 bg-brand-gold/20 rounded-full"></div>
-        </div>
-        <Hexagon size={24} className="text-brand-steel/20" />
         <p className="text-brand-steel/40 uppercase tracking-[0.4em] text-[8px] md:text-[10px] font-bold">
-          &copy; 2026 TRANSACTIVATE. <br className="md:hidden" /> FORENSIC MARKET INTELLIGENCE.
+          &copy; 2026 TRANSACTIVATE. <br className="md:hidden" /> High-Fidelity, Timely SBIR Intelligence
         </p>
       </footer>
     </div>
@@ -276,7 +270,7 @@ const LandingKey = ({ onNavigate }) => (
       </h2>
       
       <p className="text-slate-300 text-lg md:text-xl max-w-3xl mx-auto mb-10 md:mb-16 leading-relaxed font-normal px-4">
-        Powered by Generative AI, <span className="font-bold lowercase">transactivate</span> helps sellers commercialize their SBIRs and buyers acquire the Phase III data rights required to bypass competition and secure uncapped, unlimited, sole-source Phase III funding.
+        Powered by Generative AI, <span className="font-bold lowercase">transactivate</span> helps sellers commercialize and monetize their SBIRs and buyers acquire the Phase III rights required to bypass competition and secure uncapped, unlimited, sole-source Phase III funding.
       </p>
       
       <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center w-full max-w-xl mx-auto px-4">
@@ -292,8 +286,8 @@ const MethodologyKey = () => (
     <h2 className="text-3xl md:text-4xl font-light text-white tracking-[0.2em] uppercase mb-12 text-center">transactivate's Solution</h2>
 
     {/* PHASE 01: UNIFIED CONTEXT */}
-    <div className="w-full max-w-4xl bg-black/50 border border-slate-800 rounded-none p-8 lg:p-10 mb-0 relative overflow-hidden group hover:border-slate-600 transition-colors duration-500">
-      <div className="font-mono text-[11px] tracking-[0.2em] text-slate-500 uppercase mb-4 flex items-center gap-3">
+    <div className="w-full max-w-4xl bg-black/50 border border-slate-800 rounded-none p-8 lg:p-10 mb-0 relative overflow-hidden group transition-all duration-300 hover:border-[#d4af37]/50 hover:bg-[#d4af37]/5">
+      <div className="font-mono text-[11px] tracking-[0.2em] text-slate-500 group-hover:text-[#d4af37] transition-colors duration-300 uppercase mb-4 flex items-center gap-3">
         <Database className="w-4 h-4" /> 01 // Foundation
       </div>
       <h3 className="text-xl font-medium text-white mb-4">Federal Context & Transaction Experience</h3>
@@ -386,10 +380,10 @@ const MethodologyKey = () => (
         >
           <AlertTriangle className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
           <div className="flex flex-col justify-center">
-            <h5 className="text-white font-medium mb-1 tracking-wide">Immediate Procurement Situations</h5>
+            <h5 className="text-white font-medium mb-1 tracking-wide">Pressing Procurement Situations</h5>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 mt-3 mb-4 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/10">
               <div className="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse shrink-0 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
-              <span className="text-[#d4af37] text-[9px] sm:text-[10px] font-mono uppercase tracking-widest leading-snug text-left">Facing a problem right now a SBIR could solve</span>
+              <span className="text-[#d4af37] text-[9px] sm:text-[10px] font-mono uppercase tracking-widest leading-snug text-left">Facing a contracting problem a SBIR could solve</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">Pinpointing prime contractors facing relevant procurement challenges: contract protests, bridges, extensions, etc.</p>
           </div>
@@ -401,8 +395,8 @@ const MethodologyKey = () => (
     <div className="w-[2px] h-16 bg-gradient-to-t from-[#d4af37]/80 via-slate-500 to-transparent my-4"></div>
 
     {/* PHASE 03: UNIFIED EXECUTION */}
-    <div className="w-full max-w-4xl bg-black/50 border border-slate-800 rounded-none p-8 lg:p-10 mb-0 relative overflow-hidden group hover:border-slate-600 transition-colors duration-500 mt-8">
-      <div className="font-mono text-[11px] tracking-[0.2em] text-slate-500 uppercase mb-4 flex items-center gap-3">
+    <div className="w-full max-w-4xl bg-black/50 border border-slate-800 rounded-none p-8 lg:p-10 mb-0 relative overflow-hidden group transition-all duration-300 hover:border-[#d4af37]/50 hover:bg-[#d4af37]/5 mt-8">
+      <div className="font-mono text-[11px] tracking-[0.2em] text-slate-500 group-hover:text-[#d4af37] transition-colors duration-300 uppercase mb-4 flex items-center gap-3">
         <Zap className="w-4 h-4" /> 03 // The Strike
       </div>
       <h3 className="text-xl font-medium text-white mb-4">Customized Execution</h3>
@@ -430,16 +424,16 @@ const FaqKey = () => (
           <FileText className="text-brand-gold -rotate-45 block md:hidden" size={20} strokeWidth={1} />
           <FileText className="text-brand-gold -rotate-45 hidden md:block" size={24} strokeWidth={1} />
         </div>
-        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">FAQ</h2>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter mb-4 leading-[1] md:leading-[0.9] break-words">[ Frequently Asked Questions ]</h2>
         <p className="text-brand-steel uppercase tracking-[0.15em] md:tracking-[0.3em] text-[9px] sm:text-[10px] md:text-xs font-bold break-words whitespace-normal">Statutory Authority</p>
       </div>
 
       <div className="border-t border-brand-steel/20">
         <FaqItem 
-          question="Successor-in-Interest Precedents"
+          question="Can Phase III rights be acquired without a novation?"
           answer={
             <>
-              The Federal Register explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete.
+              The Federal Register explicitly confirms that a firm may be considered a full successor-in-interest if it secures the transfer of the assets involved in performing the Phase I/II award. This allows the new owner to receive Phase III awards without a novation if the original performance is complete.
             </>
           }
           citations={
@@ -451,10 +445,10 @@ const FaqKey = () => (
         />
         
         <FaqItem 
-          question="Statutory Authority Exceptions"
+          question="Does a sole-source Phase III require a J&A?"
           answer={
             <>
-              Phase III awards are statutorily authorized to be made on a sole-source basis. The competition requirement is considered satisfied by the original Phase I/II competition. No further J&A (Justification and Approval) is typically needed beyond citing the statute.
+              Phase III awards are statutorily authorized to be made on a sole-source basis. The competition requirement is considered satisfied by the original Phase I/II competition. Therefore, no further J&A (Justification and Approval) is typically needed beyond citing the statute.
             </>
           }
           citations={
@@ -551,7 +545,7 @@ const WhitepapersKey = () => (
         </div>
         
         <a 
-          href="mailto:founder@transactivate.ai?subject=Requesting Access: M&A-Driven Capture White Paper"
+          href="mailto:chris@transactivate.ai?subject=Requesting Access: M&A-Driven Capture White Paper"
           className="relative z-10 flex-shrink-0 px-6 md:px-8 py-3 md:py-4 border border-brand-steel/40 text-brand-gold bg-brand-gold/5 uppercase tracking-[0.2em] text-xs font-bold hover:bg-brand-gold hover:text-brand-black transition-all duration-300 flex items-center gap-3 group-hover:border-brand-gold w-full lg:w-auto justify-center"
         >
           Request Access <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -571,17 +565,17 @@ const ContactKey = () => (
   >
     <Crosshair className="text-brand-gold mx-auto mb-6 md:mb-8" size={32} strokeWidth={1} />
     <h2 className="text-4xl sm:text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-4 md:mb-6">
-      Initiate Protocol
+      Initiate Contact
     </h2>
     <p className="text-brand-steel mb-8 md:mb-12 font-light text-base sm:text-lg md:text-2xl max-w-2xl mx-auto tracking-wide px-4">
-      Connect the right buyer, <br className="hidden md:block"/>to the right asset, at the exact right moment.
+      Connecting the right buyer, the right seller, and the right asset, at the exact right time.
     </p>
 
     <a 
-      href="mailto:founder@transactivate.ai" 
+      href="mailto:chris@transactivate.ai" 
       className="inline-flex btn-primary items-center justify-center gap-3 md:gap-4 text-xs sm:text-sm md:text-lg px-6 py-4 md:px-12 md:py-6 relative group border border-brand-gold hover:border-white transition-colors"
     >
-      <span className="relative z-10 uppercase tracking-[0.15em] md:tracking-[0.2em] font-black">founder@transactivate.ai</span>
+      <span className="relative z-10 uppercase tracking-[0.15em] md:tracking-[0.2em] font-black">chris@transactivate.ai</span>
       <ArrowUpRight size={16} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
     </a>
   </motion.div>
