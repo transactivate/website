@@ -282,7 +282,7 @@ const LandingKey = ({ onNavigate }) => (
 );
 
 const MethodologyKey = () => (
-  <section id="solution" className="scroll-mt-24 py-32 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
+  <section id="solution" className="scroll-mt-24 pt-12 md:pt-16 pb-32 relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center">
     <h2 className="text-3xl md:text-4xl font-light text-white tracking-[0.2em] uppercase mb-12 text-center">transactivate's Solution</h2>
 
     {/* PHASE 01: UNIFIED CONTEXT */}
@@ -416,7 +416,7 @@ const FaqKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full xl:container mx-auto px-6 md:px-8 py-16 md:py-32 border-t border-brand-steel/10 relative"
+    className="w-full xl:container mx-auto px-6 md:px-8 pt-12 md:pt-16 pb-16 md:pb-32 border-t border-brand-steel/10 relative"
   >
     <div className="max-w-4xl mx-auto">
       <div className="text-center mb-10 md:mb-16">
@@ -522,7 +522,7 @@ const WhitepapersKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full xl:container mx-auto px-6 md:px-8 py-16 md:py-32 border-t border-brand-steel/10 relative print:hidden"
+    className="w-full xl:container mx-auto px-6 md:px-8 pt-12 md:pt-16 pb-16 md:pb-32 border-t border-brand-steel/10 relative print:hidden"
   >
     <div className="max-w-5xl mx-auto">
       <div className="mb-12 md:mb-16">
@@ -561,7 +561,7 @@ const ContactKey = () => (
     whileInView={{ opacity: 1 }}
     viewport={{ once: true, margin: "-100px" }}
     transition={{ duration: 0.8 }}
-    className="w-full container mx-auto px-6 md:px-8 py-16 md:py-32 border-t border-brand-steel/10 text-center"
+    className="w-full container mx-auto px-6 md:px-8 pt-12 md:pt-16 pb-16 md:pb-32 border-t border-brand-steel/10 text-center"
   >
     <Crosshair className="text-brand-gold mx-auto mb-6 md:mb-8" size={32} strokeWidth={1} />
     <h2 className="text-4xl sm:text-5xl md:text-8xl font-black text-white uppercase tracking-tighter mb-4 md:mb-6">
