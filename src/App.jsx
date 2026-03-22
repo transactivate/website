@@ -331,7 +331,7 @@ const MethodologyKey = () => (
           <Building2 className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
           <div>
             <h5 className="text-white font-medium mb-1 tracking-wide">Desired Agency</h5>
-            <p className="text-sm text-slate-400 leading-relaxed">Filtering the dormant SBIR universe by specific federal agency.</p>
+            <p className="text-sm text-slate-400 leading-relaxed">Filtering the SBIR universe by your chosen customer.</p>
           </div>
         </motion.div>
 
@@ -342,7 +342,7 @@ const MethodologyKey = () => (
           <Crosshair className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
           <div>
             <h5 className="text-white font-medium mb-1 tracking-wide">Common Mission</h5>
-            <p className="text-sm text-slate-400 leading-relaxed">Mathematical alignment of capability and tech fit to validate your derivation or extension claims.</p>
+            <p className="text-sm text-slate-400 leading-relaxed">Ranking fit to validate your derivation or extension claim.</p>
           </div>
         </motion.div>
 
@@ -353,7 +353,7 @@ const MethodologyKey = () => (
           <Clock className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
           <div>
             <h5 className="text-white font-medium mb-1 tracking-wide">Long Runway</h5>
-            <p className="text-sm text-slate-400 leading-relaxed">Calculating expiration horizons per data rights to ensure a long, protected sole-source runway.</p>
+            <p className="text-sm text-slate-400 leading-relaxed">Calculating data rights to ensure you have a long Phase III runway.</p>
           </div>
         </motion.div>
       </div>
@@ -386,10 +386,10 @@ const MethodologyKey = () => (
         >
           <AlertTriangle className="w-6 h-6 text-slate-500 mb-3 sm:mb-0 sm:mr-5 mt-1 shrink-0 group-hover:text-[#d4af37] transition-colors" />
           <div>
-            <h5 className="text-white font-medium mb-1 tracking-wide">Procurement Situations</h5>
+            <h5 className="text-white font-medium mb-1 tracking-wide">Immediate Procurement Situations</h5>
             <div className="inline-flex items-center gap-2 px-3 py-1.5 mt-3 mb-4 rounded-full border border-[#d4af37]/30 bg-[#d4af37]/10">
               <div className="w-1.5 h-1.5 rounded-full bg-[#d4af37] animate-pulse shrink-0 shadow-[0_0_8px_rgba(212,175,55,0.6)]"></div>
-              <span className="text-[#d4af37] text-[9px] sm:text-[10px] font-mono uppercase tracking-widest leading-snug text-left">in a situation right now a SBIR could solve</span>
+              <span className="text-[#d4af37] text-[9px] sm:text-[10px] font-mono uppercase tracking-widest leading-snug text-left">Facing a problem right now a SBIR could solve</span>
             </div>
             <p className="text-sm text-slate-400 leading-relaxed">Pinpointing prime contractors facing relevant procurement challenges: contract protests, bridges, extensions, etc.</p>
           </div>
