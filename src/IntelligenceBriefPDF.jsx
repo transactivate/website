@@ -3,8 +3,22 @@ import React, { useEffect } from 'react';
 const IntelligenceBriefPDF = () => {
   useEffect(() => {
     document.title = "transactivate | The M&A-Driven Capture Playbook";
+    
+    let canonicalLink = document.querySelector("link[rel='canonical']");
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", "https://transactivate.ai/playbook-pdf");
+
     return () => {
       document.title = "transactivate | Sole-Source SBIR M&A";
+      
+      let cleanupLink = document.querySelector("link[rel='canonical']");
+      if (cleanupLink) {
+        cleanupLink.setAttribute("href", "https://transactivate.ai/");
+      }
     };
   }, []);
 
