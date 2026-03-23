@@ -516,7 +516,39 @@ const FaqItem = ({ question, answer, citations }) => {
   );
 };
 
-const WhitepapersKey = () => (
+const WhitepapersKey = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  const handleRequest = async (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: "87f7bf1f-e288-420e-b127-b2fa94ebc62d",
+          subject: "New Playbook Request (transactivate)",
+          email: email,
+          message: `An executive has requested access to the M&A-Driven Capture Playbook.\n\nEmail: ${email}\n\nYou can manually reply to them with the secure link: https://transactivate.ai/playbook-pdf`
+        }),
+      });
+      if (response.ok) {
+        setIsSubmitted(true);
+        setEmail("");
+      }
+    } catch (error) {
+      console.error("Form submission error", error);
+    }
+    setIsSubmitting(false);
+  };
+
+  return (
   <motion.div 
     initial={{ opacity: 0 }}
     whileInView={{ opacity: 1 }}
@@ -544,16 +576,39 @@ const WhitepapersKey = () => (
           </p>
         </div>
         
-        <a 
-          href="mailto:founder@transactivate.ai?subject=Requesting Access: M&A-Driven Capture White Paper"
-          className="relative z-10 flex-shrink-0 px-6 md:px-8 py-3 md:py-4 border border-brand-steel/40 text-brand-gold bg-brand-gold/5 uppercase tracking-[0.2em] text-xs font-bold hover:bg-brand-gold hover:text-brand-black transition-all duration-300 flex items-center gap-3 group-hover:border-brand-gold w-full lg:w-auto justify-center"
-        >
-          Request Access <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
-        </a>
+        {isSubmitted ? (
+          <div className="relative z-10 mt-8 p-6 border border-[#d4af37]/50 bg-[#d4af37]/10 inline-block mx-auto flex-shrink-0">
+            <p className="text-[#d4af37] font-mono tracking-widest uppercase text-sm font-bold">
+              [ Request Received ]
+            </p>
+            <p className="text-slate-300 mt-2 font-mono text-sm max-w-[250px]">
+              The intelligence brief will be sent to your inbox shortly.
+            </p>
+          </div>
+        ) : (
+          <form onSubmit={handleRequest} className="relative z-10 mt-8 w-full max-w-md lg:w-auto mx-auto flex-shrink-0 flex flex-col sm:flex-row gap-4 justify-center">
+            <input 
+              type="email" 
+              required 
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              placeholder="Corporate Email Address" 
+              className="flex-1 bg-slate-900/50 border border-slate-700 text-white px-4 py-3 focus:outline-none focus:border-[#d4af37] focus:ring-1 focus:ring-[#d4af37] font-mono text-sm placeholder:text-slate-500 transition-all min-w-[250px]"
+            />
+            <button 
+              type="submit" 
+              disabled={isSubmitting}
+              className="bg-[#d4af37] hover:bg-[#b5952f] text-black font-bold px-6 py-3 uppercase tracking-wider transition-colors disabled:opacity-50 whitespace-nowrap font-mono text-sm"
+            >
+              {isSubmitting ? "Initiating..." : "Request Access"}
+            </button>
+          </form>
+        )}
       </div>
     </div>
   </motion.div>
-);
+  );
+};
 
 const ContactKey = () => (
    <motion.div 
